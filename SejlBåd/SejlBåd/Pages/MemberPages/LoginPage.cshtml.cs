@@ -26,13 +26,15 @@ namespace SejlBåd.Pages.MemberPages
 
         public IActionResult OnPost()
         {
-
+            // if login attempt isn't success full, do nothing
             if(!_memberService.Login(UserName, Password))
             {
                 return Page();
             }
 
-            return RedirectToPage("CreateAccount");
+            //should give you authority of the account you logged into(
+
+            return RedirectToPage("/Pages/Index");
         }
     }
 }

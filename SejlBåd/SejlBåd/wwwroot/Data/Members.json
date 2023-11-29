@@ -9,5 +9,16 @@
     "FirstName": "Kim",
     "LastName": "Possibly",
     "PhoneNumber": "27857356"
+  },
+  {
+    "UserId": "gaga#123",
+    "UserIdNum": 123,
+    "UserIdString": "gaga",
+    "Email": "asd",
+    "UserName": "username",
+    "Password": "password",
+    "FirstName": "asdf",
+    "LastName": "sfdf",
+    "PhoneNumber": "asfasd"
   }
 ]
