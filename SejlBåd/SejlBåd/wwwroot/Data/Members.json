@@ -1,13 +1,14 @@
 [
   {
     "UserId": "Alex#7584",
-    "UserIdNum": "7584",
+    "UserIdNum": 7584,
     "UserIdString": "Alex",
     "Email": "Alex@hotmail.com",
-    "UserName": "PInKuLoRdu6969",
-    "PassWord": "iluvborkers",
+    "UserName": "user",
+    "Password": "123",
     "FirstName": "Kim",
     "LastName": "Possibly",
-    "PhoneNumber": "27857356"
+    "PhoneNumber": "27857356",
+    "IsLoggedIn": false
   }
 ]

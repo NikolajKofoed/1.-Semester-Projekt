@@ -2,3 +2,20 @@
 @model SejlBåd.Pages.MemberPages.LoginPageModel
 @{
 }
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.UserName"></label>
+        <input asp-for="@Model.UserName"/>
+        <span asp-validation-for="@Model.UserName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Password"></label>
+        <input asp-for="@Model.Password"/>
+        <span asp-validation-for="@Model.Password"></span>
+    </div>
+    <input type="submit" value="Login" class="btn btn-primary"/>
+</form>
+<p>
+    <a asp-page="CreateAccount">Create Account</a>
+</p>

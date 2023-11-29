@@ -42,7 +42,7 @@ namespace SejlBåd.Services.MemberServices
 
         Member IMemberService.DeleteMember(string memberId)
         {
-            if (string.IsNullOrEmpty(memberId))
+            if (!string.IsNullOrEmpty(memberId))
             {
                 foreach(var member in members)
                 {
@@ -59,7 +59,7 @@ namespace SejlBåd.Services.MemberServices
 
         Member IMemberService.GetMember(string memberId)
         {
-            if (string.IsNullOrEmpty(memberId))
+            if (!string.IsNullOrEmpty(memberId))
             {
                 foreach(var member in members)
                 {
@@ -72,5 +72,20 @@ namespace SejlBåd.Services.MemberServices
             return null;
         }
 
+        bool IMemberService.Login(string userName, string password)
+        {
+            if(!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(password))
+            {
+                foreach(var member in members)
+                {
+                    if(member.Password == password && member.UserName == userName)
+                    {
+                        member.IsLoggedIn = true;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
     }
 }

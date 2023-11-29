@@ -6,11 +6,11 @@ namespace SejlBåd.Services.MemberServices
     public class JsonFileMemberService
     {
 
-        private String JsonFileName
+        private string JsonFileName
         {
             get
             {
-                return Path.Combine(WebHostEnviroment.WebRootPath, "Data", "Members.Json");
+                return Path.Combine(WebHostEnviroment.WebRootPath, "Data", "Members.json");
             }
         }
 
