@@ -80,7 +80,6 @@ namespace SejlBåd.Services.MemberServices
                 {
                     if(member.Password == password && member.UserName == userName)
                     {
-                        member.IsLoggedIn = true;
                         return true;
                     }
                 }
