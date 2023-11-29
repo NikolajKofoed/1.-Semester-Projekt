@@ -1,20 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using SejlBåd.Models;
+using SejlBåd.Services.WeatherServices;
 
-namespace SejlBåd.Pages
+namespace SejlBåd.Pages;
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    private readonly ILogger<IndexModel> _logger;
+
+    private readonly IWeatherService _weatherService;
+
+    public Forecast TodaysForecast { get; set; }
+
+    public IndexModel(ILogger<IndexModel> logger, IWeatherService weatherService)
     {
-        private readonly ILogger<IndexModel> _logger;
+        _logger = logger;
+        _weatherService = weatherService;
+    }
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
-
-        public void OnGet()
-        {
-
-        }
+    public async Task OnGet()
+    {
+        TodaysForecast = await _weatherService.GetTodaysForecast();
     }
 }

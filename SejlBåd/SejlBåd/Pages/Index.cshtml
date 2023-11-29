@@ -8,3 +8,49 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                Dato
+            </th>
+            <th>
+                Temperatur
+            </th>
+            <th>
+                Vindhastighed 
+            </th>
+            <th>
+                Vindretning
+            </th>
+            <th>
+                Regn 
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.TodaysForecast != null)
+        {
+                <tr>
+                    <td>
+                        @Model.TodaysForecast.Date
+                    </td>
+                    <td>
+                        @Model.TodaysForecast.Temperature°C
+                    </td>
+                    <td>
+                        @Model.TodaysForecast.WindSpeed m/s
+                    </td>
+                     <td>
+                        @Model.TodaysForecast.WindDirection°
+                    </td> 
+                    <td>
+                        @Model.TodaysForecast.Rain mm
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+<iframe title="Ventus Weather Map Shortcode 55.983 12.369" loading="lazy" style="width: 100; height: 350px; border-radius: 20px; box-sizing: border-box;" src="https://embed.windy.com/embed2.html?lat=55.983&amp;lon=12.369&amp;zoom=11&amp;overlay=wind&amp;marker=true&amp;pressure=&amp;detailLat=55.983&amp;detailLon=12.369&amp;metricWind=m/s&amp;metricTemp=°C&amp;detail=true&amp;calendar=now&amp;product=icon&amp;level=450h&amp;menu=&amp;message=true&amp;type=map&amp;location=coordinates&amp;radarRange=-1" frameborder="0"></iframe>
