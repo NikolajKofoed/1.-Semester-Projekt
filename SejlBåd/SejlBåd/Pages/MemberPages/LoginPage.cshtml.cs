@@ -34,7 +34,7 @@ namespace SejlBåd.Pages.MemberPages
 
             //should give you authority of the account you logged into(
 
-            return RedirectToPage("/Pages/Index");
+            return RedirectToPage("Pages/Index");
         }
     }
 }

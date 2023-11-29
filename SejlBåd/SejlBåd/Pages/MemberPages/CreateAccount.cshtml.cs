@@ -27,7 +27,10 @@ namespace SejlBåd.Pages.MemberPages
             {
                 return Page();
             }
+            // set the unique userId
+            // todo: make it unique
             Member.UserId = (Member.UserIdString+ "#" + Member.UserIdNum).ToString();
+            //add member
             _memberService.AddMember(Member);
             return RedirectToPage("LoginPage");
         }
