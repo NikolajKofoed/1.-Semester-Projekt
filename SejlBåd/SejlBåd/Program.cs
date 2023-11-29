@@ -1,7 +1,11 @@
+using SejlBåd.Services.MemberServices;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<IMemberService, MemberService>();
+builder.Services.AddTransient<JsonFileMemberService>();
 
 var app = builder.Build();
 

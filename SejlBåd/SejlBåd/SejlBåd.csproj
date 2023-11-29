@@ -9,7 +9,7 @@
   <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="Repositories\" />
-    <Folder Include="Services\" />
+    <Folder Include="wwwroot\Data\" />
   </ItemGroup>
 
 </Project>
