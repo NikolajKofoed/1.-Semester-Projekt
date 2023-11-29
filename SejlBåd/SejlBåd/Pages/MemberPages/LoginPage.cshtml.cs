@@ -8,7 +8,6 @@ namespace SejlBåd.Pages.MemberPages
     public class LoginPageModel : PageModel
     {
         private IMemberService _memberService;
-
         [BindProperty] public string UserName { get; set; }
         [BindProperty] public string Password { get; set; }
 
