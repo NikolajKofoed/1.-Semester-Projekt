@@ -25,6 +25,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
+                        @if(Pages.MemberPages.LoginPageModel.LoggedInMember == null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="MemberPages/LoginPage">Login</a>
+                            </li>
+                        }
+                        @if (Pages.MemberPages.LoginPageModel.LoggedInMember != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="MemberPages/Account">Account</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

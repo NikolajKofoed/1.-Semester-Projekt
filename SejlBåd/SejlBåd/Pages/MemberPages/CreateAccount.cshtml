@@ -1,0 +1,55 @@
+﻿@page
+@model SejlBåd.Pages.MemberPages.CreateAccountModel
+@{
+}
+<h1>Create Account</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Member.FirstName"></label>
+        <input asp-for="@Model.Member.FirstName"/>
+        <span asp-validation-for="@Model.Member.FirstName"></span>
+    </div>
+        <div class="form-group">
+        <label asp-for="@Model.Member.LastName"></label>
+        <input asp-for="@Model.Member.LastName"/>
+        <span asp-validation-for="@Model.Member.LastName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Member.Email"></label>
+        <input asp-for="@Model.Member.Email" />
+        <span asp-validation-for="@Model.Member.Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Member.PhoneNumber"></label>
+        <input asp-for="@Model.Member.PhoneNumber" />
+        <span asp-validation-for="@Model.Member.PhoneNumber"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Member.UserName"></label>
+        <input asp-for="@Model.Member.UserName" />
+        <span asp-validation-for="@Model.Member.UserName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Member.Password"></label>
+        <input asp-for="@Model.Member.Password" />
+        <span asp-validation-for="@Model.Member.Password"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Member.UserIdNum"></label>
+        <input asp-for="@Model.Member.UserIdNum" />
+        <span asp-validation-for="@Model.Member.UserIdNum"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Member.UserIdString"></label>
+        <input asp-for="@Model.Member.UserIdString" />
+        <span asp-validation-for="@Model.Member.UserIdString"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary"/>
+    </div>
+</form>
+
+<p>
+    <a asp-page="LoginPage">Back</a>
+</p>
