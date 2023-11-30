@@ -42,5 +42,16 @@
     "FirstName": "justa",
     "LastName": "beafer",
     "PhoneNumber": "29384723"
+  },
+  {
+    "UserId": "emma#5",
+    "UserIdNum": 5,
+    "UserIdString": "emma",
+    "Email": "emhyttel@gmail.com",
+    "UserName": "EmmaHyttel",
+    "Password": "hall\u00F8j123",
+    "FirstName": "emma",
+    "LastName": "hyttel",
+    "PhoneNumber": "21129907"
   }
 ]
