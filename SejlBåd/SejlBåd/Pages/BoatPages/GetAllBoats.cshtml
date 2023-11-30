@@ -1,0 +1,36 @@
+﻿@page
+@model SejlBåd.Pages.BoatPages.GetAllBoatsModel
+@{
+}
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Length</th>
+                <th>Width</th>
+                <th>Bom</th>
+                <th>HasBom</th>
+                <th>TopUnderMast</th>
+                <th>Booked</th>
+            </tr> 
+        </thead>
+        <tbody>
+            @if (Model.BoatService.listOfBoats() != null)
+            {
+                foreach (var boat in Model.BoatService.listOfBoats())
+                {
+                    <tr>
+                        <td>@boat.Id</td>
+                        <td>@boat.Length</td>
+                        <td>@boat.Width</td>
+                        <td>@boat.Bom</td>
+                        <td>@boat.HasBom</td>
+                        <td>@boat.TopUnderMast</td>
+                        <td>@boat.Booked</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
