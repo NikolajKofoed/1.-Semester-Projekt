@@ -1,11 +1,14 @@
 using SejlBåd.Services.MemberServices;
+using SejlBåd.Services.WeatherServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddHttpClient();
 builder.Services.AddSingleton<IMemberService, MemberService>();
 builder.Services.AddTransient<JsonFileMemberService>();
+builder.Services.AddTransient<IWeatherService, WeatherService>();
 
 var app = builder.Build();
 
