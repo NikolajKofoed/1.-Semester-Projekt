@@ -42,5 +42,16 @@
     "FirstName": "justa",
     "LastName": "beafer",
     "PhoneNumber": "29384723"
+  },
+  {
+    "UserId": "nikoniko#7834",
+    "UserIdNum": 7834,
+    "UserIdString": "nikoniko",
+    "Email": "hagsd@hotmail.com",
+    "UserName": "niko",
+    "Password": "12345",
+    "FirstName": "nikolaj",
+    "LastName": "kofoed",
+    "PhoneNumber": "2837464"
   }
 ]
