@@ -42,5 +42,16 @@
     "FirstName": "justa",
     "LastName": "beafer",
     "PhoneNumber": "29384723"
+  },
+  {
+    "UserId": "birthdaygirl#1997",
+    "UserIdNum": 1997,
+    "UserIdString": "birthdaygirl",
+    "Email": "birthdaygirl",
+    "UserName": "birthdayGirl",
+    "Password": "1234",
+    "FirstName": "birthday",
+    "LastName": "girl",
+    "PhoneNumber": "45678901"
   }
 ]
