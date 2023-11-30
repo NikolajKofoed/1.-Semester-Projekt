@@ -10,6 +10,7 @@ namespace SejlBåd.Pages.MemberPages
         private IMemberService _memberService;
         [BindProperty] public string? UserName { get; set; }
         [BindProperty] public string? Password { get; set; }
+        // skal ikke være static da kun en bruger kan logge ind så
         public static Member? LoggedInMember { get; set; }
 
         public LoginPageModel(IMemberService memberService)
