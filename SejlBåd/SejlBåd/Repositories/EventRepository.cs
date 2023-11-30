@@ -9,18 +9,9 @@
             EventList.Add(new Models.Event { EventName = eventName, EventDetails = eventDetails, EventDate = eventDate });
         }
 
-        public void RemoveEvent(string eventName)
-        {
-            Models.Event EventToRemove = EventList.FirstOrDefault(e => e.EventName == eventName);
-            if (EventToRemove != null)
-            {
-                EventList.Remove(EventToRemove);
-            }
-        }
-
         public void UpdateEvent(string eventName, string eventDetails, string eventDate)
         {
-            Models.Event EventToUpdate = EventList.FirstOrDefault();
+            Models.Event EventToUpdate = EventList.FirstOrDefault(e => e.EventName == eventName);
             if (EventToUpdate != null)
             {
                 EventToUpdate.EventName = eventName;
@@ -31,11 +22,16 @@
 
         public void DeleteEvent(string eventName)
         {
-            Models.Event EventToDelete = EventList.FirstOrDefault();
+            Models.Event EventToDelete = EventList.FirstOrDefault(e => e.EventName == eventName);
             if (EventToDelete != null)
             {
                 EventList.Remove(EventToDelete);
             }
+        }
+
+        public Models.Event GetEventByName(string eventName)
+        {
+            return EventList.FirstOrDefault(e => e.EventName == eventName);
         }
     }
 }
