@@ -42,5 +42,16 @@
     "FirstName": "justa",
     "LastName": "beafer",
     "PhoneNumber": "29384723"
+  },
+  {
+    "UserId": "1#1",
+    "UserIdNum": 1,
+    "UserIdString": "1",
+    "Email": "alexstripper@strip.dk",
+    "UserName": "stripperalex",
+    "Password": "strippermanden12",
+    "FirstName": "Stripper",
+    "LastName": "Alex",
+    "PhoneNumber": "30493400"
   }
 ]
