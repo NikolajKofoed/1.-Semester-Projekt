@@ -31,5 +31,16 @@
     "FirstName": "asdf",
     "LastName": "asd4",
     "PhoneNumber": "123123asdasd"
+  },
+  {
+    "UserId": "jbeaff#153",
+    "UserIdNum": 153,
+    "UserIdString": "jbeaff",
+    "Email": "kalium.123@hotmail.com",
+    "UserName": "abeaver",
+    "Password": "1234",
+    "FirstName": "justa",
+    "LastName": "beafer",
+    "PhoneNumber": "29384723"
   }
 ]

@@ -9,7 +9,7 @@ namespace SejlBåd.Services.MemberServices
         void UpdateMember(Member member);
         Member DeleteMember(string memberId);
         Member GetMember(string memberId);
-        bool Login(string userName, string password);
+        Member Login(string userName, string password);
         
 
     }

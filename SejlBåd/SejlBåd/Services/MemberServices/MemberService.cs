@@ -72,7 +72,7 @@ namespace SejlBåd.Services.MemberServices
             return null;
         }
 
-        bool IMemberService.Login(string userName, string password)
+        Member IMemberService.Login(string userName, string password)
         {
             if(!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(password))
             {
@@ -80,11 +80,11 @@ namespace SejlBåd.Services.MemberServices
                 {
                     if(member.Password == password && member.UserName == userName)
                     {
-                        return true;
+                        return member;
                     }
                 }
             }
-            return false;
+            return null;
         }
     }
 }
