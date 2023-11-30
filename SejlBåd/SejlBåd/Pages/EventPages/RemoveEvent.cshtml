@@ -1,4 +1,14 @@
-﻿@page
+﻿@page "/RemoveEvent"
 @model SejlBåd.Pages.EventPages.RemoveEventModel
 @{
 }
+
+@* Jeg mangler at implementere funktionaliteten i koden *@
+<center><h3>Remove Event</h3></center>
+<form method="post">
+    <div class="form-group">
+        <label for="eventName">Event Name</label>
+        <input type="text" class="form-control" id="eventName" name="eventName" required>
+    </div>
+    <button type="submit" class="btn btn-danger">Remove Event</button>
+</form>
