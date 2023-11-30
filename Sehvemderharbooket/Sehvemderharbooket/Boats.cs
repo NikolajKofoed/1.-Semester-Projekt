@@ -1,6 +1,12 @@
-﻿namespace SejlBåd.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sehvemderharbooket
 {
-    public class Boat
+    public class Boats
     {
         public static int nextID = 1;
         public double Length { get; set; }
@@ -11,7 +17,7 @@
         public double TopUnderMast { get; set; }
         public bool Booked { get; set; }
 
-        public Boat(double length, double width, double bom, bool hasBom, double topUnderMast, bool booked)
+        public Boats(double length, double width, double bom, bool hasBom, double topUnderMast, bool booked)
         {
             Id = nextID++;
             Length = length;
@@ -21,15 +27,10 @@
             TopUnderMast = topUnderMast;
             Booked = booked;
         }
-        public Boat()
-        {
 
-        }
         public override string ToString()
         {
             return $"{{{nameof(Length)}={Length.ToString()}, {nameof(Id)}={Id.ToString()}, {nameof(Width)}={Width.ToString()}, {nameof(Bom)}={Bom.ToString()}, {nameof(HasBom)}={HasBom.ToString()}, {nameof(TopUnderMast)}={TopUnderMast.ToString()}, {nameof(Booked)}={Booked.ToString()}}}";
         }
-
-        
     }
 }

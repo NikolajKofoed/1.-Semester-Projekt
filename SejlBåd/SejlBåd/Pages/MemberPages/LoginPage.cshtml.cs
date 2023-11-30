@@ -26,7 +26,7 @@ namespace SejlBåd.Pages.MemberPages
 
         public IActionResult OnPost()
         {
-            // if login attempt isn't success full, do nothing
+            // if login attempt isn't success full, do nothing(maybe give some indikation)
             if(_memberService.Login(UserName, Password) == null)
             {
                 return Page();
