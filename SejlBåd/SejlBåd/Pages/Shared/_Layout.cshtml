@@ -25,6 +25,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Pages/BoatPages/GetAllBoats">Boats</a>
+                        </li>
                         @if(Pages.MemberPages.LoginPageModel.LoggedInMember == null)
                         {
                             <li class="nav-item">
@@ -37,6 +40,9 @@
                                 <a class="nav-link text-dark" asp-area="" asp-page="MemberPages/Account">Account</a>
                             </li>
                         }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/SailingClassPages/GetAllSailingClasses">Sejladshold</a>
+                        </li>
                     </ul>
                 </div>
             </div>
