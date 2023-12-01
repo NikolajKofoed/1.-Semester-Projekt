@@ -1,3 +1,4 @@
+using SejlBåd.Repositories;
 using SejlBåd.Services.BoatService;
 using SejlBåd.Services.MemberServices;
 using SejlBåd.Services.WeatherServices;

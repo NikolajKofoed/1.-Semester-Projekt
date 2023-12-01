@@ -12,9 +12,9 @@ namespace SejlBåd.Models
         public string EventDetails { get; set; }
         [Display(Name = "Event Date")]
         [Required(ErrorMessage = "Event Date cannot be empty")]
-        public string EventDate { get; set; }
+        public DateTime EventDate { get; set; }
 
-        public Event(string eventName, string eventDetails, string eventDate)
+        public Event(string eventName, string eventDetails, DateTime eventDate)
         {
             EventName = eventName;
             EventDetails = eventDetails;
