@@ -53,5 +53,16 @@
     "FirstName": "nikolaj",
     "LastName": "kofoed",
     "PhoneNumber": "2837464"
+  },
+  {
+    "UserId": "123#123",
+    "UserIdNum": 123,
+    "UserIdString": "123",
+    "Email": "kalium.123@hotmail.com",
+    "UserName": "1234",
+    "Password": "1234",
+    "FirstName": "justa",
+    "LastName": "beafer",
+    "PhoneNumber": "29384723"
   }
 ]

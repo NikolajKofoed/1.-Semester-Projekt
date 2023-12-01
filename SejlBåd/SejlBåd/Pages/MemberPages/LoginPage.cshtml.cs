@@ -11,7 +11,7 @@ namespace SejlBåd.Pages.MemberPages
         [BindProperty] public string? UserName { get; set; }
         [BindProperty] public string? Password { get; set; }
         // skal ikke være static da kun en bruger kan logge ind så
-        public Member? Member { get; set; }
+        public Member Member { get; set; }
 
         public LoginPageModel(IMemberService memberService)
         {

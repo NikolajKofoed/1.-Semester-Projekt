@@ -27,7 +27,7 @@ namespace SejlBåd.Pages.EventPages
             string eventDetails = Request.Form["eventDetails"];
             string eventDate = Request.Form["eventDate"];
 
-            AddEvent(eventName, eventDetails, eventDate);
+            //AddEvent(eventName, eventDetails, eventDate);
         }
     }
 }

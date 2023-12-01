@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using SejlBåd.Services.BoatService;
 using SejlBåd.Services.MemberServices;
 using SejlBåd.Services.WeatherServices;

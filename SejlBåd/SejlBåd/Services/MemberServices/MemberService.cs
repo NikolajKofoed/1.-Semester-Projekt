@@ -81,8 +81,8 @@ namespace SejlBåd.Services.MemberServices
                 {
                     if(member.Password == password && member.UserName == userName)
                     {
-                        
-                        return LoggedInMember = member;
+                        LoggedInMember = member;
+                        return member;
                     }
                 }
             }
