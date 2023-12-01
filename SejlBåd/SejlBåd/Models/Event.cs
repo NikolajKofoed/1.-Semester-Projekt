@@ -23,9 +23,6 @@ namespace SejlBåd.Models
 
         public Event()
         {
-            EventName = "Familiedag ved Vandet";
-            EventDetails = "Børnesejlads, skattejagt og picnic for sjov og fællesskab!";
-            EventDate = "31/11/2023";
         }
     }
 }

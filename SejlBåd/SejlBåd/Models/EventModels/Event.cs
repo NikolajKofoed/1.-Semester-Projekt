@@ -26,8 +26,6 @@ namespace SejlBåd.Models.EventModels
         public Event(EventRepository eventRepository)
         {
             _eventRepository = eventRepository;
-            EventName = "et eller andet";
-
         }
 
         public void OnGet(string eventName)

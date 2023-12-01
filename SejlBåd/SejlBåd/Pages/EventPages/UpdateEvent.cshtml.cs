@@ -8,7 +8,7 @@ namespace SejlBåd.Pages.EventPages
 {
     public class UpdateEventModel : PageModel
     {
-        [BindProperty] public UpdateEventModel Event { get; set; }
+        [BindProperty] public Event Event { get; set; }
         private IMemberService _memberService;
         public Member Member { get; set; }
         public UpdateEventModel(IMemberService memberService)
