@@ -8,12 +8,12 @@ namespace SejlBåd.Services.BoatService
         {
 
          private string JsonFileName
-            {
+         {
                get
-                {
+               {
                     return Path.Combine(WebHostEnviroment.WebRootPath, "Data", "Boat.json");
-                }
-            }
+               }
+         }
 
             IWebHostEnvironment WebHostEnviroment { get; }
 
