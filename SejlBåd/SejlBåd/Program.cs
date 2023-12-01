@@ -1,3 +1,4 @@
+using SejlBåd.Services.BoatService;
 using SejlBåd.Services.MemberServices;
 using SejlBåd.Services.WeatherServices;
 
@@ -9,6 +10,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddSingleton<IMemberService, MemberService>();
 builder.Services.AddTransient<JsonFileMemberService>();
 builder.Services.AddTransient<IWeatherService, WeatherService>();
+builder.Services.AddSingleton<IBoatService, BoatService>();
 
 var app = builder.Build();
 
@@ -30,3 +32,4 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+

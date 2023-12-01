@@ -7,6 +7,7 @@ namespace SejlBåd.Services.MemberServices
 
         private List<Member> members;
         private JsonFileMemberService JsonFileMemberService { get; set; }
+        public Member LoggedInMember { get; set; }
 
         public MemberService(JsonFileMemberService jsonFileMemberService)
         {
@@ -80,7 +81,8 @@ namespace SejlBåd.Services.MemberServices
                 {
                     if(member.Password == password && member.UserName == userName)
                     {
-                        return member;
+                        
+                        return LoggedInMember = member;
                     }
                 }
             }

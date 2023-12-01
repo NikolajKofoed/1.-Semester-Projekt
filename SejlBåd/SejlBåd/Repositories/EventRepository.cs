@@ -2,22 +2,36 @@
 {
     public class EventRepository
     {
-        List<Models.Event> EventRepo = new List<Models.Event>();
+        List<Models.Event> EventList = new List<Models.Event>();
 
-        public void AddEvent()
+        public void AddEvent(string eventName, string eventDetails, string eventDate)
         {
+            EventList.Add(new Models.Event { EventName = eventName, EventDetails = eventDetails, EventDate = eventDate });
         }
 
-        public void RemoveEvent()
+        public void UpdateEvent(string eventName, string eventDetails, string eventDate)
         {
+            Models.Event EventToUpdate = EventList.FirstOrDefault(e => e.EventName == eventName);
+            if (EventToUpdate != null)
+            {
+                EventToUpdate.EventName = eventName;
+                EventToUpdate.EventDetails = eventDetails;
+                EventToUpdate.EventDate = eventDate;
+            }
         }
 
-        public void EditEvent()
+        public void DeleteEvent(string eventName)
         {
+            Models.Event EventToDelete = EventList.FirstOrDefault(e => e.EventName == eventName);
+            if (EventToDelete != null)
+            {
+                EventList.Remove(EventToDelete);
+            }
         }
 
-        public void DeleteEvent()
+        public Models.Event GetEventByName(string eventName)
         {
+            return EventList.FirstOrDefault(e => e.EventName == eventName);
         }
     }
 }
