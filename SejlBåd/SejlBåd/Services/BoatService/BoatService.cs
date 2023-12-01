@@ -5,7 +5,15 @@ namespace SejlBåd.Services.BoatService
 {
     public class BoatService : IBoatService
     {
-        List<Boat> boats = new List<Boat>();
+        private JsonFileBoatService JsonFileBoatService { get; set; }
+
+        List<Boat> boats;
+
+        public BoatService(JsonFileBoatService jsonFileBoatService, List<Boat> boats)
+        {
+            JsonFileBoatService = jsonFileBoatService;
+            this.boats = JsonFileBoatService.GetJsonBoats().ToList();
+        }
 
         void IBoatService.AddBoats(Boat boat)
         {
