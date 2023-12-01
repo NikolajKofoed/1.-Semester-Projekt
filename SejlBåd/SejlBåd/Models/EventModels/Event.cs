@@ -21,7 +21,7 @@ namespace SejlBåd.Models.EventModels
         [BindProperty]
         [Display(Name = "Event Date")]
         [Required(ErrorMessage = "Event Date cannot be empty")]
-        public string EventDate { get; set; }
+        public DateTime EventDate { get; set; }
 
         public Event(EventRepository eventRepository)
         {
