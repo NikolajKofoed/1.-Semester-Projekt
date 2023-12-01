@@ -10,7 +10,6 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Repositories\" />
     <Folder Include="Services\EventServices\" />
-    <Folder Include="wwwroot\Data\" />
   </ItemGroup>
 
 </Project>

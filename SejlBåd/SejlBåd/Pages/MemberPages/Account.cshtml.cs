@@ -13,10 +13,10 @@ namespace SejlBåd.Pages.MemberPages
         public AccountModel(IMemberService memberService)
         {
             _memberService = memberService;
-            Member = _memberService.LoggedInMember;
         }
         public IActionResult OnGet()
         {
+            Member = _memberService.LoggedInMember;
             return Page();
         }
     }

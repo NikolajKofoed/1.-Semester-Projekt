@@ -5,7 +5,7 @@ namespace SejlBåd.Services.MemberServices
     public class MemberService : IMemberService
     {
 
-        private List<Member> members;
+        private List<Member> members; 
         private JsonFileMemberService JsonFileMemberService { get; set; }
         public Member LoggedInMember { get; set; }
 
