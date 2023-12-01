@@ -9,10 +9,10 @@ namespace SejlBåd.Services.BoatService
 
         List<Boat> boats;
 
-        public BoatService(JsonFileBoatService jsonFileBoatService, List<Boat> boats)
+        public BoatService(JsonFileBoatService jsonFileBoatService)
         {
             JsonFileBoatService = jsonFileBoatService;
-            this.boats = JsonFileBoatService.GetJsonBoats().ToList();
+            boats = JsonFileBoatService.GetJsonBoats().ToList();
         }
 
         void IBoatService.AddBoats(Boat boat)
