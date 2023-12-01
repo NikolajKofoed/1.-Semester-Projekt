@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -28,13 +30,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Pages/BoatPages/GetAllBoats">Boats</a>
                         </li>
-                        @if(Pages.MemberPages.LoginPageModel.LoggedInMember == null)
+                        @if(Model.Member == null)
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="MemberPages/LoginPage">Login</a>
                             </li>
                         }
-                        @if (Pages.MemberPages.LoginPageModel.LoggedInMember != null)
+                        @if (Model.Member != null)
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="MemberPages/Account">Account</a>

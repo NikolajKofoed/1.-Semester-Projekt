@@ -11,7 +11,7 @@ namespace SejlBåd.Pages.MemberPages
         [BindProperty] public string? UserName { get; set; }
         [BindProperty] public string? Password { get; set; }
         // skal ikke være static da kun en bruger kan logge ind så
-        public static Member? LoggedInMember { get; set; }
+        public Member? Member { get; set; }
 
         public LoginPageModel(IMemberService memberService)
         {
@@ -36,7 +36,8 @@ namespace SejlBåd.Pages.MemberPages
             //the account link in the nav bar should now have the members username, and new options when hovering it
 
             // sets the member to a local variable which we can use to change and view information
-            LoggedInMember = _memberService.Login(UserName, Password);
+            _memberService.Login(UserName, Password);
+            Member = _memberService.LoggedInMember;
             return RedirectToPage("TestSite");
         }
     }
