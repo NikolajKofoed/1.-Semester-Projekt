@@ -13,10 +13,11 @@ namespace SejlBåd.Pages.MemberPages
         public AccountModel(IMemberService memberService)
         {
             _memberService = memberService;
-            Member = _memberService.GetMember(LoginPageModel.LoggedInMember.UserId);
+            Member = _memberService.LoggedInMember;
         }
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            return Page();
         }
     }
 }
