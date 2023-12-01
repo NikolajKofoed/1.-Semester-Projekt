@@ -12,6 +12,7 @@ namespace SejlBåd.Pages.MemberPages
         public TestSiteModel(IMemberService memberService)
         {
             _memberService = memberService;
+            Member = _memberService.LoggedInMember;
         }
         public void OnGet()
         {

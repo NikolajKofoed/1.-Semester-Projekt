@@ -17,6 +17,7 @@ namespace SejlBåd.Pages.MemberPages
         }
         public IActionResult OnGet()
         {
+            Member = _memberService.LoggedInMember;
             return Page();
         }
     }
