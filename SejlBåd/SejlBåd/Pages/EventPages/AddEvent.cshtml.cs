@@ -17,5 +17,16 @@ namespace SejlBåd.Pages.EventPages
         {
             Member = _memberService.LoggedInMember;
         }
+
+        public void OnPost()
+        {
+            Member = _memberService.LoggedInMember;
+
+            string eventName = Request.Form["eventName"];
+            string eventDetails = Request.Form["eventDetails"];
+            string eventDate = Request.Form["eventDate"];
+
+            AddEvent(eventName, eventDetails, eventDate);
+        }
     }
 }
