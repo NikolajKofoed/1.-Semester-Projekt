@@ -6,6 +6,7 @@ namespace SejlBåd.Pages.EventPages
 {
     public class UpdateEventModel : PageModel
     {
+        [BindProperty] public UpdateEventModel Event { get; set; }
         public void OnGet()
         {
         }

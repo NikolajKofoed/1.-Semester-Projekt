@@ -1,35 +1,38 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SejlBåd.Repositories;
+using System.ComponentModel.DataAnnotations;
 
 namespace SejlBåd.Models.EventModels
 {
-    public class UpdateEventModel
+    public class Event
     {
         private readonly EventRepository _eventRepository;
 
         [BindProperty]
+        [Display(Name = "Event Name")]
+        [Required(ErrorMessage = "Event needs a name"), MaxLength(100)]
         public string EventName { get; set; }
 
         [BindProperty]
+        [Display(Name = "Event Details")]
+        [Required(ErrorMessage = "Event must have a description"), MaxLength(350)]
         public string EventDetails { get; set; }
 
         [BindProperty]
+        [Display(Name = "Event Date")]
+        [Required(ErrorMessage = "Event Date cannot be empty")]
         public string EventDate { get; set; }
 
-        public UpdateEventModel(EventRepository eventRepository)
+        public Event(EventRepository eventRepository)
         {
             _eventRepository = eventRepository;
+            EventName = "et eller andet";
+
         }
 
         public void OnGet(string eventName)
         {
             var eventDetails = _eventRepository.GetEventByName(eventName);
-
-            if (eventDetails == null)
-            {
-                // Handle the case where the event is not found
-                return;
-            }
 
             EventName = eventDetails.EventName;
             EventDetails = eventDetails.EventDetails;
