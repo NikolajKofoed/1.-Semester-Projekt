@@ -8,6 +8,16 @@
     "HasBom": false,
     "TopUnderMast": 40,
     "Booked": false
+  },
+  {
+    "nextId": 1,
+    "Length": 200.0,
+    "Id": 1,
+    "Width": 30.0,
+    "Bom": 2,
+    "HasBom": false,
+    "TopUnderMast": 40,
+    "Booked": false
   }
 ]
 
