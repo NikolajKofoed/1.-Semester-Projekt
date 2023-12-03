@@ -2,24 +2,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SejlBåd.Models;
 using SejlBåd.Repositories;
-using SejlBåd.Services.MemberServices;
 
 namespace SejlBåd.Pages.EventPages
 {
     public class AddEventModel : PageModel
     {
-        private IMemberService _memberService;
-        public Member Member { get; set; }
         EventRepository eventRepository = new EventRepository();
 
-        public AddEventModel(IMemberService memberService)
+        public AddEventModel( )
         {
-            _memberService = memberService;
-            Member = _memberService.LoggedInMember;
         }
         public void OnGet()
         {
-            Member = _memberService.LoggedInMember;
         }
 
         //public void AddEvent(string eventName, string eventDetails, DateTime eventDate)
@@ -33,7 +27,6 @@ namespace SejlBåd.Pages.EventPages
 
         public void OnPost()
         {
-            Member = _memberService.LoggedInMember;
 
             string eventName = Request.Form["eventName"];
             string eventDetails = Request.Form["eventDetails"];
