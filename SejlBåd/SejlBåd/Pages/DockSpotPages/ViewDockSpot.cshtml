@@ -1,0 +1,49 @@
+﻿@page
+@model SejlBåd.Pages.DockSpotPages.ViewDockSpotModel
+@{
+}
+
+<h2>Rent Dock Spot</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>IsAvailable</th>
+            <th>Renter</th>
+            <th>RentPeriodStart</th>
+            <th>RentPeriodEnd</th>
+            <th>MonthlyCost</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model._dockSpotService.GetDockSpots() != null)
+        {
+            foreach (var dockSpot in Model._dockSpotService.GetDockSpots())
+            {
+                <tr>
+                    <td>@dockSpot.Id</td>
+                    <td>@dockSpot.IsAvailable</td>
+                    <td>@dockSpot.Renter</td>
+                    <td>@dockSpot.RentPeriodStart</td>
+                    <td>@dockSpot.RentPeriodEnd</td>
+                    <td>@dockSpot.MonthlyCost</td>
+                    @if(dockSpot.IsAvailable == true)
+                    {
+                        <td>
+                            <a class="btn btn-primary btn-sm" type="button" title="Rent" asp-page="RentDockSpot"
+                               asp-route-id="@dockSpot.Id">Rent Dock Spot</a>
+                        </td>
+                    }
+                    @if(dockSpot.IsAvailable == false)
+                    {
+                        <td>
+                            <a class="btn btn-primary btn-danger" type="button" title="Cancel" asp-page="CancelReservation"
+                               asp-route-id="@dockSpot.Id">Cancel Reservation</a>
+                        </td>
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>

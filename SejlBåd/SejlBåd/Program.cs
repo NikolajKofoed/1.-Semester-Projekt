@@ -1,5 +1,6 @@
 using SejlBåd.Repositories;
 using SejlBåd.Services.BoatService;
+using SejlBåd.Services.DockSpotServices;
 using SejlBåd.Services.WeatherServices;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,9 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
 builder.Services.AddTransient<JsonFileBoatService>();
+builder.Services.AddSingleton<IDockSpotService, DockSpotService>();
 builder.Services.AddTransient<IWeatherService, WeatherService>();
 builder.Services.AddSingleton<IBoatService, BoatService>();
-
+builder.Services.AddTransient<JsonFileDockSpotService>();
 
 var app = builder.Build();
 
