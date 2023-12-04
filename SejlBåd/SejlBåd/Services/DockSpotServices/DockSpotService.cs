@@ -24,6 +24,8 @@ namespace SejlBåd.Services.DockSpotServices
                     {
                         ds.Renter = null;
                         ds.IsAvailable = true;
+                        ds.RentPeriodStart = null;
+                        ds.RentPeriodEnd = null;
                     }
                 }
             }
@@ -47,7 +49,7 @@ namespace SejlBåd.Services.DockSpotServices
             return dockSpots;
         }
 
-        void IDockSpotService.RentSpot(DockSpot dockSpot, User user)
+        void IDockSpotService.RentSpot(DockSpot dockSpot, User user, DateTime start, DateTime end)
         {
             if(dockSpot != null || user != null)
             {
@@ -57,6 +59,8 @@ namespace SejlBåd.Services.DockSpotServices
                     {
                         ds.Renter = user;
                         ds.IsAvailable = false;
+                        ds.RentPeriodStart = start;
+                        ds.RentPeriodEnd = end;
                     }
                 }
             }

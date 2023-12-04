@@ -1,4 +1,7 @@
-﻿namespace SejlBåd.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
+
+namespace SejlBåd.Models
 {
     public class DockSpot
     {
@@ -6,7 +9,8 @@
         public int Id { get; set; }
         public User? Renter { get; set; }
         public bool IsAvailable { get; set; }
-        public DateTime? RentPeriodStart { get; set; }
+        [Required(ErrorMessage = "Please Give A Renting Start Date")]
+        public DateTime? RentPeriodStart { get; set; } = DateTime.Now;
         public DateTime? RentPeriodEnd { get; set; }
         public double MonthlyCost { get; set; }
 
