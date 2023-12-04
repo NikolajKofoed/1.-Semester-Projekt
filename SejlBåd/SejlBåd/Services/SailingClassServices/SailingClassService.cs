@@ -34,7 +34,7 @@ namespace SejlBåd.Services.SailingClassServices
 
         public void AddSailingClass(SailingClass sailingClass)
         {
-            throw new NotImplementedException();
+            sailingClasses.Add(sailingClass);
         }
 
     }
