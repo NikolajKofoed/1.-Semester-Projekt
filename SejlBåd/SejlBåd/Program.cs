@@ -1,6 +1,6 @@
-using SejlBåd.Repositories;
 using SejlBåd.Services.BoatService;
 using SejlBåd.Services.DockSpotServices;
+using SejlBåd.Services.EventServices;
 using SejlBåd.Services.WeatherServices;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +13,7 @@ builder.Services.AddSingleton<IDockSpotService, DockSpotService>();
 builder.Services.AddTransient<IWeatherService, WeatherService>();
 builder.Services.AddSingleton<IBoatService, BoatService>();
 builder.Services.AddTransient<JsonFileDockSpotService>();
+builder.Services.AddSingleton<IEventService, EventService>();
 
 var app = builder.Build();
 

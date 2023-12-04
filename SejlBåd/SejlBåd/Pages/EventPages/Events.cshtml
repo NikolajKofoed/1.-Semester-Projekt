@@ -1,0 +1,52 @@
+﻿@page
+@model SejlBåd.Pages.EventPages.EventsModel
+@{
+}
+
+<center><h1>Events</h1></center>
+<br />
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Event Name
+            </th>
+            <th>
+                Event Description
+            </th>
+            <th>
+                Event Date
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model._eventService != null)
+        {
+            foreach (var events in Model._eventService.GetEvents())
+            {
+                <tr>
+                    <td>
+                        @events.EventId
+                    </td>
+                    <td>
+                        @events.EventName
+                    </td>
+                    <td>
+                        @events.EventDescription
+                    </td>
+                    <td>
+                        @events.EventDate
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<br />
+<p>
+    <a class="btn btn-primary" asp-page="CreateEvent"> Create New Event </a>
+</p>
