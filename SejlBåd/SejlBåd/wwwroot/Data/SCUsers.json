@@ -1,0 +1,6 @@
+﻿namespace SejlBåd.wwwroot.Data
+{
+    public class SCUsers
+    {
+    }
+}
