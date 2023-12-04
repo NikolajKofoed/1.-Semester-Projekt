@@ -2,3 +2,14 @@
 @model SejlBåd.Pages.EventPages.DeleteEventModel
 @{
 }
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventId" class="control-lable"></label>
+        <input asp-for="@Model.Event.EventId" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Delete" class="btn btn-primary" />
+    </div>
+</form>

@@ -14,6 +14,7 @@ builder.Services.AddTransient<IWeatherService, WeatherService>();
 builder.Services.AddSingleton<IBoatService, BoatService>();
 builder.Services.AddTransient<JsonFileDockSpotService>();
 builder.Services.AddSingleton<IEventService, EventService>();
+builder.Services.AddTransient<JsonFileEventService>();
 
 var app = builder.Build();
 
