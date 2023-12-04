@@ -53,4 +53,29 @@
     </tbody>
 </table>
 
-<iframe title="Ventus Weather Map Shortcode 55.983 12.369" loading="lazy" style="width: 100; height: 350px; border-radius: 20px; box-sizing: border-box;" src="https://embed.windy.com/embed2.html?lat=55.983&amp;lon=12.369&amp;zoom=11&amp;overlay=wind&amp;marker=true&amp;pressure=&amp;detailLat=55.983&amp;detailLon=12.369&amp;metricWind=m/s&amp;metricTemp=°C&amp;detail=true&amp;calendar=now&amp;product=icon&amp;level=450h&amp;menu=&amp;message=true&amp;type=map&amp;location=coordinates&amp;radarRange=-1" frameborder="0"></iframe>
+@*<iframe title="Ventus Weather Map Shortcode 55.983 12.369" loading="lazy" style="width: 100; height: 350px; border-radius: 20px; box-sizing: border-box;" src="https://embed.windy.com/embed2.html?lat=55.983&amp;lon=12.369&amp;zoom=11&amp;overlay=wind&amp;marker=true&amp;pressure=&amp;detailLat=55.983&amp;detailLon=12.369&amp;metricWind=m/s&amp;metricTemp=°C&amp;detail=true&amp;calendar=now&amp;product=icon&amp;level=450h&amp;menu=&amp;message=true&amp;type=map&amp;location=coordinates&amp;radarRange=-1" frameborder="0"></iframe>*@
+<div id="weatherBox" style="position: fixed; bottom: 20px; right: 20px; z-index: 999; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden;">
+    <div id="weatherToggle" style="padding: 10px; cursor: pointer; display: flex; align-items: center;">
+        <i class="fas fa-cloud-sun" style="font-size: 24px; color: #f8b400; margin-right: 10px;"></i>
+        <span id="toggleText">Click to Open Weather Map</span>
+    </div>
+    <div id="weatherMap" style="display: none; padding: 10px;">
+        <iframe title="Ventus Weather Map Shortcode 55.983 12.369" loading="lazy" style="width: 100%; height: 350px; border-radius: 20px; box-sizing: border-box;" src="https://embed.windy.com/embed2.html?lat=55.983&amp;lon=12.369&amp;zoom=11&amp;overlay=wind&amp;marker=true&amp;pressure=&amp;detailLat=55.983&amp;detailLon=12.369&amp;metricWind=m/s&amp;metricTemp=°C&amp;detail=true&amp;calendar=now&amp;product=icon&amp;level=450h&amp;menu=&amp;message=true&amp;type=map&amp;location=coordinates&amp;radarRange=-1" frameborder="0"></iframe>
+    </div>
+</div>
+
+<script>
+    const toggleButton = document.getElementById('weatherToggle');
+    const mapBox = document.getElementById('weatherMap');
+    const toggleText = document.getElementById('toggleText');
+
+    toggleButton.addEventListener('click', () => {
+        if (mapBox.style.display === 'none' || mapBox.style.display === '') {
+            mapBox.style.display = 'block';
+            toggleText.textContent = 'Click to Close Weather Map';
+        } else {
+            mapBox.style.display = 'none';
+            toggleText.textContent = 'Click to Open Weather Map';
+        }
+    });
+</script>

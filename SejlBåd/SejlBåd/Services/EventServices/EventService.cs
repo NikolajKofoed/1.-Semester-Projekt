@@ -15,5 +15,10 @@ namespace SejlBåd.Services.EventServices
         {
             _events.Add(evt);
         }
+
+        public void DeleteEvent(Models.Event evt)
+        {
+            _events.Remove(evt);
+        }
     }
 }

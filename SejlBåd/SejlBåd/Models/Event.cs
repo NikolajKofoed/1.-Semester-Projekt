@@ -12,14 +12,13 @@ namespace SejlBåd.Models
         [BindProperty]
         public string EventDescription { get; set; }
         [BindProperty]
-        public string EventDate { get; set; }
+        public DateTime EventDate { get; set; }
 
-        public Event(int eventId, string eventName, string eventDescription, string eventDate)
+        public Event(int eventId, string eventName, string eventDescription, DateTime eventDate)
         {
             EventId = _nextId++;
             EventName = eventName;
             EventDescription = eventDescription;
-            EventDate = eventDate;
         }
 
         public Event()
@@ -27,7 +26,6 @@ namespace SejlBåd.Models
             EventId = _nextId++;
             EventName = "Default Name";
             EventDescription = "Default Description";
-            EventDate = "Default Date";
         }
     }
 }
