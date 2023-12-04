@@ -17,6 +17,7 @@ builder.Services.AddTransient<JsonFileDockSpotService>();
 builder.Services.AddSingleton<IEventService, EventService>();
 builder.Services.AddTransient<JsonFileEventService>();
 builder.Services.AddSingleton<ISailingClassService, SailingClassService>();
+builder.Services.AddTransient<JsonFileSCService>();
 
 var app = builder.Build();
 
