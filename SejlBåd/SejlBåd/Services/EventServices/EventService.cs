@@ -1,4 +1,5 @@
 ﻿using SejlBåd.MockData.EventMock;
+using SejlBåd.Models;
 
 namespace SejlBåd.Services.EventServices
 {
@@ -35,6 +36,18 @@ namespace SejlBåd.Services.EventServices
                     break;
                 }
             }
+        }
+
+        Event IEventService.GetEvent(int eventId)
+        {
+            foreach(var evt in _events)
+            {
+                if(evt.EventId == eventId)
+                {
+                    return evt;
+                }
+            }
+            return null;
         }
     }
 }

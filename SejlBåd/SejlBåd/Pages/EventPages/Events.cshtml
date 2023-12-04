@@ -41,6 +41,11 @@
                     <td>
                         @events.EventDate
                     </td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" method="post" type="submit" title="Slet" asp-route-id="@events.EventId">
+                            Slet Event
+                        </a>
+                    </td>
                 </tr>
             }
         }
