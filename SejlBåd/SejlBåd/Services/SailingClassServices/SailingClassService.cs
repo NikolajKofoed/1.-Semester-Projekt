@@ -14,7 +14,7 @@ namespace SejlBåd.Services.SailingClassServices
 
         public List<Models.SailingClass> GetSailingClasses()
         {
-            throw new NotImplementedException();
+            return sailingClasses;
         }
 
         public void RemoveSailingClass(SailingClass sailingClass)
