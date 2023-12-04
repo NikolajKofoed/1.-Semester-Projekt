@@ -3,7 +3,7 @@ namespace SejlBåd.Models
 {
     public class SailingClass
     {
-        public List<Member> ClassMembers { get; set; }
+        List<User> participants;
         public string ClassName { get; set; }
         public string ClassDate { get; set; }
         public int ClassSize { get; set; }

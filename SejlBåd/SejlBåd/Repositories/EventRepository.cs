@@ -4,12 +4,12 @@
     {
         List<Models.Event> EventList = new List<Models.Event>();
 
-        public void AddEvent(string eventName, string eventDetails, string eventDate)
+        public void AddEvent(string eventName, string eventDetails, DateTime eventDate)
         {
             EventList.Add(new Models.Event { EventName = eventName, EventDetails = eventDetails, EventDate = eventDate });
         }
 
-        public void UpdateEvent(string eventName, string eventDetails, string eventDate)
+        public void UpdateEvent(string eventName, string eventDetails, DateTime eventDate)
         {
             Models.Event EventToUpdate = EventList.FirstOrDefault(e => e.EventName == eventName);
             if (EventToUpdate != null)
