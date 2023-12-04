@@ -12,7 +12,7 @@ namespace SejlBåd.Pages.DockSpotPages
         [BindProperty] public DockSpot DockSpot { get; set; }
         [BindProperty] public DateTime RentPeriodStart { get; set; }
         [BindProperty] public DateTime RentPeriodEnd { get; set; }
-        [BindProperty] public string CardType { get; set; }
+        [BindProperty] public CreditCard CreditCard{ get; set; }
         
 
         public RentDockSpotModel(IDockSpotService dockSpotService)
