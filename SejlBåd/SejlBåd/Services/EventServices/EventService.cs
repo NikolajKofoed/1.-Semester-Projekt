@@ -8,7 +8,7 @@ namespace SejlBåd.Services.EventServices
         private List<Models.Event> _events = EventMockData.GetEvents();
         private JsonFileEventService _jsonEventService;
 
-        public EventService (JsonFileEventService jsonEventService)
+        public EventService(JsonFileEventService jsonEventService)
         {
             _jsonEventService = jsonEventService;
             _events = _jsonEventService.GetJsonEvents().ToList();
@@ -40,14 +40,18 @@ namespace SejlBåd.Services.EventServices
 
         Event IEventService.GetEvent(int eventId)
         {
-            foreach(var evt in _events)
+            foreach (var evt in _events)
             {
-                if(evt.EventId == eventId)
+                if (evt.EventId == eventId)
                 {
                     return evt;
                 }
             }
             return null;
+        }
+
+        public void EditEvent(int eventid, string eventName, string eventDescription, DateTime eventDate)
+        {
         }
     }
 }

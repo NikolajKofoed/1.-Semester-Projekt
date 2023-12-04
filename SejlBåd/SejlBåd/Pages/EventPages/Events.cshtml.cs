@@ -19,17 +19,17 @@ namespace SejlBåd.Pages.EventPages
             DeleteEvent = _eventService.GetEvent(id);
             Events = _eventService.GetEvents();
 
-            if(Events == null)
+            if (Events == null)
             {
                 return RedirectToPage("/index");
             }
             return Page();
         }
-        public IActionResult OnPost() 
+        public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
-                return Page();  
+                return Page();
             }
 
             _eventService.DeleteEvent(DeleteEvent.EventId);
