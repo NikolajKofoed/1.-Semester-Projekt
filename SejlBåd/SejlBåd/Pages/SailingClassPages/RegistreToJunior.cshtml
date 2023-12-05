@@ -1,0 +1,22 @@
+﻿@page
+@model SejlBåd.Pages.SailingClassPages.RegistreSailingClassModel
+@{
+}
+<form method="post">
+      <div class="form-group">
+    <label asp-for="@Model.UserToClass.FirstName" class="control-lable">Fornavn</label>
+    <input asp-for="@Model.UserToClass.FirstName" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.UserToClass.LastName">Efternavn</label>
+        <input asp-for="@Model.UserToClass.LastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.UserToClass.Email">Email</label>
+        <input asp-for="@Model.UserToClass.Email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Tilmeld" class="btn btn-primary" />
+    </div>
+</form>
