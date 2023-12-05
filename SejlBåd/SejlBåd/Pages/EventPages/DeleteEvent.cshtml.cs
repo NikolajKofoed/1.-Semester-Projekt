@@ -27,7 +27,9 @@ namespace SejlBåd.Pages.EventPages
 
         public IActionResult OnPost(int id)
         {
-            if (!ModelState.IsValid)
+            events = _eventService.GetEvent(id);
+            Models.Event deletedEvent = _eventService.DeleteEvent(events.EventId);
+            if(deletedEvent == null)
             {
                 return Page();
             }
