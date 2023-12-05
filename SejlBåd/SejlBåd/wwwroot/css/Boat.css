@@ -1,1 +1,31 @@
-﻿
+﻿.BookBoat 
+{
+    font-size: 16px;
+    text-align: center;
+}
+
+.Boksboks 
+{
+    background-color: lightblue;
+    display: inline-block;
+    margin: 10px;
+    max-width: 300px;
+    border-radius: 5px;
+    text-align:left;
+}
+
+.Boksboks-images
+{
+    max-width: 300px;
+    height: 200px;
+}
+.Boksboks p
+{
+}
+
+.boksboks-paragraf-titel
+{
+    text-align: center;
+    font-size: 20px;
+    
+}

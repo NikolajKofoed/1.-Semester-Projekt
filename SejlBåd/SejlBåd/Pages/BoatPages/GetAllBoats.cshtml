@@ -2,35 +2,57 @@
 @model SejlBåd.Pages.BoatPages.GetAllBoatsModel
 @{
 }
-<div>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Length</th>
-                <th>Width</th>
-                <th>Bom</th>
-                <th>HasBom</th>
-                <th>TopUnderMast</th>
-                <th>Booked</th>
-            </tr> 
-        </thead>
-        <tbody>
-            @if (Model.BoatService.listOfBoats() != null)
-            {
-                foreach (var boat in Model.BoatService.listOfBoats())
-                {
-                    <tr>
-                        <td>@boat.Id</td>
-                        <td>@boat.Length</td>
-                        <td>@boat.Width</td>
-                        <td>@boat.Bom</td>
-                        <td>@boat.HasBom</td>
-                        <td>@boat.TopUnderMast</td>
-                        <td>@boat.Booked</td>
-                    </tr>
-                }
-            }
-        </tbody>
-    </table>
+<div class="BookBoat">
+    <div class="Boksboks">
+        <img class="Boksboks-images" src="https://rstera.dk/Tera.JPG" />
+        <h5 class="boksboks-paragraf-titel">
+                Junior fra 8-18 år
+            
+        </h5>
+        <p>
+            •	Længde 2.87 meter<br />
+            •	Bredde 1.23 meter<br />
+            •	Bom 2.08 meter<br />
+            •	Top- og undermast 2.37 meter<br />
+            •	 Vægt 39kg<br /> <br />
+            
+
+            <strong>Der findes tre typer sejl til en Tera-jolle:</strong><br />
+            •	Tera Mini : 2.7 m2<br />
+            •	 Tera Sport : 3.7 m2<br />
+            •	 Tera Pro : 4.8 m2<br />
+        </p>
+        <button>
+            Tilmeld dig 
+        </button>
+        <p>
+            Den månedlige betaling bliver trukket en gang om måned i sæsonen fra maj til oktober månederne. Det koster 0,- kr i oprettelse. 
+        </p>
+
+    </div>
+    <div class="Boksboks">
+        <img class="Boksboks-images" src="https://sailwest.com/wp-content/uploads/2021/04/RS-Feva.jpg" />
+        <h5 class="boksboks-paragraf-titel">
+            Voksne fra 18-35 år
+        </h5>
+        <button>
+            Tilmeld dig
+        </button>
+        <p>
+            Den månedlige betaling bliver trukket en gang om måned i sæsonen fra maj til oktober månederne. Det koster 0,- kr i oprettelse.
+        </p>
+    </div>
+
+    <div class="Boksboks">
+        <img class="Boksboks-images" src="https://www.holdsport.dk/media/W1siZiIsIjIwMjEvMDMvMjYvMTdkdngycXg0ZV9EU0NGNDMzOV8xMDI0eDY4Mi5qcGciXSxbInAiLCJlbmNvZGUiLCJqcGciXV0/DSCF4339-1024x682.jpg?sha=59d90133fbeb5270" />
+        <h5 class="boksboks-paragraf-titel">
+            Senior fra 35 år
+        </h5>
+        <button>
+            Tilmeld dig
+        </button>
+        <p>
+            Den månedlige betaling bliver trukket en gang om måned i sæsonen fra maj til oktober månederne. Det koster 0,- kr i oprettelse.
+        </p>
+    </div>
 </div>
