@@ -31,9 +31,11 @@ namespace SejlBåd.Pages.EventPages
             Models.Event deletedEvent = _eventService.DeleteEvent(events.EventId);
             if(deletedEvent == null)
             {
-            return Page();
+                return Page();
             }
-                return RedirectToPage("Events");
+            _eventService.DeleteEvent(events.EventId);
+            
+          return RedirectToPage("Events");
         }
     }
 }

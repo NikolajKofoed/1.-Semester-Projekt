@@ -35,6 +35,7 @@ namespace SejlBåd.Services.EventServices
                 {
                     _events.Remove(evt);
                     _jsonEventService.SaveJsonEventData(_events);
+
                     return evt;
                 }
             }

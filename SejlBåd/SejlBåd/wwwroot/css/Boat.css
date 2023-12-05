@@ -4,23 +4,30 @@
     text-align: center;
 }
 
-.Boksboks 
-{
+.Boksboks button {
+    text-align: center;
+    color: red;
+}
+
+.Boksboks {
     background-color: lightblue;
     display: inline-block;
     margin: 10px;
     max-width: 300px;
     border-radius: 5px;
-    text-align:left;
+    text-align: left;
 }
 
 .Boksboks-images
 {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     max-width: 300px;
     height: 200px;
 }
 .Boksboks p
 {
+    padding: 15px; 
 }
 
 .boksboks-paragraf-titel
@@ -29,3 +36,4 @@
     font-size: 20px;
     
 }
+
