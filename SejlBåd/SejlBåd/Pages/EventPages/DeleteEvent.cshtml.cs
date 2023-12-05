@@ -27,13 +27,13 @@ namespace SejlBåd.Pages.EventPages
 
         public IActionResult OnPost(int id)
         {
-           events = _eventService.GetEvent(id);
-            Models.Event deletedEvent = _eventService.DeleteEvent(events.EventId);
-            if(deletedEvent == null)
+            if (!ModelState.IsValid)
             {
-            return Page();
+                return Page();
             }
-                return RedirectToPage("Events");
+            _eventService.DeleteEvent(events.EventId);
+            
+          return RedirectToPage("Events");
         }
     }
 }

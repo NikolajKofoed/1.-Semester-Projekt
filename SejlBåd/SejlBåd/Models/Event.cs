@@ -23,7 +23,7 @@ namespace SejlBåd.Models
 
         public Event()
         {
-            //EventId = _nextId++;
+            EventId = _nextId++;
             //EventName = "Default Name";
             //EventDescription = "Default Description";
         }
