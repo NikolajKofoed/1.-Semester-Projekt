@@ -6,11 +6,12 @@ namespace SejlBåd.Services.SailingClassServices
     {
         List<Models.SailingClass> GetSailingClasses();
 
-        void AddSailingClass(Models.SailingClass sailingClass);
+        void AddSailingClass(SailingClass sailingClass);
 
-        void RemoveSailingClass(Models.SailingClass sailingClass);
-        void UpdateSailingClass(Models.SailingClass sailingClass);
-        void GetSailingClass(Models.SailingClass sailingClass);
+        void RemoveSailingClass(SailingClass sailingClass);
+        void UpdateSailingClass(SailingClass sailingClass);
+        void GetSailingClass(SailingClass sailingClass);
+        void AddUserToClass(User user);
 
     }
 }

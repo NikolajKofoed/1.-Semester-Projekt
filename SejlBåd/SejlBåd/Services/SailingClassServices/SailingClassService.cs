@@ -9,12 +9,13 @@ namespace SejlBåd.Services.SailingClassServices
         public User UserToClass { get; set; }
 
         public List<Models.SailingClass> sailingClasses { get; set; }
+        public List<Models.User> sailingClassUsers { get; set; }
 
         public SailingClassService(JsonFileSCService jsonFileSCService)
         {
             JsonFileSCService = jsonFileSCService;
             sailingClasses = MockSailingClass.GetMockClasses();
-            //UserToClass = JsonFileSCService.GetJsonSCUsers().ToList();
+            UserToClass = JsonFileSCService.GetJsonSCUsers().ToList();
         }
 
         public List<Models.SailingClass> GetSailingClasses()
@@ -40,6 +41,22 @@ namespace SejlBåd.Services.SailingClassServices
         public void AddSailingClass(SailingClass sailingClass)
         {
             sailingClasses.Add(sailingClass);
+        }
+        public void AddUserToClass(User user)
+        {
+            sailingClassUsers.Add(user);
+        }
+
+        public User GetUser(string email)
+        {
+            foreach (var us in sailingClassUsers)
+            {
+                if(us.Email == email)
+                {
+                    return us;
+                }
+            }
+            return null;
         }
 
     }
