@@ -1,4 +1,33 @@
-﻿@page
+﻿@page "{id:int}"
 @model SejlBåd.Pages.EventPages.EditEventModel
 @{
 }
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventId" class="control-lable"></label>
+        <input asp-for="@Model.Event.EventId" class="form-control" readonly="@(true)" />
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventName" class="control-lable"></label>
+        <input asp-for="@Model.Event.EventName" class="form-control" />
+        <span asp-validation-for="@Model.Event.EventName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventDescription" class="control-lable"></label>
+        <input asp-for="@Model.Event.EventDescription" class="form-control" />
+        <span asp-validation-for="@Model.Event.EventDescription" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Event.EventDate" class="control-lable"></label>
+        <input asp-for="@Model.Event.EventDate" class="form-control" />
+        <span asp-validation-for="@Model.Event.EventDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Redigér" class="btn btn-primary" />
+    </div>
+</form>
+<div>
+    <a asp-page="/EventPages/Events">Tilbage til begivenheder</a>
+</div>

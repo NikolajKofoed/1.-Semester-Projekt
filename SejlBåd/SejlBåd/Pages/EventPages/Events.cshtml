@@ -3,7 +3,7 @@
 @{
 }
 
-<center><h1>Events</h1></center>
+<center><h1>Begivenheder</h1></center>
 <br />
 
 <table class="table table-bordered table-hover table-striped">
@@ -42,16 +42,15 @@
                         @events.EventDate
                     </td>
                     <td>
-                        <a class="btn btn-danger btn-sm" method="post" type="submit" title="Slet" asp-route-id="@events.EventId">
-                            Slet Event
-                        </a>
+                        <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditEvent" asp-route-id="@events.EventId">Rediger</a>
+                        <a class="btn btn-danger btn-sm " type="button" title="Delete" asp-page="DeleteEvent" asp-route-id="@events.EventId">Slet</a>
                     </td>
                 </tr>
             }
         }
     </tbody>
 </table>
-<br />
+
 <p>
-    <a class="btn btn-primary" asp-page="CreateEvent"> Create New Event </a> <a class="btn btn-primary" asp-page="DeleteEvent"> Delete Event </a>
+    <a class="btn btn-primary" asp-page="CreateEvent"> Lav Begivenhed </a>
 </p>

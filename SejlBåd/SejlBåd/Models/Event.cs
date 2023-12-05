@@ -24,8 +24,8 @@ namespace SejlBåd.Models
         public Event()
         {
             EventId = _nextId++;
-            EventName = "Default Name";
-            EventDescription = "Default Description";
+            //EventName = "Default Name";
+            //EventDescription = "Default Description";
         }
     }
 }

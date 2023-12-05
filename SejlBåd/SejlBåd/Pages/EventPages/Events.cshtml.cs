@@ -14,9 +14,8 @@ namespace SejlBåd.Pages.EventPages
         {
             _eventService = eventService;
         }
-        public IActionResult OnGet(int id)
+        public IActionResult OnGet()
         {
-            DeleteEvent = _eventService.GetEvent(id);
             Events = _eventService.GetEvents();
 
             if (Events == null)
@@ -32,7 +31,6 @@ namespace SejlBåd.Pages.EventPages
                 return Page();
             }
 
-            _eventService.DeleteEvent(DeleteEvent.EventId);
             return Page();
         }
     }
