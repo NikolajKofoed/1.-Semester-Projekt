@@ -34,10 +34,11 @@ namespace SejlBåd.Services.EventServices
                 if (evt.EventId == eventid)
                 {
                     _events.Remove(evt);
-                    break;
+                    _jsonEventService.SaveJsonEventData(_events);
+
+                    return evt;
                 }
             }
-            _jsonEventService.SaveJsonEventData(_events);
             return null;
         }
 
