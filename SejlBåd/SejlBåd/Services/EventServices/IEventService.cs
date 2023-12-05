@@ -1,11 +1,13 @@
-﻿namespace SejlBåd.Services.EventServices
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace SejlBåd.Services.EventServices
 {
     public interface IEventService
     {
          List<Models.Event> GetEvents();
         void CreateEvent(Models.Event evt);
-        void DeleteEvent(int eventId);
-        void EditEvent(int eventId, string eventName, string eventDescription, DateTime eventDate);
+        Models.Event DeleteEvent(int? eventId);
+        void EditEvent(Models.Event evt);
         Models.Event GetEvent(int eventId);
     }
 }

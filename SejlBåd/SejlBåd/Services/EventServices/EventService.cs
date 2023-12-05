@@ -1,5 +1,7 @@
-﻿using SejlBåd.MockData.EventMock;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SejlBåd.MockData.EventMock;
 using SejlBåd.Models;
+using System.Diagnostics.Tracing;
 
 namespace SejlBåd.Services.EventServices
 {
@@ -25,17 +27,18 @@ namespace SejlBåd.Services.EventServices
             _jsonEventService.SaveJsonEventData(_events);
         }
 
-        public void DeleteEvent(int eventid)
+        public Event DeleteEvent(int? eventid)
         {
-            foreach (var evt in _events)
+            foreach(Event evt in _events)
             {
                 if (evt.EventId == eventid)
                 {
                     _events.Remove(evt);
                     _jsonEventService.SaveJsonEventData(_events);
-                    break;
+                    return evt;
                 }
             }
+            return null;
         }
 
         Event IEventService.GetEvent(int eventId)
@@ -50,8 +53,21 @@ namespace SejlBåd.Services.EventServices
             return null;
         }
 
-        public void EditEvent(int eventid, string eventName, string eventDescription, DateTime eventDate)
+        public void EditEvent(Models.Event evt)
         {
+            if (evt != null)
+            {
+                foreach(Event i in _events)
+                {
+                    if (i.EventId == evt.EventId)
+                    {
+                        i.EventName = evt.EventName;
+                        i.EventDescription = evt.EventDescription;
+                        i.EventDate = evt.EventDate;
+                    }
+                }
+                _jsonEventService.SaveJsonEventData(_events);
+            }
         }
     }
 }

@@ -1,13 +1,1 @@
-[{"EventId":5,"EventName":"TestEvent","EventDescription":"TestBeskrivelse","EventDate":"2023-12-07T16:38:00"}]  {
-    "EventDate": "2023-12-04T00:00:00",
-    "EventDescription": "DefaultEventDescription",
-    "EventId": 1,
-    "EventName": "DefaultEvent"
-  },
-  {
-    "EventId": 5,
-    "EventName": "TestEvent",
-    "EventDescription": "TestBeskrivelse",
-    "EventDate": "2023-12-07T16:38:00"
-  }
-]
+[{"EventId":1,"EventName":"DefaultEvent","EventDescription":"DefaultEventDescription","EventDate":"2023-12-04T00:00:00"}]
