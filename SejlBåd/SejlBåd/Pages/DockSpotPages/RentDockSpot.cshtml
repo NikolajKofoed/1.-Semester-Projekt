@@ -7,35 +7,6 @@
 <div class="rent-boat-site">
     <form method="Post">
         <div class="payment-method">
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
-            <script>
-                /* When the user clicks on the button,
-                toggle between hiding and showing the dropdown content */
-                function myFunction() {
-                    document.getElementById("myDropdown").classList.toggle("show");
-                }
-
-                // Close the dropdown menu if the user clicks outside of it
-                window.onclick = function (event) {
-                    if (!event.target.matches('.dropbtn')) {
-                        var dropdowns = document.getElementsByClassName("dropdown-content");
-                        var i;
-                        for (i = 0; i < dropdowns.length; i++) {
-                            var openDropdown = dropdowns[i];
-                            if (openDropdown.classList.contains('show')) {
-                                openDropdown.classList.remove('show');
-                            }
-                        }
-                    }
-                }
-            </script>
             <div>
                 <label asp-for="CreditCard.CardNumber"></label>
                 <input asp-for="CreditCard.CardNumber" />
@@ -53,15 +24,17 @@
             </div>
         </div>
         <div class="renter-info">
-            <div class="form-group">
-                <label asp-for="Renter.FirstName" class="control-label"></label>
-                <input asp-for="Renter.FirstName" class="form-control" />
-                <span asp-validation-for="Renter.FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Renter.LastName" class="control-label"></label>
-                <input asp-for="Renter.LastName" class="form-control" />
-                <span asp-validation-for="Renter.LastName" class="text-danger"></span>
+            <div id="renter-name">
+                <div>
+                    <label asp-for="Renter.FirstName"></label>
+                    <input asp-for="Renter.FirstName" />
+                    <span asp-validation-for="Renter.FirstName"></span>
+                </div>
+                <div>
+                    <label asp-for="Renter.LastName" ></label>
+                    <input asp-for="Renter.LastName" />
+                    <span asp-validation-for="Renter.LastName"></span>
+                </div>
             </div>
             <div class="form-group">
                 <label asp-for="Renter.Email" class="control-label"></label>
