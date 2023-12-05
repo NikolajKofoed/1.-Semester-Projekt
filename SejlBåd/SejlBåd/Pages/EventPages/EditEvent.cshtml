@@ -5,21 +5,21 @@
 
 <form method="post">
     <div class="form-group">
-        <label asp-for="@Model.Event.EventId" class="control-lable"></label>
+        <label class="control-lable">ID</label>
         <input asp-for="@Model.Event.EventId" class="form-control" readonly="@(true)" />
     </div>
     <div class="form-group">
-        <label asp-for="@Model.Event.EventName" class="control-lable"></label>
+        <label class="control-lable">Navnet på Begivenhed</label>
         <input asp-for="@Model.Event.EventName" class="form-control" />
         <span asp-validation-for="@Model.Event.EventName" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="@Model.Event.EventDescription" class="control-lable"></label>
+        <label class="control-lable">Beskrivelse af Begivenhed</label>
         <input asp-for="@Model.Event.EventDescription" class="form-control" />
         <span asp-validation-for="@Model.Event.EventDescription" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="@Model.Event.EventDate" class="control-lable"></label>
+        <label class="control-lable">Dato på Begivenhed</label>
         <input asp-for="@Model.Event.EventDate" class="form-control" />
         <span asp-validation-for="@Model.Event.EventDate" class="text-danger"></span>
     </div>
