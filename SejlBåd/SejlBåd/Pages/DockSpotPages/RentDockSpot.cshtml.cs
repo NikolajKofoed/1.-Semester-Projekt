@@ -10,9 +10,6 @@ namespace SejlBåd.Pages.DockSpotPages
         private IDockSpotService _dockSpotService;
         [BindProperty] public User Renter { get; set; }
         [BindProperty] public DockSpot DockSpot { get; set; }
-        [BindProperty] public DateTime RentPeriodStart { get; set; }
-        [BindProperty] public DateTime RentPeriodEnd { get; set; }
-        [BindProperty] public CreditCard CreditCard{ get; set; }
         
 
         public RentDockSpotModel(IDockSpotService dockSpotService)
@@ -38,7 +35,7 @@ namespace SejlBåd.Pages.DockSpotPages
                 return Page();
             }
 
-            _dockSpotService.RentSpot(DockSpot, Renter, RentPeriodStart, RentPeriodEnd);
+            _dockSpotService.RentSpot(DockSpot, Renter);
             return RedirectToPage("ViewDockSpot");
             
         }

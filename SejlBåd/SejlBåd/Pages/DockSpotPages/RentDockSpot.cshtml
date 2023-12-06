@@ -8,19 +8,19 @@
     <form method="Post">
         <div class="payment-method">
             <div>
-                <label asp-for="CreditCard.CardNumber"></label>
-                <input asp-for="CreditCard.CardNumber" />
-                <span asp-validation-for="CreditCard.CardNumber"></span>
+                <label asp-for="Renter.CreditCardInfo.CardNumber"></label>
+                <input asp-for="Renter.CreditCardInfo.CardNumber" />
+                <span asp-validation-for="Renter.CreditCardInfo.CardNumber"></span>
             </div>
             <div>
-                <label asp-for="CreditCard.ExpirationDate"></label>
-                <input asp-for="CreditCard.ExpirationDate" />
-                <span asp-validation-for="CreditCard.ExpirationDate"></span>
+                <label asp-for="Renter.CreditCardInfo.ExpirationDate"></label>
+                <input asp-for="Renter.CreditCardInfo.ExpirationDate" />
+                <span asp-validation-for="Renter.CreditCardInfo.ExpirationDate"></span>
             </div>
             <div>
-                <label asp-for="CreditCard.SecurityCode"></label>
-                <input asp-for="CreditCard.SecurityCode" />
-                <span asp-validation-for="CreditCard.SecurityCode"></span>
+                <label asp-for="Renter.CreditCardInfo.SecurityCode"></label>
+                <input asp-for="Renter.CreditCardInfo.SecurityCode" />
+                <span asp-validation-for="Renter.CreditCardInfo.SecurityCode"></span>
             </div>
         </div>
         <div class="renter-info">
@@ -36,28 +36,17 @@
                     <span asp-validation-for="Renter.LastName"></span>
                 </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Renter.Email" class="control-label"></label>
-                <input asp-for="Renter.Email" class="form-control" />
-                <span asp-validation-for="Renter.Email" class="text-danger"></span>
+            <div>
+                <label asp-for="Renter.Email"></label>
+                <input asp-for="Renter.Email" />
+                <span asp-validation-for="Renter.Email" ></span>
             </div>
             <div class="form-group">
-                <label asp-for="Renter.Tlf" class="control-label"></label>
-                <input asp-for="Renter.Tlf" class="form-control" />
-                <span asp-validation-for="Renter.Tlf" class="text-danger"></span>
+                <label asp-for="Renter.Tlf"></label>
+                <input asp-for="Renter.Tlf"/>
+                <span asp-validation-for="Renter.Tlf" ></span>
             </div>
-            <div class="form-group">
-                <label asp-for="RentPeriodStart" class="control-label"></label>
-                <input asp-for="RentPeriodStart" class="form-control" />
-                <span asp-validation-for="RentPeriodStart" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RentPeriodEnd" class="control-label"></label>
-                <input asp-for="RentPeriodEnd" class="form-control" />
-                <span asp-validation-for="RentPeriodEnd" class="text-danger"></span>
-            </div>
-        </div>
-
+         </div>
 
         <p>
             <div class="form-control">

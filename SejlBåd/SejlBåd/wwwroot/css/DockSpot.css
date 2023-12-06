@@ -13,6 +13,10 @@
     width: 100%;
 }
 
+.payment-method input, label{
+    margin: 10px;
+}
+
 .renter-info {
     background-color: green;
     padding: 20px;
@@ -25,17 +29,19 @@
     min-width: 500px;
     max-width: 800px;
     margin: 50px 250px 50px 250px;
-    background-color: gray;
-    padding: 200px;
+    background-color: lightblue;
+    border-radius:5px;
+    padding: 100px;
 }
 
 #renter-name input {
     width: 25%;
+    box-shadow: 5px 10px darkblue;
+
 }
 
 #renter-name label {
-    color: red;
-    font-size: 10px;
+
 }
 
 #renter-name{
@@ -45,3 +51,4 @@
     text-align: unset;
 
 }
+

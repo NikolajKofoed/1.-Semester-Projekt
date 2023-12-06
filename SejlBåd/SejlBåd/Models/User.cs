@@ -7,10 +7,9 @@
         public string LastName { get; set; }
         public string Email { get; set; }
         public string? Tlf { get; set; }
-        // Creditcard info should be a nullable class of "CreditCardInfo" for the option of saving card info
-        public string? CreditCardInfo { get; set; }
+        public CreditCard CreditCardInfo { get; set; }
 
-        public User(string firstName, string lastName, string email, string? tlf, string creditCardInfo)
+        public User(string firstName, string lastName, string email, string? tlf, CreditCard creditCardInfo)
         {
             FirstName = firstName;
             LastName = lastName;
