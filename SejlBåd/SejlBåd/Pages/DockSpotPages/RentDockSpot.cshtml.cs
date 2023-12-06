@@ -2,30 +2,27 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SejlBåd.Models;
 using SejlBåd.Services.DockSpotServices;
+using SejlBåd.Services.OrderServices;
 
 namespace SejlBåd.Pages.DockSpotPages
 {
     public class RentDockSpotModel : PageModel
     {
         private IDockSpotService _dockSpotService;
-        [BindProperty] public User Renter { get; set; }
-        [BindProperty] public DockSpot DockSpot { get; set; }
-        
+        private IOrderService _orderService;
+        [BindProperty] public Order Order { get; set; }
 
-        public RentDockSpotModel(IDockSpotService dockSpotService)
+        public RentDockSpotModel(IDockSpotService dockSpotService, IOrderService orderService)
         {
+            _orderService = orderService;
             _dockSpotService = dockSpotService;
         }
 
 
-        public IActionResult OnGet(int id)
+        public IActionResult OnGet()
         {
-            DockSpot = _dockSpotService.GetDockSpot(id);
-            if( DockSpot == null)
-            {
-                return RedirectToPage("Error");
-            }
             return Page();
+
         }
 
         public IActionResult OnPost()
@@ -34,9 +31,10 @@ namespace SejlBåd.Pages.DockSpotPages
             {
                 return Page();
             }
-
-            _dockSpotService.RentSpot(DockSpot, Renter);
-            return RedirectToPage("ViewDockSpot");
+            
+            _dockSpotService.RentSpot(Order.Customer);
+            
+            return RedirectToPage("DockRentReceipt");
             
         }
     }

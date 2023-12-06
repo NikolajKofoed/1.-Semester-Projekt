@@ -1,15 +1,23 @@
-﻿namespace SejlBåd.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SejlBåd.Models
 {
     public class User
     {
 
+        [Required(ErrorMessage = "Filling out the name space is required")]
         public string FirstName { get; set; }
+        [Required(ErrorMessage = "Filling out the name space is required")]
         public string LastName { get; set; }
+        [Required(ErrorMessage = "Email is required")]
         public string Email { get; set; }
-        public string? Tlf { get; set; }
+
+        [Required(ErrorMessage = "must be 8 digits")]
+        [Range(typeof(int), "10000000", "99999999", ErrorMessage = "Phone number Must be 8 Digits")]
+        public int? Tlf { get; set; }
         public CreditCard CreditCardInfo { get; set; }
 
-        public User(string firstName, string lastName, string email, string? tlf, CreditCard creditCardInfo)
+        public User(string firstName, string lastName, string email, int? tlf, CreditCard creditCardInfo)
         {
             FirstName = firstName;
             LastName = lastName;

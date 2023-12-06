@@ -3,60 +3,60 @@
 @{
 }
 
-<h2>Rent Dock Spot</h2>
+<center><h1>Lej BådPlads</h1></center>
 <div class="rent-boat-site">
     <form method="Post">
         <div class="payment-method">
             <div>
-                <label asp-for="Renter.CreditCardInfo.CardNumber"></label>
-                <input asp-for="Renter.CreditCardInfo.CardNumber" />
-                <span asp-validation-for="Renter.CreditCardInfo.CardNumber"></span>
+                <label asp-for="Order.Customer.CreditCardInfo.CardNumber"></label>
+                <input asp-for="Order.Customer.CreditCardInfo.CardNumber" />
+                <span asp-validation-for="Order.Customer.CreditCardInfo.CardNumber"></span>
             </div>
             <div>
-                <label asp-for="Renter.CreditCardInfo.ExpirationDate"></label>
-                <input asp-for="Renter.CreditCardInfo.ExpirationDate" />
-                <span asp-validation-for="Renter.CreditCardInfo.ExpirationDate"></span>
+                <label asp-for="Order.Customer.CreditCardInfo.ExpirationDate"></label>
+                <input asp-for="Order.Customer.CreditCardInfo.ExpirationDate" class="datetime-local" />
+                <span asp-validation-for="Order.Customer.CreditCardInfo.ExpirationDate"></span>
             </div>
             <div>
-                <label asp-for="Renter.CreditCardInfo.SecurityCode"></label>
-                <input asp-for="Renter.CreditCardInfo.SecurityCode" />
-                <span asp-validation-for="Renter.CreditCardInfo.SecurityCode"></span>
+                <label asp-for="Order.Customer.CreditCardInfo.SecurityCode"></label>
+                <input asp-for="Order.Customer.CreditCardInfo.SecurityCode" />
+                <span asp-validation-for="Order.Customer.CreditCardInfo.SecurityCode"></span>
             </div>
         </div>
         <div class="renter-info">
             <div id="renter-name">
                 <div>
-                    <label asp-for="Renter.FirstName"></label>
-                    <input asp-for="Renter.FirstName" />
-                    <span asp-validation-for="Renter.FirstName"></span>
+                    <label asp-for="Order.Customer.FirstName"></label>
+                    <input asp-for="Order.Customer.FirstName" />
+                    <span asp-validation-for="Order.Customer.FirstName"></span>
                 </div>
                 <div>
-                    <label asp-for="Renter.LastName" ></label>
-                    <input asp-for="Renter.LastName" />
-                    <span asp-validation-for="Renter.LastName"></span>
+                    <label asp-for="Order.Customer.LastName"></label>
+                    <input asp-for="Order.Customer.LastName" />
+                    <span asp-validation-for="Order.Customer.LastName"></span>
                 </div>
             </div>
             <div>
-                <label asp-for="Renter.Email"></label>
-                <input asp-for="Renter.Email" />
-                <span asp-validation-for="Renter.Email" ></span>
+                <label asp-for="Order.Customer.Email"></label>
+                <input asp-for="Order.Customer.Email" />
+                <span asp-validation-for="Order.Customer.Email"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Renter.Tlf"></label>
-                <input asp-for="Renter.Tlf"/>
-                <span asp-validation-for="Renter.Tlf" ></span>
+                <label asp-for="Order.Customer.Tlf"></label>
+                <input asp-for="Order.Customer.Tlf" />
+                <span asp-validation-for="Order.Customer.Tlf"></span>
             </div>
          </div>
 
         <p>
-            <div class="form-control">
+            <div id="rent-boat-site-rent-button">
                 <input type="submit" value="Rent" class="btn btn-primary" />
             </div>
         </p>
 
     </form>
+    <p>
+        <a type="button" asp-page="Index">Return</a>
+    </p>
 </div>
 
-<p>
-    <a type="button" asp-page="ViewDockSpot">Return</a>
-</p>

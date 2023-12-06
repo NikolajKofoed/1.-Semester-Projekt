@@ -48,21 +48,36 @@ namespace SejlBåd.Services.DockSpotServices
             return dockSpots;
         }
 
-        void IDockSpotService.RentSpot(DockSpot dockSpot, User user)
+        DockSpot IDockSpotService.GetNextAvailableDockSpot()
         {
-            if(dockSpot != null || user != null)
+            foreach(var ds in dockSpots)
+            {
+                if (ds.IsAvailable)
+                {
+                    return ds;
+                }
+            }
+            return null;
+        }
+
+        DockSpot IDockSpotService.RentSpot(User user)
+        {
+            if(user != null)
             {
                 foreach(var ds in dockSpots)
                 {
-                    if(dockSpot.Id == ds.Id)
+                    if(ds.IsAvailable)
                     {
                         ds.Renter = user;
                         ds.IsAvailable = false;
                         ds.RentPeriodStart = DateTime.Now;
+                        _jsonDockSpotService.SaveJsonDockSpots(dockSpots);
+                        return ds;
                     }
                 }
             }
-            _jsonDockSpotService.SaveJsonDockSpots(dockSpots);
+            return null;
+            
         }
 
         void IDockSpotService.UpdateSpot()
