@@ -8,43 +8,43 @@
     <form method="Post">
         <div class="payment-method">
             <div>
-                <label asp-for="Order.Customer.CreditCardInfo.CardNumber"></label>
-                <input asp-for="Order.Customer.CreditCardInfo.CardNumber" />
-                <span asp-validation-for="Order.Customer.CreditCardInfo.CardNumber"></span>
+                <label asp-for="Customer.CreditCardInfo.CardNumber"></label>
+                <input asp-for="Customer.CreditCardInfo.CardNumber" />
+                <span asp-validation-for="Customer.CreditCardInfo.CardNumber"></span>
             </div>
             <div>
-                <label asp-for="Order.Customer.CreditCardInfo.ExpirationDate"></label>
-                <input asp-for="Order.Customer.CreditCardInfo.ExpirationDate" class="datetime-local" />
-                <span asp-validation-for="Order.Customer.CreditCardInfo.ExpirationDate"></span>
+                <label asp-for="Customer.CreditCardInfo.ExpirationDate"></label>
+                <input asp-for="Customer.CreditCardInfo.ExpirationDate" class="datetime-local" />
+                <span asp-validation-for="Customer.CreditCardInfo.ExpirationDate"></span>
             </div>
             <div>
-                <label asp-for="Order.Customer.CreditCardInfo.SecurityCode"></label>
-                <input asp-for="Order.Customer.CreditCardInfo.SecurityCode" />
-                <span asp-validation-for="Order.Customer.CreditCardInfo.SecurityCode"></span>
+                <label asp-for="Customer.CreditCardInfo.SecurityCode"></label>
+                <input asp-for="Customer.CreditCardInfo.SecurityCode" />
+                <span asp-validation-for="Customer.CreditCardInfo.SecurityCode"></span>
             </div>
         </div>
         <div class="renter-info">
             <div id="renter-name">
                 <div>
-                    <label asp-for="Order.Customer.FirstName"></label>
-                    <input asp-for="Order.Customer.FirstName" />
-                    <span asp-validation-for="Order.Customer.FirstName"></span>
+                    <label asp-for="Customer.FirstName"></label>
+                    <input asp-for="Customer.FirstName" />
+                    <span asp-validation-for="Customer.FirstName"></span>
                 </div>
                 <div>
-                    <label asp-for="Order.Customer.LastName"></label>
-                    <input asp-for="Order.Customer.LastName" />
-                    <span asp-validation-for="Order.Customer.LastName"></span>
+                    <label asp-for="Customer.LastName"></label>
+                    <input asp-for="Customer.LastName" />
+                    <span asp-validation-for="Customer.LastName"></span>
                 </div>
             </div>
             <div>
-                <label asp-for="Order.Customer.Email"></label>
-                <input asp-for="Order.Customer.Email" />
-                <span asp-validation-for="Order.Customer.Email"></span>
+                <label asp-for="Customer.Email"></label>
+                <input asp-for="Customer.Email" />
+                <span asp-validation-for="Customer.Email"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Order.Customer.Tlf"></label>
-                <input asp-for="Order.Customer.Tlf" />
-                <span asp-validation-for="Order.Customer.Tlf"></span>
+                <label asp-for="Customer.Tlf"></label>
+                <input asp-for="Customer.Tlf" />
+                <span asp-validation-for="Customer.Tlf"></span>
             </div>
          </div>
 

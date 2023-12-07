@@ -1,9 +1,19 @@
 [
   {
     "Id": 1,
-    "Renter": null,
-    "IsAvailable": true,
-    "RentPeriodStart": null,
+    "Renter": {
+      "FirstName": "1234",
+      "LastName": "1234",
+      "Email": "2134",
+      "Tlf": 12341234,
+      "CreditCardInfo": {
+        "CardNumber": 1234123412341234,
+        "ExpirationDate": "2023-12-22T13:04:00",
+        "SecurityCode": 234
+      }
+    },
+    "IsAvailable": false,
+    "RentPeriodStart": "2023-12-07T13:05:05.5205217+01:00",
     "YearlyContigent": 0
   },
   {
