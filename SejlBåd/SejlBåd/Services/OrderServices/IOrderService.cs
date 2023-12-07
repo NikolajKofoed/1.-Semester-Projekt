@@ -5,7 +5,7 @@ namespace SejlBåd.Services.OrderServices
     public interface IOrderService
     {
 
-        void CreateOrder(Order order);
+        void CreateOrderDockSpot(DockSpot dockSpot, User user);
 
         DockSpot[] GetDockSpots();
 
