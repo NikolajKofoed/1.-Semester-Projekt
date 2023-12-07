@@ -5,17 +5,17 @@
         static int nextId = 1;
         public int Id { get; set; }
         public DockSpot? DockSpot { get; set; }
-        public User Customer { get; set; }
+        public User? Customer { get; set; }
         public SailingClass? SailingClass { get; set; }
-        public DateTime OrderDate { get; set; }
-        public double TotalPrice { get; set; }
+        public DateTime? OrderDate { get; set; }
+        public double? TotalPrice { get; set; }
 
         public Order()
         {
             Id = nextId++;
         }
 
-        public Order(DockSpot? dockSpot, User customer, SailingClass? sailingClass, DateTime orderDate, double totalPrice)
+        public Order(DockSpot? dockSpot, User? customer, SailingClass? sailingClass, DateTime? orderDate, double? totalPrice)
         {
             Id = nextId++;
             DockSpot = dockSpot;

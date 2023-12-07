@@ -4,4 +4,36 @@
 }
 
 <h1>Thank You For Your Purchase!</h1>
-<h2>Order Information</h2>
+<div class="rent-boat-site">
+    <center><h2>Order Information</h2></center>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Båd Plads Id
+                </th>
+                <th>
+                    navn på lejeren
+                </th>
+                <th>
+                    Pris
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Dato
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @* <td>@Model.Order.Id</td>
+                <td>@Model.Order.Customer.FirstName</td>
+                <td>@Model.Order.TotalPrice</td>
+                <td>@Model.Order.Customer.Email</td>
+                <td>@Model.Order.OrderDate</td> *@
+            </tr>
+        </tbody>
+    </table>
+</div>

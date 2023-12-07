@@ -27,7 +27,7 @@ namespace SejlBåd.Pages.DockSpotPages
         {
             if (_dockSpotService.GetNextAvailableDockSpot() == null)
                 return RedirectToPage("TestPage");
-            
+
             return Page();
 
         }
@@ -51,8 +51,7 @@ namespace SejlBåd.Pages.DockSpotPages
             DockSpot = _dockSpotService.GetNextAvailableDockSpot();
 
             _dockSpotService.RentSpot(Customer, DockSpot.Id);
-            
-            
+
             _orderService.CreateOrderDockSpot(DockSpot, Customer);
 
             return RedirectToPage("DockRentReceipt");

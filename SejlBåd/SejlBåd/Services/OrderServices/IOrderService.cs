@@ -5,9 +5,12 @@ namespace SejlBåd.Services.OrderServices
     public interface IOrderService
     {
 
-        void CreateOrderDockSpot(DockSpot dockSpot, User user);
+        Order CreateOrderDockSpot(DockSpot dockSpot, User user);
 
         DockSpot[] GetDockSpots();
 
+        Order GetOrder(int id);
+
+        Order NewOrder(DockSpot? dockSpot, User? user, SailingClass? Sc);
     }
 }
