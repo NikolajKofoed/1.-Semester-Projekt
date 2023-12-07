@@ -12,7 +12,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
 builder.Services.AddTransient<JsonFileBoatService>();
 builder.Services.AddSingleton<IDockSpotService, DockSpotService>();
-//builder.Services.AddTransient<IWeatherService, WeatherService>();
+builder.Services.AddTransient<IWeatherService, WeatherService>();
 builder.Services.AddSingleton<IBoatService, BoatService>();
 builder.Services.AddTransient<JsonFileDockSpotService>();
 builder.Services.AddSingleton<IEventService, EventService>();
