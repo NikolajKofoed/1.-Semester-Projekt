@@ -7,29 +7,29 @@ using SejlBåd.Services.OrderServices;
 
 namespace SejlBåd.Pages.DockSpotPages
 {
-    public class RentDockSpotModel : PageModel
+    public class RentDockSpotExistingCustomerModel : PageModel
     {
+        private ICustomerService _customerService;
         private IDockSpotService _dockSpotService;
         private IOrderService _orderService;
-        private ICustomerService _customerService;
-        [BindProperty] public DockSpot DockSpot { get; set; }
-        [BindProperty] public User Customer { get; set; }
 
-        public RentDockSpotModel(IDockSpotService dockSpotService, IOrderService orderService, ICustomerService customerService)
+        public User Customer { get; set; }
+        [BindProperty] public string CustomerEmail { get; set; }
+        public DockSpot DockSpot { get; set; }
+
+
+        public RentDockSpotExistingCustomerModel(ICustomerService customerService, IDockSpotService dockSpotService, IOrderService orderService)
         {
-            _orderService = orderService;
-            _dockSpotService = dockSpotService;
             _customerService = customerService;
+            _dockSpotService = dockSpotService;
+            _orderService = orderService;
         }
-
-
         public IActionResult OnGet()
         {
             if (_dockSpotService.GetNextAvailableDockSpot() == null)
                 return RedirectToPage("TestPage");
             
             return Page();
-
         }
 
         public IActionResult OnPost()
@@ -39,20 +39,19 @@ namespace SejlBåd.Pages.DockSpotPages
                 return Page();
             }
 
-            if(_customerService.CheckForExistingUser(Customer.Email) == null)
+            if (_customerService.CheckForExistingUser(CustomerEmail) != null)
             {
-                _customerService.CreateUser(Customer);
+                Customer = _customerService.CheckForExistingUser(CustomerEmail);
             }
             else
             {
-                // give feedback
+                return Page();
             }
-            // need to set dockspot again here or it will get always be set to dockspot with id 1
             DockSpot = _dockSpotService.GetNextAvailableDockSpot();
 
+
+
             _dockSpotService.RentSpot(Customer, DockSpot.Id);
-            
-            
             _orderService.CreateOrderDockSpot(DockSpot, Customer);
 
             return RedirectToPage("DockRentReceipt");
