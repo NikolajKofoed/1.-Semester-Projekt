@@ -15,14 +15,13 @@ namespace SejlBåd.Models
         public DateTime? RentPeriodStart { get; set; }
         //must higer date than start date
         // highest date should be 10years from start date
-        public double MonthlyCost { get; set; }
-
-        public DockSpot(User? renter, DateTime? rentPeriodStart, double monthlyCost)
+        public double YearlyContigent { get; set; }
+        public DockSpot(User? renter, DateTime? rentPeriodStart)
         {
             Id = nextId++;
             Renter = renter;
             RentPeriodStart = rentPeriodStart;
-            MonthlyCost = monthlyCost;
+            YearlyContigent = 400;
         }
 
         public DockSpot()

@@ -11,6 +11,7 @@ namespace SejlBåd.Pages.DockSpotPages
         private IDockSpotService _dockSpotService;
         private IOrderService _orderService;
         [BindProperty] public Order Order { get; set; }
+        public DockSpot DockSpot { get; set; }
 
         public RentDockSpotModel(IDockSpotService dockSpotService, IOrderService orderService)
         {
@@ -34,6 +35,8 @@ namespace SejlBåd.Pages.DockSpotPages
             
             _dockSpotService.RentSpot(Order.Customer);
             
+            _orderService.CreateOrder(Order);
+
             return RedirectToPage("DockRentReceipt");
             
         }
