@@ -27,9 +27,7 @@
         {
 
         }
-        public override string ToString()
-        {
-            return $"{{{nameof(Length)}={Length.ToString()}, {nameof(Id)}={Id.ToString()}, {nameof(Width)}={Width.ToString()}, {nameof(Bom)}={Bom.ToString()}, {nameof(HasBom)}={HasBom.ToString()}, {nameof(TopUnderMast)}={TopUnderMast.ToString()}, {nameof(Vægt)}={Vægt.ToString()}, {nameof(Booked)}={Booked.ToString()}}}";
-        }
+
+
     }
 }
