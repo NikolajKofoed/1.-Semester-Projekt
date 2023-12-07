@@ -8,7 +8,7 @@ namespace SejlBåd.Services.BoatService
          void AddBoats(Boat boat);
          void RemoveBoats(Boat boat);
          Boat? LookUpBoat(int Id);
-         Boat GetBoats();
+         Boat GetBoat();
          List<Boat> listOfBoats();
 
 
