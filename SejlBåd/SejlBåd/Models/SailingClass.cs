@@ -8,12 +8,14 @@ namespace SejlBåd.Models
         public string ClassDate { get; set; }
         public int ClassSize { get; set; }
         public string ClassDetails { get; set; }
+       
 
         public SailingClass(string className, string classDate, string classDetails)
         {
             ClassName = className;
             ClassDate = classDate;
             ClassDetails = classDetails;
+            
         }
 
         public SailingClass()

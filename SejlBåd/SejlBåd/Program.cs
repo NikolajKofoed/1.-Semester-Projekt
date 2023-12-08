@@ -25,6 +25,8 @@ builder.Services.AddSingleton<IOrderService, OrderService>();
 builder.Services.AddTransient<JsonFileOrderService>();
 builder.Services.AddSingleton<ICustomerService, CustomerService>();
 builder.Services.AddTransient<JsonFileCustomerService>();
+builder.Services.AddSingleton<IBlogService, BlogService>();
+builder.Services.AddTransient<JsonFileBlogService>();
 
 var app = builder.Build();
 

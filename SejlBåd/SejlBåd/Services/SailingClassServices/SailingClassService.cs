@@ -1,5 +1,6 @@
 ﻿using SejlBåd.Models;
 using SejlBåd.MockData.SailingClassMock;
+using SejlBåd.MockData.EventMock;
 
 namespace SejlBåd.Services.SailingClassServices
 {
@@ -67,6 +68,18 @@ namespace SejlBåd.Services.SailingClassServices
         {
             throw new NotImplementedException();
         }
+
+        //public User GetUser(string email)
+        //{
+        //    foreach (var us in sailingClassUsers)
+        //    {
+        //        if(us.Email == email)
+        //        {
+        //            return us;
+        //        }
+        //    }
+        //    return null;
+        //}
 
     }
 }
