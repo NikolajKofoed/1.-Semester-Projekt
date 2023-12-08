@@ -1,63 +1,68 @@
 ﻿using SejlBåd.Models;
-using SejlBåd.MockData.SailingClassMock;
 
 namespace SejlBåd.Services.SailingClassServices
 {
     public class SailingClassService : ISailingClassService
     {
-        private JsonFileSCService JsonFileSCService { get; set; }
-        public User UserToClass { get; set; }
+        private JsonSailingClass _jsonFileSailingClassService;
+      
 
         public List<Models.SailingClass> sailingClasses { get; set; }
-        public List<Models.User> sailingClassUsers { get; set; }
 
-        public SailingClassService(JsonFileSCService jsonFileSCService)
+        private List<User> _sCJunior;
+        private List<User> _sCSenior;
+
+
+        public SailingClassService(JsonSailingClass jsonFileSailingClassService)
         {
-            JsonFileSCService = jsonFileSCService;
-            sailingClassUsers = JsonFileSCService.GetJsonSCUsers().ToList();
+           _jsonFileSailingClassService = jsonFileSailingClassService;
+            sailingClasses = _jsonFileSailingClassService.GetJsonSC().ToList();
         }
 
-        public List<Models.SailingClass> GetSailingClasses()
+        List<User> ISailingClassService.GetSailingClassJunior()
+        {
+            return _sCJunior = sailingClasses[0].Participants;
+        }
+
+        List<User> ISailingClassService.GetSailingClassSenior()
+        {
+            return _sCSenior = sailingClasses[1].Participants;
+        }
+        void ISailingClassService.AddUserToJuniorClass(User user)
+        {
+            sailingClasses[0].Participants.Add(user);
+            _jsonFileSailingClassService.SaveJsonSC(sailingClasses);
+        }
+        void ISailingClassService.AddUserToSeniorClass(User user)
+        {
+            sailingClasses[1].Participants.Add(user);
+            _jsonFileSailingClassService.SaveJsonSC(sailingClasses);
+        }
+        List<SailingClass> ISailingClassService.GetSailingClasses()
         {
             return sailingClasses;
         }
 
-        public void RemoveSailingClass(SailingClass sailingClass)
+        SailingClass ISailingClassService.AddSailingClass(SailingClass sailingClass)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateSailingClass(SailingClass sailingClass)
+        SailingClass ISailingClassService.RemoveSailingClass(SailingClass sailingClass)
         {
             throw new NotImplementedException();
         }
 
-        public void GetSailingClass(SailingClass sailingClass)
+        void ISailingClassService.UpdateSailingClass(SailingClass sailingClass)
         {
             throw new NotImplementedException();
         }
 
-        public void AddSailingClass(SailingClass sailingClass)
+        SailingClass ISailingClassService.GetSailingClass(SailingClass sailingClass)
         {
-            sailingClasses.Add(sailingClass);
-        }
-        public void AddUserToClass(User user)
-        {
-            sailingClassUsers.Add(user);
-            JsonFileSCService.SaveJsonSC(sailingClassUsers);
+            throw new NotImplementedException();
         }
 
-        //public User GetUser(string email)
-        //{
-        //    foreach (var us in sailingClassUsers)
-        //    {
-        //        if(us.Email == email)
-        //        {
-        //            return us;
-        //        }
-        //    }
-        //    return null;
-        //}
-
+      
     }
 }

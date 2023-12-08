@@ -1,3 +1,4 @@
+using SejlBåd.Models;
 using SejlBåd.Services.BoatService;
 using SejlBåd.Services.CustomerServices;
 using SejlBåd.Services.DockSpotServices;
@@ -19,11 +20,12 @@ builder.Services.AddTransient<JsonFileDockSpotService>();
 builder.Services.AddSingleton<IEventService, EventService>();
 builder.Services.AddTransient<JsonFileEventService>();
 builder.Services.AddSingleton<ISailingClassService, SailingClassService>();
-builder.Services.AddTransient<JsonFileSCService>();
+builder.Services.AddTransient<JsonSailingClass>();
 builder.Services.AddSingleton<IOrderService, OrderService>();
 builder.Services.AddTransient<JsonFileOrderService>();
 builder.Services.AddSingleton<ICustomerService, CustomerService>();
 builder.Services.AddTransient<JsonFileCustomerService>();
+
 
 var app = builder.Build();
 
