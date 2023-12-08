@@ -2,10 +2,6 @@
 
 }
 
-.table-custom{
-}
-
-
 .rent-boat-site label{
     width: 120px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -54,4 +50,10 @@
     width: 100%;
     text-align: unset;
 
+}
+
+.table-custom{
+    border-color:black;
+    border-radius: 5px;
+    margin: 25px;
 }

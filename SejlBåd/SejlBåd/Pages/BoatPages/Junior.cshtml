@@ -1,0 +1,61 @@
+﻿@page
+@model SejlBåd.Pages.BoatPages.JuniorModel
+@{
+}
+
+<center><h1>Junior</h1></center>
+<br />
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+              Længde i meter
+            </th>
+            <th>
+               Bredde i meter
+            </th>
+            <th>
+               Bom
+            </th>
+            <th>
+                Top- og undermast i meter
+            </th>
+            <th>
+                Vægten i kg
+            </th>
+        </tr>
+    </thead>
+<tbody>
+@if (@JuniorModel.BoatList != null)
+{
+    foreach( var boat in JuniorModel.BoatList)
+    {
+        <tr>
+            <td>
+                @boat.Id
+            </td>
+            <td>
+                @boat.Length
+            </td>
+            <td>
+                @boat.Width
+            </td>
+            <td>
+                @boat.Bom
+            </td>
+            <td>
+                @boat.TopUnderMast
+            </td>
+            <td>
+                @boat.Vægt
+            </td>
+            <td>
+                        <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">Book</a>
+            </td>
+        </tr>
+    }
+}

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace SejlBåd.Pages.BoatPages
 {
-    public class RegistrerlejbaadModel : PageModel
+    public class EditJuniorModel : PageModel
     {
         public void OnGet()
         {

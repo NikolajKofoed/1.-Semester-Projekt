@@ -1,4 +1,5 @@
-﻿using SejlBåd.Models;
+﻿using Microsoft.AspNetCore.WebUtilities;
+using SejlBåd.Models;
 using SejlBåd.Services.DockSpotServices;
 
 namespace SejlBåd.Services.OrderServices
@@ -20,36 +21,37 @@ namespace SejlBåd.Services.OrderServices
             dockSpots = _dockSpotService.GetDockSpots();
         }
 
-        public void CreateOrder(Order order)
+        public Order GetOrder(int id)
+        {
+            foreach(var order in orders)
+            {
+                if(order.Id == id)
+                {
+                    return order;
+                }
+            }
+            return null;
+        }
+        public Order NewOrder(DockSpot? dockSpot, User? user, SailingClass? Sc)
+        {
+            Order order = new Order(dockSpot, user, Sc, null, null);
+            orders.Add(order);
+            _jsonOrderService.SaveJsonOrders(orders);
+            return order;
+        }
+
+        public Order GetLatestOrder()
+        {
+            return orders.Last();
+        }
+        public Order CreateOrderDockSpot(DockSpot dockSpot, User user)
         {
 
-            if(order != null)
-            {
-                //foreach (var ds in dockSpots)
-                //{
-                //    if (ds.IsAvailable)
-                //    {
-                //        ds.Renter = order.Customer;
-                //        ds.IsAvailable = false;
-                //        ds.RentPeriodStart = DateTime.Now;
-                //        _jsonDockSpotService.SaveJsonDockSpots(dockSpots);
-                //        break;
-                //    }
-                //}
-                foreach (var ds in dockSpots)
-                {
-                    if(order.Customer.Email == ds.Renter.Email)
-                    {
-                        order.DockSpot = ds;
-                        order.TotalPrice = ds.YearlyContigent;
-                        break;
-                    }
-                }
-                order.OrderDate = DateTime.Now;
-                orders.Add(order);
-
-                _jsonOrderService.SaveJsonOrders(orders);
-            }
+            Order order = new Order(dockSpot, user, null, DateTime.Now, 400);
+            orders.Add(order);
+            _jsonOrderService.SaveJsonOrders(orders);
+            return order;
+            
         }
 
         public DockSpot[] GetDockSpots()

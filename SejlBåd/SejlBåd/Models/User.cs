@@ -12,7 +12,7 @@ namespace SejlBåd.Models
         [Required(ErrorMessage = "Email is required")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "must be 8 digits")]
+        //[Required(ErrorMessage = "must be 8 digits")]
         [Range(typeof(int), "10000000", "99999999", ErrorMessage = "Phone number Must be 8 Digits")]
         public int? Tlf { get; set; }
         public CreditCard? CreditCardInfo { get; set; }

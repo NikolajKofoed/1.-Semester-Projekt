@@ -2,6 +2,45 @@
 @model SejlBåd.Pages.DockSpotPages.DockRentReceiptModel
 @{
 }
+<center><h1>Thank You For Your Purchase!</h1></center>
 
-<h1>Thank You For Your Purchase!</h1>
-<h2>Order Information</h2>
+<div class="rent-boat-site">
+    <center><h2>Order Information</h2></center>
+    <table class="table table-responsive-lg table-bordered table-custom">
+        <thead>
+            <tr class="col">
+                <th>
+                    Order id
+                </th>
+                <th>
+                    BådPlads
+                </th>
+                <th>
+                    navn på lejeren
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Dato
+                </th>
+                <th>
+                    Pris
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="col">
+                <td>@Model.Order.Id</td>
+                <td>@Model.Order.DockSpot.Id</td>
+                <td>@Model.Order.Customer.FirstName</td>
+                <td>@Model.Order.Customer.Email</td>
+                <td>@Model.Order.OrderDate</td>
+                <td>@Model.Order.TotalPrice</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <center><a  asp-area="" asp-page="/Index" type="button" class="btn btn-primary btn-lg">Til Forsiden</a></center>
+    </div>
+</div>
