@@ -26,7 +26,7 @@ namespace SejlBåd.Pages.SailingClassPages
             {
                 return Page();
             }
-            _sailingClassService.AddUserToClass(UserToClass);
+            _sailingClassService.AddUserToSeniorClass(UserToClass);
             return RedirectToPage("GetAllSailingClasses");
         }
     }
