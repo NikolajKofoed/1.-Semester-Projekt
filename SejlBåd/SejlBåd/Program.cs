@@ -20,13 +20,13 @@ builder.Services.AddTransient<JsonFileDockSpotService>();
 builder.Services.AddSingleton<IEventService, EventService>();
 builder.Services.AddTransient<JsonFileEventService>();
 builder.Services.AddSingleton<ISailingClassService, SailingClassService>();
-builder.Services.AddTransient<JsonFileSailingClass>();
+builder.Services.AddTransient<JsonFileSailingClassService>();
 builder.Services.AddSingleton<IOrderService, OrderService>();
 builder.Services.AddTransient<JsonFileOrderService>();
 builder.Services.AddSingleton<ICustomerService, CustomerService>();
 builder.Services.AddTransient<JsonFileCustomerService>();
-builder.Services.AddSingleton<IBlogService, BlogService>();
-builder.Services.AddTransient<JsonFileBlogService>();
+//builder.Services.AddSingleton<IBlogService, BlogService>();
+//builder.Services.AddTransient<JsonFileBlogService>();
 
 
 var app = builder.Build();
