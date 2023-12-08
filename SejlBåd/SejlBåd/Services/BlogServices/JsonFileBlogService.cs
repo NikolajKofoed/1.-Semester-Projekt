@@ -1,45 +1,44 @@
 ﻿using SejlBåd.Models;
 using System.Text.Json;
 
-namespace SejlBåd.Services.SailingClassServices
+namespace SejlBåd.Services.BlogServices
 {
-    public class JsonFileSCJuniorService
+    public class JsonFileBlogService
     {
         private string JsonFileName
         {
             get
             {
-                return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "SCJuniorUsers.json");
+                return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "BlogPosts.json");
             }
         }
 
         IWebHostEnvironment WebHostEnvironment { get; }
 
-        public JsonFileSCJuniorService(IWebHostEnvironment webHostEnvironment)
+        public JsonFileBlogService(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
         }
 
-        public void SaveJsonSC(List<User> SCUsers)
+        public void SaveJsonBlogData(List<Blog> blogs)
         {
             using (FileStream jsonFileWriter = File.Create(JsonFileName))
             {
                 Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
                 {
                     SkipValidation = false,
-                    Indented = true
+                    Indented = true,
                 });
-                JsonSerializer.Serialize<User[]>(jsonFileWriter, SCUsers.ToArray());
+                JsonSerializer.Serialize<Blog[]>(jsonFileWriter, blogs.ToArray());
             }
         }
 
-        public IEnumerable<User> GetJsonSCUsers()
+        public IEnumerable<Blog>? GetJsonBlogData()
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileName))
             {
-                return JsonSerializer.Deserialize<User[]>(jsonFileReader.ReadToEnd());
+                return JsonSerializer.Deserialize<Blog[]>(jsonFileReader.ReadToEnd());
             }
         }
     }
 }
-

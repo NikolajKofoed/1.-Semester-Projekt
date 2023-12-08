@@ -3,24 +3,24 @@ using System.Text.Json;
 
 namespace SejlBåd.Services.SailingClassServices
 {
-	public class JsonSailingClass
+	public class JsonFileSCService
 	{
 		private string JsonFileName
 		{
 			get
 			{
-				return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "SCJuniorUsers.json");
+				return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "SCUsers.json");
 			}
 		}
 
 		IWebHostEnvironment WebHostEnvironment { get; }
 
-		public JsonSailingClass(IWebHostEnvironment webHostEnvironment)
+		public JsonFileSCService(IWebHostEnvironment webHostEnvironment)
 		{
 			WebHostEnvironment = webHostEnvironment;
 		}
 
-		public void SaveJsonSC(List<SailingClass> sailingClass)
+		public void SaveJsonSC(List<User> SCUsers)
 		{
 			using (FileStream jsonFileWriter = File.Create(JsonFileName))
 			{
@@ -29,15 +29,15 @@ namespace SejlBåd.Services.SailingClassServices
 					SkipValidation = false,
 					Indented = true
 				});
-				JsonSerializer.Serialize<SailingClass[]>(jsonFileWriter, sailingClass.ToArray());
+				JsonSerializer.Serialize<User[]>(jsonFileWriter, SCUsers.ToArray());
 			}
 		}
 
-		public IEnumerable<SailingClass> GetJsonSC()
+		public IEnumerable<User> GetJsonSCUsers()
 		{
 			using (StreamReader jsonFileReader = File.OpenText(JsonFileName))
 			{
-				return JsonSerializer.Deserialize<SailingClass[]>(jsonFileReader.ReadToEnd());
+				return JsonSerializer.Deserialize<User[]>(jsonFileReader.ReadToEnd());
 			}
 		}
 	}

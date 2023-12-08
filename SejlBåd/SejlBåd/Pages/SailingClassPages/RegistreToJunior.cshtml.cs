@@ -10,8 +10,6 @@ namespace SejlBåd.Pages.SailingClassPages
         [BindProperty]
         public Models.User UserToClass { get; set; }
         
-       
-
 
         public RegistreSailingClassModel(ISailingClassService sailingClassService)
         {
