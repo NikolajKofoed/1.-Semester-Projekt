@@ -71,6 +71,21 @@
             border-color: #dc3545;
             color: #fff;
         }
+
+        /* Different colors for View Comments and View Blog Post buttons */
+        .button-container a.btn-view-blog-post,
+        .button-container a.btn-view-blog-post:hover {
+            background-color: #28a745;
+            border-color: #28a745;
+            color: #fff;
+        }
+
+        .button-container a.btn-view-comments,
+        .button-container a.btn-view-comments:hover {
+            background-color: #ff5733;
+            border-color: #ff5733;
+            color: #fff;
+        }
 </style>
 
 <h1>Hillerød Sejlklub - Blogindlæg</h1>
@@ -84,13 +99,11 @@
             <h2>@blogs.BlogPostTitle</h2>
             <h5>@blogs.BlogPostSubtext</h5>
             <div class="button-container">
+                <a class="btn btn-view-blog-post btn-sm" type="button" asp-page="ViewBlogPost" asp-route-id="@blogs.Id">View Blog Post</a>
+                <a class="btn btn-view-comments btn-sm" type="button" asp-page="ViewComments" asp-route-id="@blogs.Id">View Comments</a>
                 <a class="btn btn-primary btn-sm" type="button" asp-page="UpdateBlogPost" asp-route-id="@blogs.Id">Redigér</a>
                 <a class="btn btn-danger btn-sm" type="button" asp-page="DeleteBlogPost" asp-route-id="@blogs.Id">Slet</a>
             </div>
-            <hr />
-            <p>@blogs.BlogPostText</p>
-            <br />
-            <br />
         </div>
     }
 }
