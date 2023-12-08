@@ -13,7 +13,7 @@ namespace SejlBåd.Pages.SailingClassPages
 
         public RegistreSailingClassModel(ISailingClassService sailingClassService)
         {
-            _sailingClassService = sailingClassService;
+            _sailingClassService = sailingClassService; 
         }
 
         public IActionResult OnGet()
