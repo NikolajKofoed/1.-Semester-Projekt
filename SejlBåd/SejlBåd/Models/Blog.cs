@@ -4,9 +4,9 @@ namespace SejlBåd.Models
 {
     public class Blog
     {
-        private static int nextId = 0;
+        private static int nextId = 1;
         [BindProperty]
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
         [BindProperty]
         public string BlogPostTitle { get; set; }
         [BindProperty]

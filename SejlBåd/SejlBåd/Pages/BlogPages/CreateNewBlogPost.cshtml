@@ -16,8 +16,11 @@
         <label asp-for="@Model.BlogPost.BlogPostText" class="form-label">Tekst:</label>
         <textarea asp-for="@Model.BlogPost.BlogPostText" class="form-control" rows="12"></textarea>
     </div>
-
+    <br />
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Lav nyt indlæg</button>
     </div>
 </form>
+<div style="margin-top:5px">
+    <a asp-page="/BlogPages/GetAllBlogPosts">Gå tilbage til bloggen</a>
+</div>
