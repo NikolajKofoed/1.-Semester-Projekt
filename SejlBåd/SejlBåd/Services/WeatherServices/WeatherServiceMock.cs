@@ -5,7 +5,7 @@ namespace SejlBåd.Services.WeatherServices;
 public class WeatherServiceMock : IWeatherService
 {
     public WeatherServiceMock()
-    {}
+    { }
 
     public Task<Forecast?> GetTodaysForecast()
     {

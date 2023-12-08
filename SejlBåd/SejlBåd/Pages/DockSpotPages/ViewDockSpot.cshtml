@@ -9,10 +9,9 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Bookede</th>
+            <th>Er Ledig</th>
             <th>Lejer</th>
-            <th>Start Dato</th>
-            <th>Slut Dato</th>
+            <th>Dato for lejning</th>
             <th>Årlig Kontigent</th>
         </tr>
     </thead>
@@ -26,15 +25,14 @@
                     <td>@dockSpot.IsAvailable</td>
                     <td>@dockSpot.Renter</td>
                     <td>@dockSpot.RentPeriodStart</td>
-                    <td>@dockSpot.RentPeriodEnd</td>
-                    <td>@dockSpot.MonthlyCost</td>
-                    @if(dockSpot.IsAvailable == true)
+                    <td>@dockSpot.YearlyContigent</td>
+                    @* @if(dockSpot.IsAvailable == true)
                     {
                         <td>
                             <a class="btn btn-primary btn-sm" type="button" title="Rent" asp-page="RentDockSpot"
                                asp-route-id="@dockSpot.Id">Rent Dock Spot</a>
                         </td>
-                    }
+                    } *@
                     @if(dockSpot.IsAvailable == false)
                     {
                         <td>

@@ -5,11 +5,13 @@ namespace SejlBåd.Services.DockSpotServices
     public interface IDockSpotService
     {
 
-        void RentSpot(DockSpot dockSpot, User user, DateTime start, DateTime end);
+        DockSpot RentSpot(User user, int dockSpotId);
         void UpdateSpot();
         DockSpot[] GetDockSpots();
         DockSpot GetDockSpot(int id);
         void CancelReservation(DockSpot dockSpot);
+        DockSpot GetNextAvailableDockSpot();
+        DockSpot CheckDockSpots();
 
     }
 }

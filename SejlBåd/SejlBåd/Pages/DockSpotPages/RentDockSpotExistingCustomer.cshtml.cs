@@ -4,33 +4,35 @@ using SejlBåd.Models;
 using SejlBåd.Services.CustomerServices;
 using SejlBåd.Services.DockSpotServices;
 using SejlBåd.Services.OrderServices;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
 
 namespace SejlBåd.Pages.DockSpotPages
 {
-    public class RentDockSpotModel : PageModel
+    public class RentDockSpotExistingCustomerModel : PageModel
     {
+        private ICustomerService _customerService;
         private IDockSpotService _dockSpotService;
         private IOrderService _orderService;
-        private ICustomerService _customerService;
-        [BindProperty] public DockSpot DockSpot { get; set; }
-        [BindProperty] public User Customer { get; set; }
+        
+        public User Customer { get; set; }
+        [BindProperty] public string CustomerEmail { get; set; }
+        public DockSpot DockSpot { get; set; }
 
-        public RentDockSpotModel(IDockSpotService dockSpotService, IOrderService orderService, ICustomerService customerService)
+
+        public RentDockSpotExistingCustomerModel(ICustomerService customerService, IDockSpotService dockSpotService, IOrderService orderService)
         {
-            _orderService = orderService;
-            _dockSpotService = dockSpotService;
             _customerService = customerService;
+            _dockSpotService = dockSpotService;
+            _orderService = orderService;
         }
-
-
         public IActionResult OnGet()
         {
-            // if if there are no more Available spots return another page
+            // if there are no more dockspots available redirect to another page
             if (_dockSpotService.GetNextAvailableDockSpot() == null)
                 return RedirectToPage("TestPage");
-
+            
             return Page();
-
         }
 
         public IActionResult OnPost()
@@ -40,22 +42,20 @@ namespace SejlBåd.Pages.DockSpotPages
                 return Page();
             }
 
-            // if customer doesn't exist add customer
-            if(_customerService.CheckForExistingUser(Customer.Email) == null)
+            // if email doesn't exists return page
+            if (_customerService.CheckForExistingUser(CustomerEmail) != null)
             {
-                _customerService.CreateUser(Customer);
+                Customer = _customerService.CheckForExistingUser(CustomerEmail);
             }
             else
             {
-                // give feedback
+                return Page();
             }
-
-            // need to set dockspot again here or it will always be set to dockspot with id 1
             DockSpot = _dockSpotService.GetNextAvailableDockSpot();
 
-            // rent spot and create order
-            _dockSpotService.RentSpot(Customer, DockSpot.Id);
 
+            // rent boat and create save order
+            _dockSpotService.RentSpot(Customer, DockSpot.Id);
             _orderService.CreateOrderDockSpot(DockSpot, Customer);
 
             return RedirectToPage("DockRentReceipt");

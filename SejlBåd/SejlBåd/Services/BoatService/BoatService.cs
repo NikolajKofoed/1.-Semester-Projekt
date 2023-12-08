@@ -20,7 +20,7 @@ namespace SejlBåd.Services.BoatService
             boats.Add(boat);
         }
 
-        Boat IBoatService.GetBoats()
+        Boat IBoatService.GetBoat()
         {
 
             foreach (var boat in boats)

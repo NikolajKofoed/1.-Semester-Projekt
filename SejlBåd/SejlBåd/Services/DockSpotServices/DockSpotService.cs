@@ -25,7 +25,6 @@ namespace SejlBåd.Services.DockSpotServices
                         ds.Renter = null;
                         ds.IsAvailable = true;
                         ds.RentPeriodStart = null;
-                        ds.RentPeriodEnd = null;
                     }
                 }
             }
@@ -49,22 +48,36 @@ namespace SejlBåd.Services.DockSpotServices
             return dockSpots;
         }
 
-        void IDockSpotService.RentSpot(DockSpot dockSpot, User user, DateTime start, DateTime end)
+        DockSpot IDockSpotService.GetNextAvailableDockSpot()
         {
-            if(dockSpot != null || user != null)
+            foreach(var ds in dockSpots)
+            {
+                if (ds.IsAvailable)
+                {
+                    return ds;
+                }
+            }
+            return null;
+        }
+
+        DockSpot IDockSpotService.RentSpot(User user, int dockSpotId)
+        {
+            if(user != null)
             {
                 foreach(var ds in dockSpots)
                 {
-                    if(dockSpot.Id == ds.Id)
+                    if(ds.Id == dockSpotId && ds.IsAvailable)
                     {
                         ds.Renter = user;
                         ds.IsAvailable = false;
-                        ds.RentPeriodStart = start;
-                        ds.RentPeriodEnd = end;
+                        ds.RentPeriodStart = DateTime.Now;
+                        _jsonDockSpotService.SaveJsonDockSpots(dockSpots);
+                        return ds;
                     }
                 }
             }
-            _jsonDockSpotService.SaveJsonDockSpots(dockSpots);
+            return null;
+            
         }
 
         void IDockSpotService.UpdateSpot()
@@ -72,5 +85,16 @@ namespace SejlBåd.Services.DockSpotServices
             throw new NotImplementedException();
         }
 
+        DockSpot IDockSpotService.CheckDockSpots()
+        {
+            foreach(var ds in dockSpots)
+            {
+                if(ds.IsAvailable)
+                {
+                    return ds;
+                }
+            }
+            return null;
+        }
     }
 }

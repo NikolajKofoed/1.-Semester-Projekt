@@ -1,0 +1,24 @@
+﻿@page
+@model SejlBåd.Pages.DockSpotPages.RentDockSpotExistingCustomerModel
+@{
+}
+<center><h2>Indtast Din E-mail</h2></center>
+<center>
+    <div class="rent-boat-site">
+        
+        <form method="post">
+            <div>
+                <label asp-for="@Model.CustomerEmail"></label>
+                <input asp-for="@Model.CustomerEmail" />
+
+            </div>
+            <div>
+                <input type="submit" value="Lej" class="btn btn-primary btn-lg" />
+            </div>
+
+        </form>
+
+        <a type="button" asp-page="RentDockSpot">Gå tilbage</a>
+    </div>
+
+</center>
