@@ -39,6 +39,11 @@ namespace SejlBåd.Services.OrderServices
             _jsonOrderService.SaveJsonOrders(orders);
             return order;
         }
+
+        public Order GetLatestOrder()
+        {
+            return orders.Last();
+        }
         public Order CreateOrderDockSpot(DockSpot dockSpot, User user)
         {
 

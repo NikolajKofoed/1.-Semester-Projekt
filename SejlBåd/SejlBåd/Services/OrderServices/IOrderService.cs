@@ -11,6 +11,8 @@ namespace SejlBåd.Services.OrderServices
 
         Order GetOrder(int id);
 
+        Order GetLatestOrder();
+
         Order NewOrder(DockSpot? dockSpot, User? user, SailingClass? Sc);
     }
 }

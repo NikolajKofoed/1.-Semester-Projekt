@@ -9,20 +9,17 @@ namespace SejlBåd.Pages.DockSpotPages
 {
     public class DockRentReceiptModel : PageModel
     {
-        private IDockSpotService _dockSpotService;
         private IOrderService _orderService;
-        private ICustomerService _customerService;
-        [BindProperty] public User Order { get; set; }
+        [BindProperty] public Order Order { get; set; }
 
-        public DockRentReceiptModel(IDockSpotService dockSpotService, IOrderService orderService, ICustomerService customerService)
+        public DockRentReceiptModel(IOrderService orderService)
         {
             _orderService = orderService;
-            _dockSpotService = dockSpotService;
-            _customerService = customerService;
         }
         public IActionResult OnGet(string email)
         {
-            Order = _customerService.CheckForExistingUser(email);
+            //inconsistent way of doing, should be changed when possible
+            Order = _orderService.GetLatestOrder();
             return Page();
         }
     }
