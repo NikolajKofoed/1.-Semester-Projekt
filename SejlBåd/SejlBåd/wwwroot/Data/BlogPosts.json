@@ -1,1 +1,9 @@
-[{"Id":0,"BlogPostTitle":"asda","BlogPostSubtext":"asda","BlogPostText":"asda"}]
+[
+  {
+    "Id": 0,
+    "BlogPostTitle": "asda",
+    "BlogPostSubtext": "asda",
+    "BlogPostText": "asda"
+    "Comment": "Comment"
+  }
+]

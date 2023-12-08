@@ -9,5 +9,7 @@ namespace SejlBåd.Services.BlogServices
         void UpdateBlogPost(Blog blog);
         Blog GetBlogPost(int blogId);
         Blog DeleteBlogPost(int? blogId);
+        //List<Comment> GetCommentsForBlogPost(int blogId);
+        //void AddCommentToBlog(int blogId, Comment comment);
     }
 }

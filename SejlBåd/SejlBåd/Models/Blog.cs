@@ -13,6 +13,8 @@ namespace SejlBåd.Models
         public string BlogPostSubtext { get; set; }
         [BindProperty]
         public string BlogPostText { get; set; }
+        [BindProperty]
+        public List<Comment> Comments { get; set; }
 
         public Blog(string blogTitle, string blogDescription, string blogText)
         {
@@ -28,6 +30,7 @@ namespace SejlBåd.Models
             BlogPostTitle = "Placeholder Post Title";
             BlogPostSubtext = "Placeholder Description";
             BlogPostText = "Placeholder Post Text";
+            Comments = new List<Comment>();
         }
     }
 }

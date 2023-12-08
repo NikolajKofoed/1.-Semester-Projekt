@@ -43,11 +43,11 @@ namespace SejlBåd.Services.BlogServices
 
         Blog IBlogService.GetBlogPost(int blogId)
         {
-            foreach (var i in _posts)
+            foreach (var blog in _posts)
             {
-                if (i.Id == blogId)
+                if (blog.Id == blogId)
                 {
-                    return i;
+                    return blog;
                 }
             }
             return null;
@@ -66,5 +66,25 @@ namespace SejlBåd.Services.BlogServices
             }
             return null;
         }
+
+        //public List<Comment> GetCommentsForBlogPost(int blogId)
+        //{
+        //    var blog = GetBlogPost(blogId);
+        //    return blog?.Comments;
+
+        //}
+
+        //public void AddCommentToBlog(int blogId, Comment comment)
+        //{
+        //    var blog = GetBlogPost(blogId);
+
+        //    if (blog != null)
+        //    {
+        //        comment.Id = Comment.nextId++;
+        //        blog.Comments ??= new List<Comment>();
+        //        blog.Comments.Add(comment);
+        //        _jsonBlogService.SaveJsonBlogData(_posts);
+        //    }
+        //}
     }
 }

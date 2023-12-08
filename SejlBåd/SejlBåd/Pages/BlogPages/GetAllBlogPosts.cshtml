@@ -92,8 +92,14 @@
             <br />
             <br />
         </div>
+        @foreach (var comment in blogs.Comments)
+        {
+            <p><strong>@comment.Name:</strong> @comment.Message</p>
+        }
     }
+
 }
+
 
 <div class="create-button-container">
     <p>
