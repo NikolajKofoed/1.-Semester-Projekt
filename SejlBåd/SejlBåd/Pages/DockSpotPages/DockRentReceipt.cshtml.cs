@@ -16,7 +16,7 @@ namespace SejlBåd.Pages.DockSpotPages
         {
             _orderService = orderService;
         }
-        public IActionResult OnGet(string email)
+        public IActionResult OnGet()
         {
             //inconsistent way of doing, should be changed when possible
             Order = _orderService.GetLatestOrder();

@@ -10,6 +10,5 @@ namespace SejlBåd.Services.CustomerServices
         User CheckForExistingUser(string email);
 
 
-
     }
 }
