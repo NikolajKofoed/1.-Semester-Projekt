@@ -6,50 +6,24 @@ namespace SejlBåd.Services.SailingClassServices
 {
     public class SailingClassService : ISailingClassService
     {
-        private JsonFileSailingClass _jsonFileSailingClassService;
+        private JsonFileSCService JsonFileSCService { get; set; }
+        public User UserToClass { get; set; }
 
-        public List<SailingClass> sailingClasses { get; set; }
+        public List<Models.SailingClass> sailingClasses { get; set; }
+        public List<Models.User> sailingClassUsers { get; set; }
 
-        private List<User> _sCJuniors;
-        private List<User> _sCSeniors;
-
-        public SailingClassService(JsonFileSailingClass jsonFileSailingClassService)
+        public SailingClassService(JsonFileSCService jsonFileSCService)
         {
-            _jsonFileSailingClassService = jsonFileSailingClassService;
-            sailingClasses = _jsonFileSailingClassService.GetJsonSailingClass().ToList();
-
-
+            JsonFileSCService = jsonFileSCService;
+            sailingClassUsers = JsonFileSCService.GetJsonSCUsers().ToList();
         }
 
-        List<User> ISailingClassService.GetSailingClassJunior()
-        {
-            return _sCJuniors = sailingClasses[0].Participants;
-        }
-
-        List<User> ISailingClassService.GetSailingClassSenior()
-        {
-            return _sCSeniors = sailingClasses[1].Participants;
-        }
-
-        void ISailingClassService.AddUserToJuniorClass(User user)
-        {
-            sailingClasses[0].Participants.Add(user);
-            _jsonFileSailingClassService.SaveJsonSailingClass(sailingClasses);
-        }
-        void ISailingClassService.AddUserToSeniorClass(User user)
-        {
-            sailingClasses[1].Participants.Add(user);
-        }
-
-        List<SailingClass> ISailingClassService.GetSailingClasses()
+        public List<Models.SailingClass> GetSailingClasses()
         {
             return sailingClasses;
         }
 
-
-
-
-        SailingClass ISailingClassService.AddSailingClass(SailingClass sailingClass)
+        public void RemoveSailingClass(SailingClass sailingClass)
         {
             throw new NotImplementedException();
         }
@@ -69,17 +43,6 @@ namespace SejlBåd.Services.SailingClassServices
             throw new NotImplementedException();
         }
 
-        //public User GetUser(string email)
-        //{
-        //    foreach (var us in sailingClassUsers)
-        //    {
-        //        if(us.Email == email)
-        //        {
-        //            return us;
-        //        }
-        //    }
-        //    return null;
-        //}
-
+      
     }
 }

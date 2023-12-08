@@ -28,6 +28,7 @@ builder.Services.AddTransient<JsonFileCustomerService>();
 builder.Services.AddSingleton<IBlogService, BlogService>();
 builder.Services.AddTransient<JsonFileBlogService>();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

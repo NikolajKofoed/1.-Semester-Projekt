@@ -42,3 +42,4 @@ namespace SejlBåd.Services.SailingClassServices
         }
     }
 }
+
