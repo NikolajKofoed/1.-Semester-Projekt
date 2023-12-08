@@ -24,15 +24,15 @@ namespace SejlBåd.Pages.BlogPages
             Comments = _blogService.GetCommentsForBlogPost(blogId);
         }
 
-        public IActionResult OnPostAddComment(int blogId)
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+        //public IActionResult OnPostAddComment(int blogId)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return Page();
+        //    }
 
-            _blogService.AddCommentToBlog(blogId, NewComment);
-            return RedirectToPage("GetAllBlogPosts");
-        }
+        //    _blogService.AddCommentToBlog(blogId, NewComment);
+        //    return RedirectToPage("GetAllBlogPosts");
+        //}
     }
 }
