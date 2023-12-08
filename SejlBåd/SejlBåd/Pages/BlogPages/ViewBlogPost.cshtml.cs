@@ -20,7 +20,20 @@ namespace SejlBåd.Pages.BlogPages
 
         public void OnGet(int id)
         {
-            blogs = _blogService.GetBlogPost(id);    
+            blogs = _blogService.GetBlogPost(id);
+            Comments = _blogService.GetCommentsForBlogPost(id);
+        }
+
+        public IActionResult OnPostAddComment(int blogId)
+        {
+            blogs = _blogService.GetBlogPost(blogId);
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            _blogService.AddCommentToBlog(blogId, NewComment);
+            return RedirectToAction("ViewBlogPost");
         }
     }
 }
