@@ -11,11 +11,12 @@ namespace SejlBåd.Pages.DockSpotPages
 {
     public class RentDockSpotExistingCustomerModel : PageModel
     {
-        private ICustomerService _customerService;
+        public ICustomerService _customerService;
         private IDockSpotService _dockSpotService;
         private IOrderService _orderService;
         
         public User Customer { get; set; }
+        [Required(ErrorMessage = "angiv en mail")]
         [BindProperty] public string CustomerEmail { get; set; }
         public DockSpot DockSpot { get; set; }
 
@@ -49,8 +50,10 @@ namespace SejlBåd.Pages.DockSpotPages
             }
             else
             {
+
                 return Page();
             }
+
             DockSpot = _dockSpotService.GetNextAvailableDockSpot();
 
 

@@ -14,7 +14,7 @@ namespace SejlBåd.Pages.DockSpotPages
         private ICustomerService _customerService;
         [BindProperty] public DockSpot DockSpot { get; set; }
         [BindProperty] public User Customer { get; set; }
-
+        public Order Order { get; set; }
         public RentDockSpotModel(IDockSpotService dockSpotService, IOrderService orderService, ICustomerService customerService)
         {
             _orderService = orderService;
@@ -25,7 +25,7 @@ namespace SejlBåd.Pages.DockSpotPages
 
         public IActionResult OnGet()
         {
-            // if if there are no more Available spots return another page
+            // if there are no more Available spots return another page
             if (_dockSpotService.GetNextAvailableDockSpot() == null)
                 return RedirectToPage("TestPage");
 
@@ -56,7 +56,7 @@ namespace SejlBåd.Pages.DockSpotPages
             // rent spot and create order
             _dockSpotService.RentSpot(Customer, DockSpot.Id);
 
-            _orderService.CreateOrderDockSpot(DockSpot, Customer);
+            Order = _orderService.CreateOrderDockSpot(DockSpot, Customer);
 
             return RedirectToPage("DockRentReceipt");
             

@@ -10,6 +10,11 @@
             <div>
                 <label asp-for="@Model.CustomerEmail"></label>
                 <input asp-for="@Model.CustomerEmail" />
+                @if(Model._customerService.CheckForExistingUser(Model.CustomerEmail) == null && !string.IsNullOrEmpty(Model.CustomerEmail))
+                {
+                    <span class="text-danger">Den Givne E-mail Eksistere Ikke</span>
+                }
+                <span asp-validation-for="@Model.CustomerEmail" class="text-danger"></span>
 
             </div>
             <div>
