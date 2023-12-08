@@ -3,7 +3,7 @@
 @{
 }
 
-
+<h2>Junior Hold Medlemmer</h2>
 <table class="table table-bordered table-hover table-striped">
     <thead>
         <tr>
@@ -17,7 +17,7 @@
                 Beskrivelse
             </th>
             <th>
-                Dato
+                Tlf
             </th>
         </tr>
     </thead>
@@ -38,6 +38,49 @@
                     </td>
                     <td>
                         @junior.Tlf
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<br /><br />
+
+<h2>Senior Hold Medlemmer</h2>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Navn
+            </th>
+            <th>
+                Beskrivelse
+            </th>
+            <th>
+                Tlf
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.SeniorSC != null)
+        {
+            foreach (var senior in Model.SeniorSC)
+            {
+                <tr>
+                    <td>
+                        @senior.FirstName
+                    </td>
+                    <td>
+                        @senior.LastName
+                    </td>
+                    <td>
+                        @senior.Email
+                    </td>
+                    <td>
+                        @senior.Tlf
                     </td>
                 </tr>
             }
