@@ -1,5 +1,6 @@
 ﻿using SejlBåd.Models;
 using SejlBåd.MockData.SailingClassMock;
+using SejlBåd.MockData.EventMock;
 
 namespace SejlBåd.Services.SailingClassServices
 {
@@ -8,8 +9,8 @@ namespace SejlBåd.Services.SailingClassServices
         private JsonFileSCService JsonFileSCService { get; set; }
         public User UserToClass { get; set; }
 
-        public List<Models.SailingClass> sailingClasses { get; set; }
-        public List<Models.User> sailingClassUsers { get; set; }
+        public List<SailingClass> sailingClasses { get; set; }
+        public List<User> sailingClassUsers { get; set; }
 
         public SailingClassService(JsonFileSCService jsonFileSCService)
         {
@@ -47,17 +48,17 @@ namespace SejlBåd.Services.SailingClassServices
             JsonFileSCService.SaveJsonSC(sailingClassUsers);
         }
 
-        //public User GetUser(string email)
-        //{
-        //    foreach (var us in sailingClassUsers)
-        //    {
-        //        if(us.Email == email)
-        //        {
-        //            return us;
-        //        }
-        //    }
-        //    return null;
-        //}
+        public User GetUser(string email)
+        {
+            foreach (var us in sailingClassUsers)
+            {
+                if (us.Email == email)
+                {
+                    return us;
+                }
+            }
+            return null;
+        }
 
     }
 }
