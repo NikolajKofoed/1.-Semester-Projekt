@@ -1,0 +1,32 @@
+﻿@page
+@model SejlBåd.Pages.BlogPages.ViewBlogPostModel
+@{
+}
+
+
+
+<div class="blog-post">
+    <h6 style="color: dimgray; opacity: 0.7;">ID: blogs.Id</h6>
+    <h2>blogs.BlogPostTitle</h2>
+    <h5>blogs.BlogPostSubtext</h5>
+    <div class="button-container">
+    </div>
+    <hr />
+    <p> blogs.BlogPostText</p>
+    <br />
+    <br />
+</div>
+<h4>Add Comment:</h4>
+<form method="post" asp-page-handler="AddComment">
+    <div class="form-group">
+        <label asp-for="NewComment.Name" class="form-label">Name:</label>
+        <input asp-for="NewComment.Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="NewComment.Message" class="form-label">Comment:</label>
+        <textarea asp-for="NewComment.Message" class="form-control" rows="4"></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add Comment</button>
+    </div>
+</form>

@@ -1,0 +1,15 @@
+﻿@page
+@model SejlBåd.Pages.BlogPages.ViewCommentsModel
+@{
+}
+
+<h1>Comments for Blog Post</h1>
+
+@foreach (var comment in Model.Comments)
+{
+    <p><strong>@comment.Name:</strong> @comment.Message</p>
+}
+
+<div style="margin-top: 10px">
+    <a asp-page="/BlogPages/GetAllBlogPosts">Back to Blog</a>
+</div>

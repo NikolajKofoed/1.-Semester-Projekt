@@ -3,7 +3,25 @@
     "Id": 0,
     "BlogPostTitle": "asda",
     "BlogPostSubtext": "asda",
-    "BlogPostText": "asda"
-    "Comment": "Comment"
+    "BlogPostText": "asda",
+    "Comments": [
+      {
+        "Id": 1,
+        "Name": "John",
+        "Message": "Johns Kommentar"
+      },
+      {
+        "Id": 4,
+        "Name": "Erik",
+        "Message": "Eriks Kommentar"
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "BlogPostTitle": "asdasd",
+    "BlogPostSubtext": "asdas",
+    "BlogPostText": "asdasda",
+    "Comments": []
   }
 ]

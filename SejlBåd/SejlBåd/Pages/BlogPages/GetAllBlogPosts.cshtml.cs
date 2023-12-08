@@ -18,21 +18,21 @@ namespace SejlBåd.Pages.BlogPages
             this._blogService = blogService;
         }
 
-        public void OnGet()
+        public void OnGet(int blogId)
         {
             blogPosts = _blogService.GetBlogPosts();
-            //Comments = _blogService.GetCommentsForBlogPost(blogId);
+            Comments = _blogService.GetCommentsForBlogPost(blogId);
         }
 
-        //public IActionResult OnPostAddComment(int blogId)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return Page();
-        //    }
+        public IActionResult OnPostAddComment(int blogId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
 
-        //    _blogService.AddCommentToBlog(blogId, NewComment);
-        //    return RedirectToPage("GetAllBlogPosts");
-        //}
+            _blogService.AddCommentToBlog(blogId, NewComment);
+            return RedirectToPage("GetAllBlogPosts");
+        }
     }
 }
