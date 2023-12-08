@@ -15,9 +15,9 @@ namespace SejlBåd.Models
         [Required(ErrorMessage = "must be 8 digits")]
         [Range(typeof(int), "10000000", "99999999", ErrorMessage = "Phone number Must be 8 Digits")]
         public int? Tlf { get; set; }
-        public CreditCard CreditCardInfo { get; set; }
+        public CreditCard? CreditCardInfo { get; set; }
 
-        public User(string firstName, string lastName, string email, int? tlf, CreditCard creditCardInfo)
+        public User(string firstName, string lastName, string email, int? tlf, CreditCard? creditCardInfo)
         {
             FirstName = firstName;
             LastName = lastName;

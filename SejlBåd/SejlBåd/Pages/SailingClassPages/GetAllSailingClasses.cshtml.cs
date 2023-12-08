@@ -9,7 +9,6 @@ namespace SejlBåd.Pages.SailingClassPages
     {
         private ISailingClassService _sailingClassService;
         public List<Models.SailingClass> sailingClasses { get; private set; }
-        
 
         [BindProperty] public string ClassName { get; set; }
 
