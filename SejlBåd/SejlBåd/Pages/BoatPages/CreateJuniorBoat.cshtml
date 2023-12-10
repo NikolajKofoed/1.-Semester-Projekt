@@ -1,13 +1,20 @@
 ﻿@page
-@model SejlBåd.Pages.BoatPages.CreatBoatModel
+@model SejlBåd.Pages.BoatPages.CreateBoatModel
 @{
 }
-@* <form method="post">
+<form method="post">
     <div class="form-group">
-         <label class="control-label"> Id på båden</label>
-         <input asp-action="@Model.Id" class="form-control"
+        <label class="control-lable">Id på båden</label>
+        <input asp-for="@Model.Boat.BoatPages" class="form-control" />
     </div>
     <div class="form-group">
-
+        <label class="control-lable">Beskrivelse af Begivenhed</label>
+        <input asp-for="@Model.Boat.BoatPages" class="form-control" />
     </div>
-</form> *@
+    <br />
+    <div class="form-group">
+        <label class="control-lable">Dato på Begivenhed</label>
+        <input asp-for="@Model.Event.BoatPages" class="datetime-local" />
+    </div>
+    <br />
+</form>
