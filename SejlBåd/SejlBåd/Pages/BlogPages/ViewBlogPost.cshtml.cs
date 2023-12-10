@@ -32,8 +32,8 @@ namespace SejlBåd.Pages.BlogPages
                 return Page();
             }
 
-            _blogService.AddCommentToBlog(blogId, NewComment);
-            return RedirectToAction("ViewBlogPost");
+                _blogService.AddCommentToBlog(blogId, NewComment);
+            return RedirectToAction("ViewBlogPost", new { id = blogId} );
         }
     }
 }

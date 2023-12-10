@@ -37,7 +37,15 @@ namespace SejlBåd.Services.BlogServices
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileName))
             {
-                return JsonSerializer.Deserialize<Blog[]>(jsonFileReader.ReadToEnd());
+                try
+                {
+                    return JsonSerializer.Deserialize<Blog[]>(jsonFileReader.ReadToEnd());
+
+                }
+                catch (JsonException)
+                {
+                    return new List<Blog>();
+                }
             }
         }
     }

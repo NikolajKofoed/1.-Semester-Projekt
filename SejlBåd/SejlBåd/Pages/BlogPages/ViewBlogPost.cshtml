@@ -135,6 +135,7 @@
 
 <h4>Add Comment:</h4>
 <form method="post" asp-page-handler="AddComment">
+    <input type="hidden" id="blogId" name="blogId" value="@Model.blogs.Id" />
     <div class="form-group">
         <label asp-for="NewComment.Name" class="form-label">Name:</label>
         <input asp-for="NewComment.Name" class="form-control" />

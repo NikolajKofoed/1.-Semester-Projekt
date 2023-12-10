@@ -8,6 +8,17 @@ namespace SejlBåd.Services.BlogServices
         private JsonFileBlogService _jsonBlogService;
 
 
+        private int NextBlogId()
+        {
+            var maxId = 0;
+            foreach (var blog in _posts)
+            {
+                if (maxId < blog.Id)
+                    maxId = blog.Id;
+            }
+            return maxId + 1;
+        }
+
         public BlogService(JsonFileBlogService jsonBlogService)
         {
             _jsonBlogService = jsonBlogService;
@@ -15,11 +26,18 @@ namespace SejlBåd.Services.BlogServices
         }
         public List<Blog> GetBlogPosts()
         {
-            return _posts;
+            var reversePosts = new List<Blog>();
+            for (var i = _posts.Count - 1; i >= 0; i--)
+            {
+                reversePosts.Add(_posts[i]);
+            }
+
+            return reversePosts;
         }
 
         public void AddBlogPost(Blog blog)
         {
+            blog.Id = NextBlogId();
             _posts.Add(blog);
             _jsonBlogService.SaveJsonBlogData(_posts);
         }
