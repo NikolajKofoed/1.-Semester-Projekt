@@ -14,15 +14,19 @@ public class IndexModel : PageModel
 
     private IDockSpotService _dockSpotService;
 
+    private LinkGenerator _linkGenerator;
+
     public Forecast TodaysForecast { get; set; }
+    public string PathByPage { get; set; }
 
     [BindProperty] public DockSpot DockSpot { get; set; }
 
-    public IndexModel(ILogger<IndexModel> logger, IWeatherService weatherService, IDockSpotService dockSpotService)
+    public IndexModel(ILogger<IndexModel> logger, IWeatherService weatherService, IDockSpotService dockSpotService, LinkGenerator linkGenerator)
     {
         _logger = logger;
         _weatherService = weatherService;
         _dockSpotService = dockSpotService;
+        _linkGenerator = linkGenerator;
     }
 
     public async Task OnGet()
@@ -30,15 +34,4 @@ public class IndexModel : PageModel
         TodaysForecast = await _weatherService.GetTodaysForecast();
     }
 
-    public IActionResult OnPostCheckDockSpot()
-    {
-        if(_dockSpotService.CheckDogSpots() == null)
-        return Page();
-
-        DockSpot = _dockSpotService.CheckDogSpots();
-        return RedirectToPage(@"DockSpotPages/RentDockSpot/{DockSpot.Id}");
-
-        
-
-    }
 }

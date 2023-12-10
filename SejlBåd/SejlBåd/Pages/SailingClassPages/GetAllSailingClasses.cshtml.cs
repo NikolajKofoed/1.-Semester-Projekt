@@ -8,8 +8,7 @@ namespace SejlBåd.Pages.SailingClassPages
     public class GetAllSailingClassesModel : PageModel
     {
         private ISailingClassService _sailingClassService;
-        public List<Models.SailingClass> sailingClasses { get; private set; }
-        
+        public List<SailingClass> sailingClasses { get; private set; }
 
         [BindProperty] public string ClassName { get; set; }
 
@@ -19,7 +18,7 @@ namespace SejlBåd.Pages.SailingClassPages
         }
         public void OnGet()
         {
-            sailingClasses = _sailingClassService.GetSailingClasses();
+            _sailingClassService.GetSailingClasses();
         }
     }
 }

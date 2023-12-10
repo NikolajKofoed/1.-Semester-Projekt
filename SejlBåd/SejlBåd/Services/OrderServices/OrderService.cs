@@ -21,11 +21,36 @@ namespace SejlBåd.Services.OrderServices
             dockSpots = _dockSpotService.GetDockSpots();
         }
 
-        public void CreateOrderDockSpot(DockSpot dockSpot, User user)
+        public Order GetOrder(int id)
+        {
+            foreach(var order in orders)
+            {
+                if(order.Id == id)
+                {
+                    return order;
+                }
+            }
+            return null;
+        }
+        public Order NewOrder(DockSpot? dockSpot, User? user, SailingClass? Sc)
+        {
+            Order order = new Order(dockSpot, user, Sc, null, null);
+            orders.Add(order);
+            _jsonOrderService.SaveJsonOrders(orders);
+            return order;
+        }
+
+        public Order GetLatestOrder()
+        {
+            return orders.Last();
+        }
+        public Order CreateOrderDockSpot(DockSpot dockSpot, User user)
         {
 
-            orders.Add(new Order(dockSpot, user, null, DateTime.Now, 400));
+            Order order = new Order(dockSpot, user, null, DateTime.Now, 400);
+            orders.Add(order);
             _jsonOrderService.SaveJsonOrders(orders);
+            return order;
             
         }
 

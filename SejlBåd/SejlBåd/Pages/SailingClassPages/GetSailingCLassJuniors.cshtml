@@ -1,0 +1,89 @@
+﻿@page
+@model SejlBåd.Pages.SailingClassPages.GetSailingCLassJuniorsModel
+@{
+}
+
+<h2>Junior Hold Medlemmer</h2>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                Fornavn
+            </th>
+            <th>
+                Efternavn
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Tlf
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.JuniorSC != null)
+        {
+            foreach (var junior in Model.JuniorSC)
+            {
+                <tr>
+                    <td>
+                        @junior.FirstName
+                    </td>
+                    <td>
+                        @junior.LastName
+                    </td>
+                    <td>
+                        @junior.Email
+                    </td>
+                    <td>
+                        @junior.Tlf
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<br /><br />
+
+<h2>Senior Hold Medlemmer</h2>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                Fornavn
+            </th>
+            <th>
+                Efteravn
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Tlf
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.SeniorSC != null)
+        {
+            foreach (var senior in Model.SeniorSC)
+            {
+                <tr>
+                    <td>
+                        @senior.FirstName
+                    </td>
+                    <td>
+                        @senior.LastName
+                    </td>
+                    <td>
+                        @senior.Email
+                    </td>
+                    <td>
+                        @senior.Tlf
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

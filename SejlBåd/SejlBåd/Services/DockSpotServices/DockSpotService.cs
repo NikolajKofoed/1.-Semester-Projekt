@@ -60,13 +60,13 @@ namespace SejlBåd.Services.DockSpotServices
             return null;
         }
 
-        DockSpot IDockSpotService.RentSpot(User user, DockSpot dockSpot)
+        DockSpot IDockSpotService.RentSpot(User user, int dockSpotId)
         {
             if(user != null)
             {
                 foreach(var ds in dockSpots)
                 {
-                    if(ds.Id == dockSpot.Id && ds.IsAvailable)
+                    if(ds.Id == dockSpotId && ds.IsAvailable)
                     {
                         ds.Renter = user;
                         ds.IsAvailable = false;
@@ -85,11 +85,11 @@ namespace SejlBåd.Services.DockSpotServices
             throw new NotImplementedException();
         }
 
-        DockSpot IDockSpotService.CheckDogSpots()
+        DockSpot IDockSpotService.CheckDockSpots()
         {
             foreach(var ds in dockSpots)
             {
-                if(ds != null)
+                if(ds.IsAvailable)
                 {
                     return ds;
                 }

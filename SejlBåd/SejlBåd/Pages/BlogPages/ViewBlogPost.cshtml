@@ -1,0 +1,151 @@
+﻿@page
+@model SejlBåd.Pages.BlogPages.ViewBlogPostModel
+@{
+}
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        color: #495057;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .blog-post {
+        background-color: #ffffff;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .blog-post h2 {
+            color: #007bff;
+        }
+
+        .blog-post h5 {
+            color: #6c757d;
+        }
+
+        .blog-post h6 {
+            color: dimgray;
+            opacity: 0.7;
+        }
+
+    .button-container {
+        display: flex;
+        gap: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 10px; /* Reduced margin for smaller size */
+    }
+
+    label.form-label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px; /* Reduced padding for smaller size */
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        transition: border-color 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            color: #fff;
+        }
+
+    .comment-container {
+        border: 2px solid #f8f9fa; /* Match the page color */
+        border-radius: 8px;
+        padding: 20px; /* Increased padding for better separation */
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .comment {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+        .comment img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .comment p {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .comment strong {
+            font-weight: bold;
+        }
+</style>
+
+<div class="blog-post">
+    <h6>ID: @Model.blogs.Id</h6>
+    <h2>@Model.blogs.BlogPostTitle</h2>
+    <h5>@Model.blogs.BlogPostSubtext</h5>
+    <div class="button-container">
+        <!-- Add any buttons or controls here if needed -->
+    </div>
+    <hr />
+    <p>@Model.blogs.BlogPostText</p>
+</div>
+
+<div class="comment-container">
+    <h4>Comments:</h4>
+    @foreach (var comment in Model.blogs.Comments)
+    {
+        <div class="comment">
+            <img src="https://i.imgur.com/VPd6z2o.png" alt="User Avatar" width="30" height="30" />
+            <p><strong>@comment.Name:</strong> @comment.Message</p>
+        </div>
+    }
+</div>
+
+<hr /> <!-- Additional horizontal line for better separation -->
+
+<h4>Add Comment:</h4>
+<form method="post" asp-page-handler="AddComment">
+    <div class="form-group">
+        <label asp-for="NewComment.Name" class="form-label">Name:</label>
+        <input asp-for="NewComment.Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="NewComment.Message" class="form-label">Comment:</label>
+        <textarea asp-for="NewComment.Message" class="form-control" rows="4"></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add Comment</button>
+    </div>
+</form>
+<br />
+<br />

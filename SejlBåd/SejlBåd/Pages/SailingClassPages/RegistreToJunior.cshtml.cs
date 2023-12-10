@@ -10,12 +10,10 @@ namespace SejlBåd.Pages.SailingClassPages
         [BindProperty]
         public Models.User UserToClass { get; set; }
         
-       
-
 
         public RegistreSailingClassModel(ISailingClassService sailingClassService)
         {
-            _sailingClassService = sailingClassService;
+            _sailingClassService = sailingClassService; 
         }
 
         public IActionResult OnGet()
@@ -28,8 +26,8 @@ namespace SejlBåd.Pages.SailingClassPages
             {
                 return Page();
             }
-            _sailingClassService.AddUserToClass(UserToClass);
-            return RedirectToPage("GetAllSailingClasses");
+            _sailingClassService.AddUserToJuniorClass(UserToClass);
+            return RedirectToPage("SCReceipt");
         }
        
     }

@@ -60,11 +60,10 @@
         <p class="lead">
             Hillerød Sejlklub er en sejlklub beliggende i Hillerød, Danmark. Klubben blev grundlagt i 1882 og er en af de ældste sejlklubber i Danmark. Klubben har ca. 400 medlemmer og tilbyder sejlads for alle niveauer, fra begyndere til erfarne sejlere.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Tilmeld Hold</button>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Læs Mere</button>
-            <form method="post">
-                <input type="submit" class="btn btn-secondary btn-lg px-4" asp-page-handler="CheckDockSpot" />
-            </form>
+            <a asp-page="SailingClassPages/GetAllSailingClasses" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Tilmeld Hold</a>
+             <a type="button" class="btn btn-outline-secondary btn-lg px-4">Læs Mere</a>
+             <a type="submit" class="btn btn-secondary btn-lg px-4" asp-page="DockSpotPages/RentDockSpot" >Lej Båd</a>
+
         </div>
     </div>
 </div>

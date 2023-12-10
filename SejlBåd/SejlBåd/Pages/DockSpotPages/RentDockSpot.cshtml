@@ -50,13 +50,17 @@
 
         <p>
             <div id="rent-boat-site-rent-button">
-                <input type="submit" value="Rent" class="btn btn-primary" />
+                <input type="submit" value="Lej" class="btn btn-primary btn-lg" asp-route-id="@Model.Order"/>
             </div>
         </p>
 
     </form>
     <p>
-        <a type="button" asp-page="Index">Return</a>
+        <a type="button" asp-page="RentDockSpotExistingCustomer" class="btn btn-secondary btn-lg">Har mail</a>
     </p>
+    <p>
+        <a asp-area="" asp-page="/Index">gå tilbage</a>
+    </p>
+
 </div>
 

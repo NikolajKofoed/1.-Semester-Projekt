@@ -14,7 +14,7 @@ namespace SejlBåd.Pages.DockSpotPages
         private ICustomerService _customerService;
         [BindProperty] public DockSpot DockSpot { get; set; }
         [BindProperty] public User Customer { get; set; }
-
+        public Order Order { get; set; }
         public RentDockSpotModel(IDockSpotService dockSpotService, IOrderService orderService, ICustomerService customerService)
         {
             _orderService = orderService;
@@ -23,9 +23,12 @@ namespace SejlBåd.Pages.DockSpotPages
         }
 
 
-        public IActionResult OnGet(int id)
+        public IActionResult OnGet()
         {
-            DockSpot = _dockSpotService.GetDockSpot(id);
+            // if there are no more Available spots return another page
+            if (_dockSpotService.GetNextAvailableDockSpot() == null)
+                return RedirectToPage("TestPage");
+
             return Page();
 
         }
@@ -37,16 +40,23 @@ namespace SejlBåd.Pages.DockSpotPages
                 return Page();
             }
 
+            // if customer doesn't exist add customer
             if(_customerService.CheckForExistingUser(Customer.Email) == null)
             {
                 _customerService.CreateUser(Customer);
             }
-            
-            
-            _dockSpotService.RentSpot(Customer, DockSpot);
-            
-            
-            //_orderService.CreateOrderDockSpot(DockSpot, Customer);
+            else
+            {
+                // give feedback
+            }
+
+            // need to set dockspot again here or it will always be set to dockspot with id 1
+            DockSpot = _dockSpotService.GetNextAvailableDockSpot();
+
+            // rent spot and create order
+            _dockSpotService.RentSpot(Customer, DockSpot.Id);
+
+            Order = _orderService.CreateOrderDockSpot(DockSpot, Customer);
 
             return RedirectToPage("DockRentReceipt");
             
