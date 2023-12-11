@@ -61,5 +61,10 @@ namespace SejlBåd.Services.BoatService
                 }
             }
         }
+
+        void IBoatService.CreateBoatModel(Boat boat)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
