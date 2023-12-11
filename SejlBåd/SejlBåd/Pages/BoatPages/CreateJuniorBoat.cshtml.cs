@@ -10,7 +10,7 @@ namespace SejlBåd.Pages.BoatPages
         private IBoatService _boatservice;
         [BindProperty]
         public Models.Boat Boat { get; set; }
-        public CreateJuniorBoat (IBoatService BoatService)
+        public CreateBoatModel (IBoatService BoatService)
         {
             _boatservice = BoatService;
         }

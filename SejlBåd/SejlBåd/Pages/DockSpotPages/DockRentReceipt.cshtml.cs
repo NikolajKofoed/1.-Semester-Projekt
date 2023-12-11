@@ -16,10 +16,10 @@ namespace SejlBåd.Pages.DockSpotPages
         {
             _orderService = orderService;
         }
-        public IActionResult OnGet()
+        public IActionResult OnGet(int id)
         {
             //inconsistent way of doing, should be changed when possible
-            Order = _orderService.GetLatestOrder();
+            Order = _orderService.GetOrder(id);
             return Page();
         }
     }
