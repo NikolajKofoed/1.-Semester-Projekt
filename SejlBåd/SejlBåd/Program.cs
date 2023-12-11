@@ -1,4 +1,5 @@
 using SejlBåd.Models;
+using SejlBåd.Services.AccountServices;
 using SejlBåd.Services.BlogServices;
 using SejlBåd.Services.BoatService;
 using SejlBåd.Services.CustomerServices;
@@ -28,6 +29,8 @@ builder.Services.AddSingleton<ICustomerService, CustomerService>();
 builder.Services.AddTransient<JsonFileCustomerService>();
 builder.Services.AddSingleton<IBlogService, BlogService>();
 builder.Services.AddTransient<JsonFileBlogService>();
+builder.Services.AddSingleton<IAccountService, AccountService>();
+builder.Services.AddTransient<JsonFileAccountService>();
 
 
 var app = builder.Build();
