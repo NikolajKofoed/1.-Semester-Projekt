@@ -120,16 +120,7 @@
     <p>@Model.blogs.BlogPostText</p>
 </div>
 
-<div class="comment-container">
-    <h4>Comments:</h4>
-    @foreach (var comment in Model.blogs.Comments)
-    {
-        <div class="comment">
-            <img src="https://i.imgur.com/VPd6z2o.png" alt="User Avatar" width="30" height="30" />
-            <p><strong>@comment.Name:</strong> @comment.Message</p>
-        </div>
-    }
-</div>
+
 
 <hr /> <!-- Additional horizontal line for better separation -->
 
@@ -149,4 +140,14 @@
     </div>
 </form>
 <br />
+<div class="comment-container">
+    <h4>Comments:</h4>
+    @foreach (var comment in Model.blogs.Comments)
+    {
+        <div class="comment">
+            <img src="https://i.imgur.com/VPd6z2o.png" alt="User Avatar" width="30" height="30" />
+            <p><strong>@comment.Name:</strong> @comment.Message</p>
+        </div>
+    }
+</div>
 <br />
