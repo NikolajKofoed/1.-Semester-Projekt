@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SejlBåd.Services.BoatService;
-using SejlBåd.Services.EventServices;
+
 
 namespace SejlBåd.Pages.BoatPages
 {
@@ -17,7 +17,7 @@ namespace SejlBåd.Pages.BoatPages
         }
         public IActionResult OnGet(int id)
         {
-            _boatService = (IBoatService)_boatService.GetBoat(id);
+            _boatService = (IBoatService)_boatService.GetjuniorModel(id);
             if (juniorModel == null)
             {
                 return RedirectToPage("Junior");
@@ -28,12 +28,12 @@ namespace SejlBåd.Pages.BoatPages
         public IActionResult OnPost(int id)
         {
             juniorModel = _boatService.GetjuniorModel(id);
-            Models.Junior deletedJunior = _boatService.DeleteJunior(JuniorId);
+            Models.Junior deletedJunior = _boatService.DeleteJunior(Id);
             if (deletedJunior == null)
             {
                 return Page();
             }
-            _boatService.DeleteJunior(JuniorModel.JuniorId);
+            _boatService.DeleteJunior(JuniorModel.Id);
 
             return RedirectToPage("Junior");
         }
