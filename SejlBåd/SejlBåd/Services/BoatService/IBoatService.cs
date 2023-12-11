@@ -10,10 +10,5 @@ namespace SejlBåd.Services.BoatService
          Boat? LookUpBoat(int Id);
          Boat GetBoat(int id);
          List<Boat> listOfBoats();
-        void CreateBoatModel(Boat boat);
-        void DeleteJunior(object boatId);
-        Boat DeleteJunior(object id);
-        JuniorModel GetjuniorModel(int id);
-        void DeleteJunior(object juniorId);
     }
 }

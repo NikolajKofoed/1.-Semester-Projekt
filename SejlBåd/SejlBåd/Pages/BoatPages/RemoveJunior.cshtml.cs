@@ -5,19 +5,19 @@ using SejlBåd.Services.BoatService;
 
 namespace SejlBåd.Pages.BoatPages
 {
-    public class DeleteJuniorModel : PageModel
+    public class RemoveJuniorModel : PageModel
     {
         private Services.BoatService.IBoatService _boatService;
         [BindProperty]
         public Models.JuniorModel juniorModel { get; set; }
 
-        public DeleteJuniorModel(IBoatService BoatService)
+        public RemoveJuniorModel(IBoatService BoatService)
         {
             _boatService = BoatService;
         }
         public IActionResult OnGet(int id)
         {
-            _boatService = (IBoatService)_boatService.GetjuniorModel(id);
+            _boatService = (IBoatService)_boatService.RemoveBoats(id);
             if (juniorModel == null)
             {
                 return RedirectToPage("Junior");
@@ -27,13 +27,13 @@ namespace SejlBåd.Pages.BoatPages
 
         public IActionResult OnPost(int id)
         {
-            juniorModel = _boatService.GetjuniorModel(id);
-            Models.Junior deletedJunior = _boatService.DeleteJunior(Id);
+            juniorModel = _boatService.GetJuniorModel(id);
+            Models.Junior deletedJunior = _boatService.RemoveJunior();
             if (deletedJunior == null)
             {
                 return Page();
             }
-            _boatService.DeleteJunior(JuniorModel.Id);
+            _boatService.RemoveJunior(juniorModel.Id);
 
             return RedirectToPage("Junior");
         }
