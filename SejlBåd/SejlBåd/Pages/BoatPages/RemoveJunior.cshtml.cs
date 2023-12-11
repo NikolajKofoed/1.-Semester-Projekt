@@ -35,7 +35,7 @@ namespace SejlBåd.Pages.BoatPages
             }
             _boatService.RemoveJunior(juniorModel.Id);
 
-            return RedirectToPage("Junior");
+            return RedirectToPage("/BoatPages/Boats");
         }
     }
 }
