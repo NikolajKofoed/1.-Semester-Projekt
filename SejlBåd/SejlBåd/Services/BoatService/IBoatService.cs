@@ -13,5 +13,6 @@ namespace SejlBåd.Services.BoatService
         JuniorModel GetJuniorModel(int id);
         void RemoveJunior(object id);
         JuniorModel RemoveJuniorModel();
+        IBoatService RemoveBoats(int id);
     }
 }
