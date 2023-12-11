@@ -11,13 +11,15 @@ namespace SejlBåd.Pages.DockSpotPages
 {
     public class RentDockSpotExistingCustomerModel : PageModel
     {
-        private ICustomerService _customerService;
+        public ICustomerService _customerService;
         private IDockSpotService _dockSpotService;
         private IOrderService _orderService;
         
         public User Customer { get; set; }
+        [Required(ErrorMessage = "angiv en mail")]
         [BindProperty] public string CustomerEmail { get; set; }
         public DockSpot DockSpot { get; set; }
+        public Order Order { get; set; }
 
 
         public RentDockSpotExistingCustomerModel(ICustomerService customerService, IDockSpotService dockSpotService, IOrderService orderService)
@@ -26,11 +28,10 @@ namespace SejlBåd.Pages.DockSpotPages
             _dockSpotService = dockSpotService;
             _orderService = orderService;
         }
-        public IActionResult OnGet()
+        public IActionResult OnGet(int id)
         {
             // if there are no more dockspots available redirect to another page
-            if (_dockSpotService.GetNextAvailableDockSpot() == null)
-                return RedirectToPage("TestPage");
+            DockSpot = _dockSpotService.GetDockSpot(id);
             
             return Page();
         }
@@ -49,16 +50,18 @@ namespace SejlBåd.Pages.DockSpotPages
             }
             else
             {
+
                 return Page();
             }
+
             DockSpot = _dockSpotService.GetNextAvailableDockSpot();
 
 
             // rent boat and create save order
             _dockSpotService.RentSpot(Customer, DockSpot.Id);
-            _orderService.CreateOrderDockSpot(DockSpot, Customer);
+            Order = _orderService.CreateOrderDockSpot(DockSpot, Customer);
 
-            return RedirectToPage("DockRentReceipt");
+            return RedirectToPage("DockRentReceipt", new { Order.Id});
             
         }
     }

@@ -13,21 +13,23 @@ namespace SejlBåd.Models
         public string BlogPostSubtext { get; set; }
         [BindProperty]
         public string BlogPostText { get; set; }
+        [BindProperty]
+        public List<Comment> Comments { get; set; }
 
         public Blog(string blogTitle, string blogDescription, string blogText)
         {
-            Id = nextId++;
             BlogPostTitle = blogTitle;
             BlogPostSubtext = blogDescription;
             BlogPostText = blogText;
+            Comments = new List<Comment>();
         }
 
         public Blog()
         {
-            Id = nextId++;
             BlogPostTitle = "Placeholder Post Title";
             BlogPostSubtext = "Placeholder Description";
             BlogPostText = "Placeholder Post Text";
+            Comments = new List<Comment>();
         }
     }
 }

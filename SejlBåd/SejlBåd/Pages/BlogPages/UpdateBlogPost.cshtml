@@ -3,31 +3,91 @@
 @{
 }
 
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        color: #495057;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .control-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        transition: border-color 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            color: #fff;
+        }
+
+    .back-link-container {
+        margin-top: 10px;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        a:hover {
+            color: #0056b3;
+        }
+</style>
+
 <form method="post">
     <div class="form-group">
-        <label asp-for="@Model.BlogPost.Id" class="control-lable">ID</label>
+        <label asp-for="@Model.BlogPost.Id" class="control-label">ID</label>
         <input asp-for="@Model.BlogPost.Id" class="form-control" readonly="@(true)" />
     </div>
     <div class="form-group">
-        <label asp-for="@Model.BlogPost.BlogPostTitle" class="control-lable">Titlen:</label>
+        <label asp-for="@Model.BlogPost.BlogPostTitle" class="control-label">Titlen:</label>
         <input asp-for="@Model.BlogPost.BlogPostTitle" class="form-control" />
         <span asp-validation-for="@Model.BlogPost.BlogPostTitle" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="@Model.BlogPost.BlogPostSubtext" class="control-lable">Undertitlen:</label>
+        <label asp-for="@Model.BlogPost.BlogPostSubtext" class="control-label">Undertitlen:</label>
         <input asp-for="@Model.BlogPost.BlogPostSubtext" class="form-control" />
         <span asp-validation-for="@Model.BlogPost.BlogPostSubtext" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="@Model.BlogPost.BlogPostText" class="control-lable">Tekst:</label>
-        <textarea asp-for="@Model.BlogPost.BlogPostText" class="form-control" rows="12" />@Model.BlogPost.BlogPostText</textarea>
+        <label asp-for="@Model.BlogPost.BlogPostText" class="control-label">Tekst:</label>
+        <textarea asp-for="@Model.BlogPost.BlogPostText" class="form-control" rows="12"></textarea>
         <span asp-validation-for="@Model.BlogPost.BlogPostText" class="text-danger"></span>
     </div>
-    <br />
     <div class="form-group">
         <input type="submit" value="Opdatér Blogindlæg" class="btn btn-primary" />
     </div>
 </form>
-<div style="margin-top:5px">
+
+<div class="back-link-container">
     <a asp-page="/BlogPages/GetAllBlogPosts">Gå tilbage til bloggen</a>
 </div>

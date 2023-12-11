@@ -10,7 +10,6 @@ namespace SejlBåd.Services.BoatService
          Boat? LookUpBoat(int Id);
          Boat GetBoat();
          List<Boat> listOfBoats();
-
-
+        void CreateBoatModel(Boat boat);
     }
 }

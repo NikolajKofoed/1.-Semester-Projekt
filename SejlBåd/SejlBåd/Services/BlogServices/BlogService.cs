@@ -8,6 +8,17 @@ namespace SejlBåd.Services.BlogServices
         private JsonFileBlogService _jsonBlogService;
 
 
+        private int NextBlogId()
+        {
+            var maxId = 0;
+            foreach (var blog in _posts)
+            {
+                if (maxId < blog.Id)
+                    maxId = blog.Id;
+            }
+            return maxId + 1;
+        }
+
         public BlogService(JsonFileBlogService jsonBlogService)
         {
             _jsonBlogService = jsonBlogService;
@@ -15,11 +26,18 @@ namespace SejlBåd.Services.BlogServices
         }
         public List<Blog> GetBlogPosts()
         {
-            return _posts;
+            var reversePosts = new List<Blog>();
+            for (var i = _posts.Count - 1; i >= 0; i--)
+            {
+                reversePosts.Add(_posts[i]);
+            }
+
+            return reversePosts;
         }
 
         public void AddBlogPost(Blog blog)
         {
+            blog.Id = NextBlogId();
             _posts.Add(blog);
             _jsonBlogService.SaveJsonBlogData(_posts);
         }
@@ -41,13 +59,13 @@ namespace SejlBåd.Services.BlogServices
             }
         }
 
-        Blog IBlogService.GetBlogPost(int blogId)
+        public Blog GetBlogPost(int blogId)
         {
-            foreach (var i in _posts)
+            foreach (var blog in _posts)
             {
-                if (i.Id == blogId)
+                if (blog.Id == blogId)
                 {
-                    return i;
+                    return blog;
                 }
             }
             return null;
@@ -65,6 +83,26 @@ namespace SejlBåd.Services.BlogServices
                 }
             }
             return null;
+        }
+
+        public List<Comment> GetCommentsForBlogPost(int blogId)
+        {
+            var blog = GetBlogPost(blogId);
+            return blog?.Comments;
+
+        }
+
+        public void AddCommentToBlog(int blogId, Comment comment)
+        {
+            var blog = GetBlogPost(blogId);
+
+            if (blog != null)
+            {
+                comment.Id = Comment.nextId++;
+                blog.Comments ??= new List<Comment>();
+                blog.Comments.Add(comment);
+                _jsonBlogService.SaveJsonBlogData(_posts);
+            }
         }
     }
 }

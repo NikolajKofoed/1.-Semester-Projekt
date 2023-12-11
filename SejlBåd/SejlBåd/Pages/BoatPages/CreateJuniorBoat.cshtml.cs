@@ -1,12 +1,32 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SejlBåd.Services.BoatService;
+using SejlBåd.Services.EventServices;
 
 namespace SejlBåd.Pages.BoatPages
 {
-    public class CreatBoatModel : PageModel
+    public class CreateBoatModel : PageModel
     {
-        public void OnGet()
+        private IBoatService _boatservice;
+        [BindProperty]
+        public Models.Boat Boat { get; set; }
+        public CreateBoatModel (IBoatService BoatService)
         {
+            _boatservice = BoatService;
+        }
+        public IActionResult OnGet()
+        {
+            return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+           _boatservice.AddBoats(Boat); 
+            return RedirectToPage("/BoatPages/Boats");
         }
     }
 }

@@ -76,3 +76,18 @@ body {
         border-radius: 20px;
         box-sizing: border-box;
     }
+
+
+.make-picture {
+    background-image: url(https://i.imgur.com/h5fss8A.jpg);
+    background-size: 100%;
+    background-repeat:no-repeat;
+    border-radius: 5px;
+    height: 800px;
+    
+
+}
+
+.index-make-picture{
+    text-align: left;
+}
