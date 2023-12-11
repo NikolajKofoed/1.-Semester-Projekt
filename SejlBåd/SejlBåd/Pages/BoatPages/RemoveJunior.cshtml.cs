@@ -28,12 +28,12 @@ namespace SejlBåd.Pages.BoatPages
         public IActionResult OnPost(int id)
         {
             juniorModel = _boatService.GetJuniorModel(id);
-            Models.Junior deletedJunior = _boatService.RemoveJunior();
-            if (deletedJunior == null)
+            Models.JuniorModel RemoveJunior = _boatService.RemoveJuniorModel();
+            if (RemoveJunior == null)
             {
                 return Page();
             }
-            _boatService.RemoveJunior(juniorModel.Id);
+            _boatService.RemoveJunior(juniorModel);
 
             return RedirectToPage("/BoatPages/Boats");
         }
