@@ -7,7 +7,7 @@ namespace SejlBåd.Pages.Account.Register
 {
     public class DateAndCountryModel : PageModel
     {
-        public Models.Account Account { get; set; }
+        [BindProperty] public Models.Account Account { get; set; }
         [BindProperty] public string Country { get; set; }
 
         [BindProperty] public DateOnly BirthDate { get; set; }
@@ -23,9 +23,9 @@ namespace SejlBåd.Pages.Account.Register
             return Page();
         }
 
-        public IActionResult OnPost(int id)
+        public IActionResult OnPost()
         {
-            Account = _accountService.GetDummyAccount(id);
+            Account = _accountService.CreateDummyAccount(Account);
 
             if (!ModelState.IsValid)
                 return Page();

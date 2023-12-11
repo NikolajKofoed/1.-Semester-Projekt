@@ -34,6 +34,10 @@ builder.Services.AddTransient<JsonFileBlogService>();
 builder.Services.AddSingleton<IAccountService, AccountService>();
 builder.Services.AddTransient<JsonFileAccountService>();
 builder.Services.AddTransient<JsonFileContactService>();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+});
 
 
 var app = builder.Build();
@@ -47,7 +51,9 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles(); 
+app.UseStaticFiles();
+
+app.UseSession();
 
 app.UseRouting();
 

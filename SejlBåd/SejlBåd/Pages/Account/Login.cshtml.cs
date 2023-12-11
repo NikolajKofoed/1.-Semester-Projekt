@@ -8,6 +8,10 @@ namespace SejlBåd.Pages.Account
     {
         [BindProperty] public Models.Account Account { get; set; }
         private IAccountService _accountService;
+        [BindProperty]
+        public string UserName { get; set; }
+        [BindProperty]
+        public string Password { get; set; }
 
         public LoginModel(IAccountService accountService)
         {
@@ -16,17 +20,26 @@ namespace SejlBåd.Pages.Account
 
         public IActionResult OnGet()
         {
+            
             return Page();
         }
 
-        public IActionResult OnPostRegisterAccount()
+        public IActionResult OnPost()
         {
-            Account = _accountService.CreateDummyAccount(Account);
-
             if (!ModelState.IsValid)
                 return Page();
 
-            return RedirectToPage("Register/DateAndCountry", new {Account.Id});
+            Account = _accountService.Login(UserName, Password);
+
+            if (Account != null)
+            {
+                // Store user role in session or authentication cookie
+                HttpContext.Session.SetString("UserRole", Account.Role);
+            }
+            
+            return RedirectToPage("/Index", new { Account.Id });
+
         }
+
     }
 }

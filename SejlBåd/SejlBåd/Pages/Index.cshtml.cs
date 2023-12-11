@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SejlBåd.Models;
+using SejlBåd.Services.AccountServices;
 using SejlBåd.Services.DockSpotServices;
 using SejlBåd.Services.WeatherServices;
 
@@ -15,6 +16,8 @@ public class IndexModel : PageModel
     private IDockSpotService _dockSpotService;
 
     private LinkGenerator _linkGenerator;
+    private IAccountService _accountService;
+
 
     public Forecast TodaysForecast { get; set; }
     public string PathByPage { get; set; }
@@ -31,6 +34,7 @@ public class IndexModel : PageModel
 
     public async Task OnGet()
     {
+
         TodaysForecast = await _weatherService.GetTodaysForecast();
     }
 
