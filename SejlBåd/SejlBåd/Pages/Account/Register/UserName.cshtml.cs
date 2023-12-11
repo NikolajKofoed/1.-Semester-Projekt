@@ -7,7 +7,7 @@ namespace SejlBåd.Pages.Account.Register
     public class UserNameModel : PageModel
     {
         [BindProperty] public Models.Account Account { get; set; }
-        private IAccountService _accountService;
+        public IAccountService _accountService;
 
         [BindProperty]
         public string UserName { get; set; }
@@ -28,9 +28,14 @@ namespace SejlBåd.Pages.Account.Register
             if (!ModelState.IsValid)
                 return Page();
 
+            if (_accountService.SetUserName(Account.Id, UserName) == false)
+            {
+                return Page();
+            }
 
             _accountService.SetUserName(Account.Id, UserName);
             _accountService.CreateAccount(Account);
+
             return RedirectToPage("AccountCreatedNotice", new { Account.Id });
 
         }

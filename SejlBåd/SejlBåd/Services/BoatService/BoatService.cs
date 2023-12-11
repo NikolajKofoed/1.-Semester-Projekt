@@ -15,17 +15,17 @@ namespace SejlBåd.Services.BoatService
             boats = JsonFileBoatService.GetJsonBoats().ToList();
         }
 
-        void IBoatService.AddBoats(Boat boat)
+        public void AddBoats(Boat boat)
         {
             boats.Add(boat);
         }
 
-        Boat IBoatService.GetBoat()
+        public Boat GetBoat(int id)
         {
 
             foreach (var boat in boats)
             {
-                if ( boat.Length == 200)
+                if (boat.Id == id)
                 {
                     return boat;
                 }
@@ -37,7 +37,7 @@ namespace SejlBåd.Services.BoatService
             return boats;
         }
 
-        Boat? IBoatService.LookUpBoat(int Id)
+        public Boat? LookUpBoat(int Id)
         {
             foreach (var boat in boats)
             {
@@ -49,10 +49,10 @@ namespace SejlBåd.Services.BoatService
             return null;
         }
 
-        void IBoatService.RemoveBoats(Boat boat)
+        public void RemoveBoats(Boat boat)
 
         {
-           foreach (Boat b in boats)
+            foreach (Boat b in boats)
             {
                 if (boat == b)
                 {
@@ -62,7 +62,27 @@ namespace SejlBåd.Services.BoatService
             }
         }
 
-        void IBoatService.CreateBoatModel(Boat boat)
+        public void CreateBoatModel(Boat boat)
+        {
+            throw new NotImplementedException();
+        }
+
+        JuniorModel IBoatService.GetJuniorModel(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IBoatService.RemoveJunior(object id)
+        {
+            throw new NotImplementedException();
+        }
+
+        JuniorModel IBoatService.RemoveJuniorModel()
+        {
+            throw new NotImplementedException();
+        }
+
+        IBoatService IBoatService.RemoveBoats(int id)
         {
             throw new NotImplementedException();
         }

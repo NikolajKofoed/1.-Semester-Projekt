@@ -15,7 +15,7 @@ namespace SejlBåd.Services.AccountServices
         }
 
 
-
+        // create account
         public void CreateAccount(Account account)
         {
             _accounts.Add(account);
@@ -23,12 +23,32 @@ namespace SejlBåd.Services.AccountServices
 
         }
 
+        #region Account Methods
+        //account methods
 
+        public List<Account> GetAccounts()
+        {
+            return _accounts;
+        }
         public Account GetAccount(int id)
         {
             return _dummyAccounts.FirstOrDefault(account => account.Id == id);
         }
 
+        public Account Login(string userName, string password)
+        {
+            if(!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(password))
+            {
+                // check for matching account
+                return _accounts.FirstOrDefault(value => value.UserName == userName && value.Password == password);
+            }
+            return null;
+        }
+
+        #endregion
+
+
+        #region Dummy Account Methods
         // dummy account methods
         void IAccountService.AddDummyAccount(Account account)
         {
@@ -36,6 +56,11 @@ namespace SejlBåd.Services.AccountServices
             {
                 _dummyAccounts.Add(account);
             }
+        }
+
+        public List<Account> GetDummyAccounts()
+        {
+            return _dummyAccounts;
         }
 
         public Account CreateDummyAccount(Account account)
@@ -102,8 +127,15 @@ namespace SejlBåd.Services.AccountServices
             }
         }
 
-        void IAccountService.SetUserName(int id, string userName)
+        bool IAccountService.SetUserName(int id, string userName)
         {
+            foreach(var acc in _accounts)
+            {
+                if(acc.UserName == userName)
+                {
+                    return false;
+                }
+            }
             foreach(var ac in _dummyAccounts)
             {
                 if(ac.Id == id)
@@ -111,7 +143,9 @@ namespace SejlBåd.Services.AccountServices
                     ac.UserName = userName;
 
                 }
-            }        
+            }
+            return true;
         }
+        #endregion
     }
 }

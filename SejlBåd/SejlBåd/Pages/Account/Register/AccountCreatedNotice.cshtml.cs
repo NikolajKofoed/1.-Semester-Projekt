@@ -16,7 +16,7 @@ namespace SejlBåd.Pages.Account.Register
 
         public void OnGet(int id)
         {
-            Account = _accountService.GetAccount(id);
+            Account = _accountService.GetDummyAccount(id);
         }
     }
 }
