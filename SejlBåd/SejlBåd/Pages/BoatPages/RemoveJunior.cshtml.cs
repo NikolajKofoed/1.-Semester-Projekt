@@ -39,4 +39,4 @@ namespace SejlBåd.Pages.BoatPages
         }
     }
 }
-}
+

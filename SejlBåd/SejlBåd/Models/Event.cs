@@ -5,7 +5,7 @@ namespace SejlBåd.Models
     public class Event
     {
         private static int _nextId = 1;
-        [BindProperty]
+        [BindProperty] 
         public int EventId { get; set; }
         [BindProperty]
         public string EventName { get; set; }
