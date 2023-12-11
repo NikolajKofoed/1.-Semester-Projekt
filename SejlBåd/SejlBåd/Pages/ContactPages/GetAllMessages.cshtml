@@ -1,0 +1,111 @@
+﻿@page
+@model SejlBåd.Pages.ContactPages.GetAllMessagesModel
+@{
+}
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        color: #495057;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        text-align: center;
+        color: #007bff;
+        margin-bottom: 20px;
+    }
+
+    .blog-post {
+        background-color: #ffffff;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .blog-post h2 {
+            color: #007bff;
+        }
+
+        .blog-post h5 {
+            color: #6c757d;
+        }
+
+    .button-container,
+    .create-button-container {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+        .button-container a.btn,
+        .create-button-container a.btn-primary {
+            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .button-container a.btn-primary,
+        .create-button-container a.btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+        }
+
+            .create-button-container a.btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+                color: #fff;
+            }
+
+        .button-container a.btn-danger,
+        .button-container a.btn-danger:hover {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            color: #fff;
+        }
+
+        /* Different colors for View Comments and View Blog Post buttons */
+        .button-container a.btn-view-blog-post,
+        .button-container a.btn-view-blog-post:hover {
+            background-color: #28a745;
+            border-color: #28a745;
+            color: #fff;
+        }
+
+        .button-container a.btn-view-comments,
+        .button-container a.btn-view-comments:hover {
+            background-color: #ff5733;
+            border-color: #ff5733;
+            color: #fff;
+        }
+</style>
+
+<h1>Beskeder</h1>
+
+@if (Model.ContactService.GetAllMessages() != null)
+{
+    foreach (var contacts in Model.ContactService.GetAllMessages())
+    {
+        <div class="blog-post">
+            <h6 style="color: dimgray; opacity: 0.7;">ID: @contacts.Id</h6>
+            <h2>@contacts.LastName, @contacts.FirstName</h2>
+            <p>@contacts.Message</p>
+            <div class="button-container">
+                <a class="btn btn-view-blog-post btn-sm" type="button" asp-page="ViewMessage" asp-route-id="@contacts.Id">Besvar</a>
+                <a class="btn btn-danger btn-sm" type="button" asp-page="DeleteMessage" asp-route-id="@contacts.Id">Slet</a>
+@*                 <a class="btn btn-view-comments btn-sm" type="button" asp-page="ViewComments" asp-route-id="@blogs.Id">View Comments</a>
+                 <a class="btn btn-primary btn-sm" type="button" asp-page="UpdateBlogPost" asp-route-id="@blogs.Id">Redigér</a> *@
+            </div>
+        </div>
+    }
+}
+<!-- For at knappen "Opret nyt indlæg" ikke clasher med footer -->
+<br />
+<br />

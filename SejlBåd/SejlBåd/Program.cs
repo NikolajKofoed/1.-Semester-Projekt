@@ -2,6 +2,7 @@ using SejlBåd.Models;
 using SejlBåd.Services.AccountServices;
 using SejlBåd.Services.BlogServices;
 using SejlBåd.Services.BoatService;
+using SejlBåd.Services.ContactService;
 using SejlBåd.Services.CustomerServices;
 using SejlBåd.Services.DockSpotServices;
 using SejlBåd.Services.EventServices;
@@ -17,6 +18,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddTransient<JsonFileBoatService>();
 builder.Services.AddSingleton<IDockSpotService, DockSpotService>();
 builder.Services.AddTransient<IWeatherService, WeatherService>();
+builder.Services.AddSingleton<IContactService, ContactService>();
 builder.Services.AddSingleton<IBoatService, BoatService>();
 builder.Services.AddTransient<JsonFileDockSpotService>();
 builder.Services.AddSingleton<IEventService, EventService>();
@@ -31,6 +33,7 @@ builder.Services.AddSingleton<IBlogService, BlogService>();
 builder.Services.AddTransient<JsonFileBlogService>();
 builder.Services.AddSingleton<IAccountService, AccountService>();
 builder.Services.AddTransient<JsonFileAccountService>();
+builder.Services.AddTransient<JsonFileContactService>();
 
 
 var app = builder.Build();
