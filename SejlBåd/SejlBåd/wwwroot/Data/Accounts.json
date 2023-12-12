@@ -1,4 +1,5 @@
-[{"Id":1,"Password":"trallaal","UserName":"Jamie oliver: Grise i Krise jule edition","Country":"dnemark","DateOfBirth":"0001-01-01","FirstName":"nikolaj","LastName":"kofoed","Email":"askjhdhjk","PhoneNumber":"786234","Role":"User"},{"Id":2,"Password":"jkadsjkdsa","UserName":"guine","Country":"denmark","DateOfBirth":"0001-01-01","FirstName":"jbkashjk","LastName":"jkdashkjs","Email":"uniqueemail","PhoneNumber":"123123123","Role":"User"},{"Id":3,"Password":"asdasd","UserName":"asdasd","Country":"sda","DateOfBirth":"0001-01-01","FirstName":"adsads","LastName":"adasd","Email":"hero","PhoneNumber":"asd","Role":"User"},{"Id":4,"Password":"asdasdsa","UserName":"asdasdsa","Country":"adasd","DateOfBirth":"0001-01-01","FirstName":"asdsasda","LastName":"daasdsad","Email":"asdasd","PhoneNumber":"dasdasd","Role":"User"},{"Id":5,"Password":"asdasd","UserName":"Guine","Country":"asdasd","DateOfBirth":"0001-01-01","FirstName":"asdasd","LastName":"asdasd","Email":"asd","PhoneNumber":"asdad","Role":"User"},{"Id":6,"Password":"123","UserName":"nik","Country":"Denmark","DateOfBirth":"0001-01-01","FirstName":"asdasd","LastName":"asdasd","Email":"asd","PhoneNumber":"asdad","Role":"User"},{"Id":7,"Password":"123","UserName":"Nik","Country":"denamrk","DateOfBirth":"0001-01-01","FirstName":"kata","LastName":"rina","Email":"jhkdfshjk","PhoneNumber":"jkhsdjhksdf","Role":"Admin"},{"Id":8,"Password":"ksdfjksdlf","UserName":"jsdkjfs","Country":"denmar","DateOfBirth":"0001-01-01","FirstName":"jkhdsfhjk","LastName":"jhksdhjkfds","Email":"hdsfjhkdf","PhoneNumber":"kjshjdsf","Role":"User"},{"Id":9,"Password":"dfshjkdsfhjk","UserName":"jkdsfhjkdsfjk","Country":"jdfsjkh","DateOfBirth":"0001-01-01","FirstName":"jkhsdhjk","LastName":"jksdhjkdsf","Email":"hjksdhjkdfs","PhoneNumber":"jhksdjhkdf","Role":"User"},{"Id":10,"Password":"hjksdfjdfhjk","UserName":"bjsdfbd","Country":"asdasd","DateOfBirth":"0001-01-01","FirstName":"jkhdsfhjkdhjk","LastName":"hjkshjdkhjkds","Email":"jkdfshjkdhjk","PhoneNumber":"jkdshjkdfhj","Role":"User"},{"Id":11,"Password":"sdfdsfdf","UserName":"sdffsdfdsf","Country":"nbmsdfbnmbnm","DateOfBirth":"0001-01-01","FirstName":"kjsdfbdsfhjk","LastName":"jbsdfjdsfjk","Email":"bdsfbnbnm","PhoneNumber":"nbmsdbnmbndmf","Role":"User"}]  {
+[
+  {
     "Id": 1,
     "Password": "trallaal",
     "UserName": "Jamie oliver: Grise i Krise jule edition",
@@ -81,5 +82,53 @@
     "Email": "jhkdfshjk",
     "PhoneNumber": "jkhsdjhksdf",
     "Role": "Admin"
+  },
+  {
+    "Id": 8,
+    "Password": "ksdfjksdlf",
+    "UserName": "jsdkjfs",
+    "Country": "denmar",
+    "DateOfBirth": "0001-01-01",
+    "FirstName": "jkhdsfhjk",
+    "LastName": "jhksdhjkfds",
+    "Email": "hdsfjhkdf",
+    "PhoneNumber": "kjshjdsf",
+    "Role": "User"
+  },
+  {
+    "Id": 9,
+    "Password": "dfshjkdsfhjk",
+    "UserName": "jkdsfhjkdsfjk",
+    "Country": "jdfsjkh",
+    "DateOfBirth": "0001-01-01",
+    "FirstName": "jkhsdhjk",
+    "LastName": "jksdhjkdsf",
+    "Email": "hjksdhjkdfs",
+    "PhoneNumber": "jhksdjhkdf",
+    "Role": "User"
+  },
+  {
+    "Id": 10,
+    "Password": "hjksdfjdfhjk",
+    "UserName": "bjsdfbd",
+    "Country": "asdasd",
+    "DateOfBirth": "0001-01-01",
+    "FirstName": "jkhdsfhjkdhjk",
+    "LastName": "hjkshjdkhjkds",
+    "Email": "jkdfshjkdhjk",
+    "PhoneNumber": "jkdshjkdfhj",
+    "Role": "User"
+  },
+  {
+    "Id": 11,
+    "Password": "sdfdsfdf",
+    "UserName": "sdffsdfdsf",
+    "Country": "nbmsdfbnmbnm",
+    "DateOfBirth": "0001-01-01",
+    "FirstName": "kjsdfbdsfhjk",
+    "LastName": "jbsdfjdsfjk",
+    "Email": "bdsfbnbnm",
+    "PhoneNumber": "nbmsdbnmbndmf",
+    "Role": "User"
   }
-]
+] 

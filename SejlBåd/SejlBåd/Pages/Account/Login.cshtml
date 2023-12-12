@@ -1,9 +1,35 @@
 ﻿@page
 @model SejlBåd.Pages.Account.LoginModel
 @{
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
 }
 
 
+@* <h2>loginpage</h2>
+
+
+<form method="post">
+    <div>
+        <label asp-for="UserName">User Name:</label>
+        <input asp-for="UserName" required/>
+        <br />
+        <label asp-for="Password">Password:</label>
+        <input asp-for="Password" required/>
+    </div>
+
+    <button type="submit">Login</button>
+</form>
+
+<p>
+    <a type="button" asp-page="Register/DateAndCountry">Register</a>
+</p> *@
 
 
 <center><h2>loginpage</h2></center>
@@ -23,11 +49,10 @@
                 <input asp-for="Password" required />
             </div>
         </div>
-
-        <p>
-            <a type="button" asp-page="Register/DateAndCountry">Register</a>
-        </p>
         <button type="submit">Login</button>
     </form>
+    <p>
+        <a type="button" asp-page="Register/DateAndCountry">Register</a>
+    </p>
 
 </div>

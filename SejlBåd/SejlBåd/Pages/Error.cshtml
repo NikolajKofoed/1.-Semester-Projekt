@@ -2,6 +2,14 @@
 @model ErrorModel
 @{
     ViewData["Title"] = "Error";
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
 }
 
 <h1 class="text-danger">Error.</h1>

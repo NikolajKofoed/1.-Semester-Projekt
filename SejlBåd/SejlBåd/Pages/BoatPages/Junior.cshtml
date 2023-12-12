@@ -1,6 +1,14 @@
 ﻿@page
 @model SejlBåd.Pages.BoatPages.JuniorModel
 @{
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
 }
 
 <center><h1>Junior</h1></center>

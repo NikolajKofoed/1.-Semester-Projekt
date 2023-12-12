@@ -1,7 +1,16 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+
+    if(HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if(HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
+
 }
 
 
@@ -87,7 +96,7 @@
                 <p>Vi sætter pris på din interesse! Hvis du har spørgsmål eller kommentarer, er du mere end velkommen til at kontakte os. Du kan nå os via e-mail på [e-mail-adresse] eller ved at ringe til os på [telefonnummer].</p>
             </div>
             <div class="mt-auto text-center">
-                <a href="#link" class="btn btn-primary" role="button">Klik her for mere</a>
+                <a asp-page="/ContactPages/CreateNewMessage" class="btn btn-primary" role="button">Klik her for mere</a>
             </div>
         </div>
         <div class="col-md-4 d-flex flex-column justify-content-between mx-auto">

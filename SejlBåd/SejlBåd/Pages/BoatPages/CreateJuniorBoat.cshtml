@@ -1,6 +1,14 @@
 ﻿@page
 @model SejlBåd.Pages.BoatPages.CreateBoatModel
 @{
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
 }
 @* <form method="post">
     <div class="form-group">
