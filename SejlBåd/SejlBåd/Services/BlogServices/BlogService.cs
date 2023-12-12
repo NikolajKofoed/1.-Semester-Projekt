@@ -5,6 +5,7 @@ namespace SejlBåd.Services.BlogServices
     public class BlogService : IBlogService
     {
         private List<Models.Blog> _posts = MockData.BlogMockData.MockBlog.GetBlogPosts();
+        private Blog Blog { get; set; }
         private JsonFileBlogService _jsonBlogService;
 
 
@@ -103,6 +104,12 @@ namespace SejlBåd.Services.BlogServices
                 blog.Comments.Add(comment);
                 _jsonBlogService.SaveJsonBlogData(_posts);
             }
+        }
+
+        public Blog GetCurrentDate(Blog blog)
+        {
+            blog.DatePublished = DateTime.Now;
+            return blog;
         }
     }
 }

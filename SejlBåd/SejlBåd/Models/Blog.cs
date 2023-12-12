@@ -15,7 +15,8 @@ namespace SejlBåd.Models
         public string BlogPostText { get; set; }
         [BindProperty]
         public List<Comment> Comments { get; set; }
-
+        [BindProperty]
+        public DateTime DatePublished { get; set; }
         public Blog(string blogTitle, string blogDescription, string blogText)
         {
             BlogPostTitle = blogTitle;
