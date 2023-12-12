@@ -30,7 +30,6 @@ namespace SejlBåd.Pages.DockSpotPages
         }
         public IActionResult OnGet(int id)
         {
-            // if there are no more dockspots available redirect to another page
             DockSpot = _dockSpotService.GetDockSpot(id);
             
             return Page();

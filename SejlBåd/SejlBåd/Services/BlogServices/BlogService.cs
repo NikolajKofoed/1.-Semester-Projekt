@@ -5,6 +5,7 @@ namespace SejlBåd.Services.BlogServices
     public class BlogService : IBlogService
     {
         private List<Models.Blog> _posts = MockData.BlogMockData.MockBlog.GetBlogPosts();
+        private Blog Blog { get; set; }
         private JsonFileBlogService _jsonBlogService;
 
 
@@ -38,6 +39,7 @@ namespace SejlBåd.Services.BlogServices
         public void AddBlogPost(Blog blog)
         {
             blog.Id = NextBlogId();
+            blog.DatePublished = DateTime.Now;
             _posts.Add(blog);
             _jsonBlogService.SaveJsonBlogData(_posts);
         }
@@ -51,7 +53,6 @@ namespace SejlBåd.Services.BlogServices
                     if (i.Id == blog.Id)
                     {
                         i.BlogPostTitle = blog.BlogPostTitle;
-                        i.BlogPostSubtext = blog.BlogPostSubtext;
                         i.BlogPostText = blog.BlogPostText;
                     }
                 }
@@ -103,6 +104,10 @@ namespace SejlBåd.Services.BlogServices
                 blog.Comments.Add(comment);
                 _jsonBlogService.SaveJsonBlogData(_posts);
             }
+        }
+
+        public void GetCurrentDate()
+        {
         }
     }
 }

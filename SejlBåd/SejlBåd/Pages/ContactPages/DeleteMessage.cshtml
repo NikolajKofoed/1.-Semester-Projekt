@@ -1,6 +1,14 @@
 ﻿@page
 @model SejlBåd.Pages.ContactPages.DeleteMessageModel
 @{
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
 }
 
 <h1>Bekræft handling</h1>

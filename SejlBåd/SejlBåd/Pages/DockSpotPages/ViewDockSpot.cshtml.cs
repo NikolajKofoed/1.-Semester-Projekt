@@ -17,9 +17,16 @@ namespace SejlBåd.Pages.DockSpotPages
             _dockSpotService = dockSpotService;
             _orderService = orderService;
         }
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            var userRole = HttpContext.Session.GetString("UserRole");
+
+            if (string.IsNullOrEmpty(userRole) || userRole != "Admin")
+            {
+                return RedirectToPage("/AuthenticationFailed");
+            }
             DockSpots = _dockSpotService.GetDockSpots();
+            return Page();
         }
     }
 }

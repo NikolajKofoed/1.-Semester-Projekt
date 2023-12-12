@@ -1,5 +1,5 @@
 ﻿@page
-@model SejlBåd.Pages.Account.HiddenModel
+@model SejlBåd.Pages.Account.LogoutModel
 @{
     if (HttpContext.Session.GetString("UserRole") == "User")
     {
@@ -11,4 +11,9 @@
     }
 }
 
-<h2>GoatSexBirdMan</h2>
+
+<h2>log out</h2>
+
+<form method="post">
+    <button type="submit" class="btn btn-primary">Bekræft</button>
+</form>

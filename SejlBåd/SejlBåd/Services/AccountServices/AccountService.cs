@@ -14,10 +14,20 @@ namespace SejlBåd.Services.AccountServices
             _accounts = _jsonFileAccountService.GetJsonAccounts().ToList();
         }
 
-
+        private int NextAccountId()
+        {
+            var maxId = 0;
+            foreach (var acc in _accounts)
+            {
+                if (maxId < acc.Id)
+                    maxId = acc.Id;
+            }
+            return maxId + 1;
+        }
         // create account
         public void CreateAccount(Account account)
         {
+            account.Id = NextAccountId();
             _accounts.Add(account);
             _jsonFileAccountService.SaveJsonAccounts(_accounts);
 

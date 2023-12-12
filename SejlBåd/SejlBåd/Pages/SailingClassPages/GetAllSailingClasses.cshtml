@@ -1,6 +1,14 @@
 ﻿@page
 @model SejlBåd.Pages.SailingClassPages.GetAllSailingClassesModel
 @{
+	if (HttpContext.Session.GetString("UserRole") == "User")
+	{
+		ViewData["IsUser"] = true;
+	}
+	if (HttpContext.Session.GetString("UserRole") == "Admin")
+	{
+		ViewData["IsAdmin"] = true;
+	}
 }
 
 <center><h1>Sejladshold</h1></center>

@@ -1,87 +1,164 @@
 ﻿@page
 @model SejlBåd.Pages.BlogPages.CreateNewBlogPostModel
 @{
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
 }
 
 <style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f8f9fa;
-        color: #495057;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #495057;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .form-group {
-        margin-bottom: 15px;
-    }
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-    .form-label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
+        .form-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
 
-    .form-control {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ced4da;
-        border-radius: 8px;
-        transition: border-color 0.3s ease;
-    }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
 
-        .form-control:focus {
+            .form-control:focus {
+                border-color: #007bff;
+                outline: none;
+            }
+
+        .btn-primary {
+            background-color: #007bff;
             border-color: #007bff;
-            outline: none;
-        }
-
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-        color: #fff;
-        transition: background-color 0.3s ease;
-    }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
             color: #fff;
+            transition: background-color 0.3s ease;
         }
 
-    .back-link-container {
-        margin-top: 10px;
-    }
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+                color: #fff;
+            }
 
-    a {
-        color: #007bff;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-        a:hover {
-            color: #0056b3;
+        .back-link-container {
+            margin-top: 10px;
         }
-</style>
 
-<form method="post">
-    <div class="form-group">
-        <label asp-for="@Model.BlogPost.BlogPostTitle" class="form-label">Titel:</label>
-        <input asp-for="@Model.BlogPost.BlogPostTitle" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="@Model.BlogPost.BlogPostSubtext" class="form-label">Undertitel:</label>
-        <input asp-for="@Model.BlogPost.BlogPostSubtext" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="@Model.BlogPost.BlogPostText" class="form-label">Tekst:</label>
-        <textarea asp-for="@Model.BlogPost.BlogPostText" class="form-control" rows="12"></textarea>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Lav nyt indlæg</button>
-    </div>
-</form>
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-<div class="back-link-container">
-    <a asp-page="/BlogPages/GetAllBlogPosts">Gå tilbage til bloggen</a>
-</div>
+            a:hover {
+                color: #0056b3;
+            }
+
+        /* Visuel repræsentation af HTML-tags sektion */
+        #html-tags-section {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+            #html-tags-section code {
+                background-color: #f8f9fa;
+                padding: 2px 5px;
+                border-radius: 4px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+        /* Forhåndsvisningsområde */
+        #preview-area {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="@Model.BlogPost.BlogPostTitle" class="form-label">Titel:</label>
+            <input asp-for="@Model.BlogPost.BlogPostTitle" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.BlogPost.BlogPostText" class="form-label">Tekst:</label>
+            <textarea asp-for="@Model.BlogPost.BlogPostText" class="form-control" rows="12" id="blogPostText"></textarea>
+        <!-- Forhåndsvisningsområde -->
+        <div id="preview-area">
+            <label>Forhåndsvisning af tekst:</label>
+            <div id="preview-content"></div>
+        </div>
+
+            <!-- Tilføj en henvisning til HTML-tags -->
+            <small style="color: #6c757d; display: block; margin-top: 5px;">
+                Tip: Du kan bruge HTML-tags til tekstformatering.
+                <a href="#html-tags-section">Se tilgængelige HTML-tags</a>.
+            </small>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Lav nyt indlæg</button>
+        </div>
+    </form>
+
+    <!-- HTML-tags sektionen -->
+    <details id="html-tags-section">
+        <summary>HTML-Tags</summary>
+        <p>
+            <ul>
+                <li><code>&lt;p&gt;</code>: Afsnit</li>
+                <li><code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code>: Overskrifter (fra højeste til laveste niveau)</li>
+                <li><code>&lt;b&gt;</code>: Fed tekst</li>
+                <li><code>&lt;i&gt;</code>: Kursiv tekst</li>
+                <li><code>&lt;u&gt;</code>: Understreget tekst</li>
+                <li><code>&lt;strong&gt;</code>: Stærk betoning (typisk fed)</li>
+                <li><code>&lt;em&gt;</code>: Fremhævet tekst (typisk kursiv)</li>
+                <li><code>&lt;sub&gt;</code>: Sænket tekst</li>
+                <li><code>&lt;sup&gt;</code>: Hævet tekst</li>
+                <li><code>&lt;del&gt;</code>: Slettet tekst</li>
+                <li><code>&lt;ins&gt;</code>: Indsat tekst</li>
+                <li><code>&lt;mark&gt;</code>: Markeret tekst (typisk fremhævet)</li>
+                <li><code>&lt;small&gt;</code>: Mindre tekst</li>
+                <li><code>&lt;abbr&gt;</code>: Forkortelse</li>
+                <li><code>&lt;q&gt;</code>: Inline citat</li>
+                <li><code>&lt;blockquote&gt;</code>: Blok-citat</li>
+            </ul>
+        </p>
+    </details>
+    <br />
+    <br />
+
+<script>
+    // JavaScript til at opdatere forhåndsvisningsområdet
+    document.addEventListener('DOMContentLoaded', function () {
+        var textArea = document.getElementById('blogPostText');
+        var previewContent = document.getElementById('preview-content');
+
+        textArea.addEventListener('input', function () {
+            previewContent.innerText = textArea.value;
+        });
+    });
+</script>
+

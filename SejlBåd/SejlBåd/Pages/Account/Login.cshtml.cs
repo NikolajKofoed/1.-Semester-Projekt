@@ -7,7 +7,7 @@ namespace SejlBåd.Pages.Account
     public class LoginModel : PageModel
     {
         [BindProperty] public Models.Account Account { get; set; }
-        private IAccountService _accountService;
+        public IAccountService _accountService;
         [BindProperty]
         public string UserName { get; set; }
         [BindProperty]
@@ -20,7 +20,12 @@ namespace SejlBåd.Pages.Account
 
         public IActionResult OnGet()
         {
-            
+            var userRole = HttpContext.Session.GetString("UserRole");
+
+            if (userRole == "User" || userRole == "Admin")
+            {
+                return RedirectToPage("/AuthenticationFailed");
+            }
             return Page();
         }
 
@@ -31,13 +36,14 @@ namespace SejlBåd.Pages.Account
 
             Account = _accountService.Login(UserName, Password);
 
-            if (Account != null)
+            if(Account == null)
             {
-                // Store user role in session or authentication cookie
-                HttpContext.Session.SetString("UserRole", Account.Role);
+                return Page();
             }
+                // Store user role in session or authentication cookie
+            HttpContext.Session.SetString("UserRole", Account.Role);
             
-            return RedirectToPage("/Index", new { Account.Id });
+            return RedirectToPage("/Index");
 
         }
 

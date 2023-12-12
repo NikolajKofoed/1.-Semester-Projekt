@@ -5,57 +5,101 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SejlBåd</title>
+    <title>@ViewData["Title"] - Hillerød Sejlklub</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SejlBåd.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="~/css/DockSpot.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Boat.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/Account.css" asp-append-version="true" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">SejlBåd</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Hillerød Sejlklub</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Hjem</a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Kategorier
+                            </a>
+                           
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <!-- Dropdown items -->
+                                
+                                @if(ViewData["IsUser"] == null && ViewData["IsAdmin"] == null)
+                                {
+                                    <a class="dropdown-item" asp-area="" asp-page="/Account/Login">Login</a>
+                                }
+                                
+                                @if (ViewData["IsUser"] != null && (bool)ViewData["IsUser"] || ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+                                {
+                                    <a class="dropdown-item" asp-area="" asp-page="/Account/Logout">Logout</a>
+                                }
+                                <a class="dropdown-item" asp-area="" asp-page="/EventPages/Events">Begivenheder</a>
+                                <a class="dropdown-item" asp-area="" asp-page="/BlogPages/GetAllBlogPosts">Blog</a>
+                                <a class="dropdown-item" asp-area="" asp-page="/BoatPages/GetAllBoats">Både</a>
+                                <a class="dropdown-item" asp-area="" asp-page="/SailingClassPages/GetAllSailingClasses">Hold</a>
+                                <a class="dropdown-item" asp-area="" asp-page="/ContactPages/CreateNewMessage">Kontakt Klubben</a>
+
+                                @if (ViewData["IsUser"] != null && (bool)ViewData["IsUser"] || ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+                                {
+                                    <a class="dropdown-item" asp-area="" asp-page="/Account/Hidden">Kun For Medlemmer</a>
+                                }
+                                @if (ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+                                {
+                                    <a class="dropdown-item" asp-area="" asp-page="/DockSpotPages/ViewDockSpot">Båd Pladser</a>
+                                    <a class="dropdown-item" asp-area="" asp-page="/SailingClassPages/GetSailingCLassJuniors">Hold Oversigt</a>
+                                }
+                                
+                            </div>
                         </li>
-                        <li class="nav-item">
+                    </ul>
+                   
+                    
+                        @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/EventPages/Events">Begivenheder</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> * *@
+                      @*    <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/BlogPages/GetAllBlogPosts">Blog</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> *@
+                        @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/BoatPages/GetAllBoats">Både</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> *@
+                       @*  <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/SailingClassPages/GetAllSailingClasses">Hold</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> *@
+                       @*  <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/DockSpotPages/ViewDockSpot">Book Bådplads</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> *@
+                    @*     <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/SailingClassPages/GetSailingCLassJuniors">holdmedlemtest</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> *@
+                      @*   <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Account/Login">Login</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> *@
+                       @*  <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Logout">Logout</a>
+                        </li> *@
+                       @*  <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/ContactPages/CreateNewMessage">Kontakt Klubben</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Hidden">Kun For Medlemmer</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Hidden">OnlyFans</a>
                         </li>
+
                     </ul>
                 </div>
+                        </li> *@
+                       @*  <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Hidden">Kun For Medlemmer</a>
+                        </li> *@ 
             </div>
         </nav>
     </header>

@@ -10,16 +10,14 @@ namespace SejlBåd.Models
         [BindProperty]
         public string BlogPostTitle { get; set; }
         [BindProperty]
-        public string BlogPostSubtext { get; set; }
-        [BindProperty]
         public string BlogPostText { get; set; }
         [BindProperty]
         public List<Comment> Comments { get; set; }
-
+        [BindProperty]
+        public DateTime DatePublished { get; set; }
         public Blog(string blogTitle, string blogDescription, string blogText)
         {
             BlogPostTitle = blogTitle;
-            BlogPostSubtext = blogDescription;
             BlogPostText = blogText;
             Comments = new List<Comment>();
         }
@@ -27,9 +25,13 @@ namespace SejlBåd.Models
         public Blog()
         {
             BlogPostTitle = "Placeholder Post Title";
-            BlogPostSubtext = "Placeholder Description";
             BlogPostText = "Placeholder Post Text";
             Comments = new List<Comment>();
+        }
+
+        public override string ToString()
+        {
+            return $"{{{nameof(Id)}={Id.ToString()}, {nameof(BlogPostTitle)}={BlogPostTitle}, {nameof(BlogPostText)}={BlogPostText}, {nameof(Comments)}={Comments}, {nameof(DatePublished)}={DatePublished.ToString()}}}";
         }
     }
 }

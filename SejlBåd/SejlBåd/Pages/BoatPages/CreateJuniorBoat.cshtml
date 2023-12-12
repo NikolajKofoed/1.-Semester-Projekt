@@ -1,19 +1,27 @@
 ﻿@page
 @model SejlBåd.Pages.BoatPages.CreateBoatModel
 @{
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
 }
-<form method="post">
+@* <form method="post">
     <div class="form-group">
         <label class="control-lable">Id på båden</label>
-        <input asp-for="@Model.Boat" class="form-control" />
+        <label asp-for="@Model.Boat.BoatId" class="control-lable"></label>
+        <input asp-for="@Model.Boat.BoatId" class="form-control" />
     </div>
     <div class="form-group">
-        <label class="control-label">Type båd</label>
-        <input asp-for="@Model.Boat" class="form-control" />
+       <label class="control-lable">Id på båden</label>
+        <label asp-for="@Model.Boat.BoatName" class="control-lable"></label>
+        <input asp-for="@Model.Boat.BoatName" class="form-control" />
     </div>
-
-
     <div class="form-group">
-        <input type="submit" value="Opret ny båd" class="btn btn-primary" />
+        <input type="submit" value="Tilføj ny båd" class="btn btn-primary" />
     </div>
-</form>
+</form> *@

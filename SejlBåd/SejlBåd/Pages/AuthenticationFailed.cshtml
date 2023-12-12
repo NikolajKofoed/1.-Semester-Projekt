@@ -1,5 +1,5 @@
 ﻿@page
-@model SejlBåd.Pages.Account.HiddenModel
+@model SejlBåd.Pages.AuthenticationFailedModel
 @{
     if (HttpContext.Session.GetString("UserRole") == "User")
     {
@@ -11,4 +11,4 @@
     }
 }
 
-<h2>GoatSexBirdMan</h2>
+<h2>Authentication requirement not reached</h2>

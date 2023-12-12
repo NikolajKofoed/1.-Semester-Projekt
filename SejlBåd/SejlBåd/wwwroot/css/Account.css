@@ -1,0 +1,49 @@
+﻿body {
+}
+
+
+.account-register-form {
+    width: 100%;
+    height: 800px;
+    text-align: center;
+}
+
+.account-register-form label{
+    text-align: right;
+    width: 120px;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.account-register-form input{
+    box-shadow: 2px 2px darkblue;
+    margin-right: 100px;
+}
+
+.account-register-form button{
+border-radius: 5px;
+margin: 5px;
+margin-top: 15px;
+padding: 10px;
+width: 100px;
+box-shadow: 2px 2px gray;
+}
+
+.account-register-form button:hover{
+    background-color: lightgray;
+    box-shadow: 2px 2px lightblue;
+}
+
+.account-register-form form{
+    background-color: lightblue;
+    border-radius: 5px;
+    margin: 10px;
+    height: 400px;
+    margin-left: 380px;
+    margin-top: 100px;
+    width: 40%;
+}
+.account-register-form-input-label{
+    margin-top: 100px;
+    text-align:center;
+}

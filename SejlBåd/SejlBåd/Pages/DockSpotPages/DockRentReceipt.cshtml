@@ -1,6 +1,14 @@
 ﻿@page
 @model SejlBåd.Pages.DockSpotPages.DockRentReceiptModel
 @{
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
 }
 <center><h1>Thank You For Your Purchase!</h1></center>
 

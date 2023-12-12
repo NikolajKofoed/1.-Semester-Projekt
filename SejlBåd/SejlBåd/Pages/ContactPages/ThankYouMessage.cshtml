@@ -1,6 +1,14 @@
 ﻿@page
 @model SejlBåd.Pages.ContactPages.ThankYouMessageModel
 @{
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
 }
 
 <center><h1>Tak for din besked!</h1></center>

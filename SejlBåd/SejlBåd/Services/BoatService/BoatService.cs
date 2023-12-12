@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Routing.Constraints;
 using SejlBåd.Models;
+using SejlBåd.Pages.BoatPages;
 
 namespace SejlBåd.Services.BoatService
 {
@@ -49,7 +50,7 @@ namespace SejlBåd.Services.BoatService
             return null;
         }
 
-        public void RemoveBoats(Boat boat)
+        public void DeleteBoats(Boat boat)
 
         {
             foreach (Boat b in boats)
@@ -67,22 +68,38 @@ namespace SejlBåd.Services.BoatService
             throw new NotImplementedException();
         }
 
-        JuniorModel IBoatService.GetJuniorModel(int id)
+        //JuniorModel IBoatService.GetJuniorModel(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //JuniorModel IBoatService.DeleteJuniorModel()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        IBoatService IBoatService.DeleteBoats(int id)
         {
             throw new NotImplementedException();
         }
 
-        void IBoatService.RemoveJunior(object id)
+
+        void IBoatService.EditJuniorModel(Boat boat)
         {
             throw new NotImplementedException();
         }
 
-        JuniorModel IBoatService.RemoveJuniorModel()
+        JuniorBoat IBoatService.GetJuniorModel(int id)
         {
             throw new NotImplementedException();
         }
 
-        IBoatService IBoatService.RemoveBoats(int id)
+        JuniorBoat IBoatService.DeleteJuniorModel()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IBoatService.DeleteJunior(JuniorBoat boat)
         {
             throw new NotImplementedException();
         }

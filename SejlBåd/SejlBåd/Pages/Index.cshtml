@@ -1,7 +1,16 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+
+    if(HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if(HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
+
 }
 
 
@@ -61,8 +70,9 @@
             Hillerød Sejlklub er en sejlklub beliggende i Hillerød, Danmark. Klubben blev grundlagt i 1882 og er en af de ældste sejlklubber i Danmark. Klubben har ca. 400 medlemmer og tilbyder sejlads for alle niveauer, fra begyndere til erfarne sejlere.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             <a asp-page="SailingClassPages/GetAllSailingClasses" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Tilmeld Hold</a>
+            <a type="submit" class="btn btn-primary btn-lg px-4" asp-page="DockSpotPages/RentDockSpot">Lej Bådplads</a>
              <a type="button" class="btn btn-outline-secondary btn-lg px-4">Læs Mere</a>
-             <a type="submit" class="btn btn-secondary btn-lg px-4" asp-page="DockSpotPages/RentDockSpot" >Lej Båd</a>
+             
 
         </div>
     </div>
@@ -77,7 +87,15 @@
                 <p>Bliv en del af vores sejlfællesskab, hvor hver deltager er med til at forme og styrke vores sport. Ved at deltage støtter du ikke bare sejlsporten, men også et værdifuldt fællesskab med stærkt sammenhold og engagement.</p>
             </div>
             <div class="mt-auto text-center">
-                <a href="#link" class="btn btn-primary" role="button">Klik her for mere</a>
+                @if (ViewData["IsUser"] != null && (bool)ViewData["IsUser"] || ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+                {
+                    <a class="btn btn-secondary" role="button">Klik her for mere</a>
+                }
+                else
+                {
+                    <a asp-page="Account/Register/DateAndCountry" class="btn btn-primary" role="button">Klik her for mere</a>
+                }
+
             </div>
         </div>
         <div class="col-md-4 d-flex flex-column justify-content-between mx-auto">
@@ -87,7 +105,7 @@
                 <p>Vi sætter pris på din interesse! Hvis du har spørgsmål eller kommentarer, er du mere end velkommen til at kontakte os. Du kan nå os via e-mail på [e-mail-adresse] eller ved at ringe til os på [telefonnummer].</p>
             </div>
             <div class="mt-auto text-center">
-                <a href="#link" class="btn btn-primary" role="button">Klik her for mere</a>
+                <a asp-page="/ContactPages/CreateNewMessage" class="btn btn-primary" role="button">Klik her for mere</a>
             </div>
         </div>
         <div class="col-md-4 d-flex flex-column justify-content-between mx-auto">
@@ -97,7 +115,14 @@
                 <p>Som medlem af Hillerød Sejlklub får du adgang til vores faciliteter, aktiviteter og medlemsfordele. Uanset om du er nybegynder eller erfaren sejler, tilbyder vi et varieret program, og vores ungdomsafdeling skaber spændende muligheder for børn og unge med sejlads, kapsejladser og andre aktiviteter.</p>
             </div>
             <div class="mt-auto text-center">
-                <a href="#link" class="btn btn-primary" role="button">Klik her for mere</a>
+                @if (ViewData["IsUser"] != null && (bool)ViewData["IsUser"] || ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+                {
+                    <a asp-page="Account/Hidden" class="btn btn-primary" role="button">Klik her for mere</a>
+                }
+                else
+                {
+                    <a class="btn btn-secondary" role="button">Klik her for mere</a>
+                }
             </div>
         </div>
     </div>

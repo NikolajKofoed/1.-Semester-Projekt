@@ -1,4 +1,5 @@
 ﻿using SejlBåd.Models;
+using SejlBåd.Pages.BoatPages;
 
 namespace SejlBåd.Services.BoatService
 {
@@ -6,13 +7,14 @@ namespace SejlBåd.Services.BoatService
     {
 
         void AddBoats(Boat boat);
-        void RemoveBoats(Boat boat);
+        void DeleteBoats(Boat boat);
         Boat? LookUpBoat(int Id);
         Boat GetBoat(int id);
         List<Boat> listOfBoats();
-        JuniorModel GetJuniorModel(int id);
-        void RemoveJunior(object id);
-        JuniorModel RemoveJuniorModel();
-        IBoatService RemoveBoats(int id);
+        JuniorBoat GetJuniorModel(int id);
+        IBoatService DeleteBoats(int id);
+        JuniorBoat DeleteJuniorModel();
+        void EditJuniorModel(Boat boat);
+        void DeleteJunior(JuniorBoat boat);
     }
 }
