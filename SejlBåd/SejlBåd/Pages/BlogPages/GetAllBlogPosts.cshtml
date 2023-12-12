@@ -94,10 +94,11 @@
 {
     foreach (var blogs in Model._blogService.GetBlogPosts())
     {
+        @Model._blogService.GetCurrentDate(blogs)
         <div class="blog-post">
-            <h6 style="color: dimgray; opacity: 0.7;">ID: @blogs.Id</h6>
+            <h6 style="color: dimgray; opacity: 0.7;">@blogs.DatePublished</h6>
             <h2>@blogs.BlogPostTitle</h2>
-            <h5>@blogs.BlogPostSubtext</h5>
+            <h5></h5>
             <div class="button-container">
                 <a class="btn btn-view-blog-post btn-sm" type="button" asp-page="ViewBlogPost" asp-route-id="@blogs.Id">View Blog Post</a>
                 <a class="btn btn-view-comments btn-sm" type="button" asp-page="ViewComments" asp-route-id="@blogs.Id">View Comments</a>
