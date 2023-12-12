@@ -60,7 +60,14 @@
                             </div>
                             <!-- Dropdown Menu Slutter -->
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/EventPages/Events">Begivenheder</a>
+                                @if (ViewData["IsUser"] == null && ViewData["IsAdmin"] == null)
+                                {
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Account/Login">Login</a>
+                                }
+                                @if (ViewData["IsUser"] != null && (bool)ViewData["IsUser"] || ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+                                {
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Logout">Logout</a>
+                                }
                         </li>
                     </ul>
                    
