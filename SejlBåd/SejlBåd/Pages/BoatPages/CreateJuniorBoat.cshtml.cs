@@ -10,10 +10,11 @@ namespace SejlBåd.Pages.BoatPages
         private IBoatService _boatservice;
         [BindProperty]
         public Models.Boat Boat { get; set; }
-        public CreateJuniorBoat (IBoatService BoatService)
-        {
-            _boatservice = BoatService;
-        }
+
+        //public CreateJuniorBoat (IBoatService BoatService)
+        //{
+        //    _boatservice = BoatService;
+        //}
         public IActionResult OnGet()
         {
             return Page();
