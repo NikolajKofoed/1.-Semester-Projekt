@@ -74,11 +74,6 @@
         <span asp-validation-for="@Model.BlogPost.BlogPostTitle" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="@Model.BlogPost.BlogPostSubtext" class="control-label">Undertitlen:</label>
-        <input asp-for="@Model.BlogPost.BlogPostSubtext" class="form-control" />
-        <span asp-validation-for="@Model.BlogPost.BlogPostSubtext" class="text-danger"></span>
-    </div>
-    <div class="form-group">
         <label asp-for="@Model.BlogPost.BlogPostText" class="control-label">Tekst:</label>
         <textarea asp-for="@Model.BlogPost.BlogPostText" class="form-control" rows="12"></textarea>
         <span asp-validation-for="@Model.BlogPost.BlogPostText" class="text-danger"></span>
