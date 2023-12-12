@@ -61,6 +61,42 @@
         a:hover {
             color: #0056b3;
         }
+
+    /* Visuel repræsentation af HTML-tags sektion */
+    #html-tags-section {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+        #html-tags-section code {
+            background-color: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+    /* Forhåndsvisningsområde */
+    #preview-area {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #preview-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    #preview-content {
+        white-space: pre-wrap;
+    }
 </style>
 
 <form method="post">
@@ -75,13 +111,65 @@
     </div>
     <div class="form-group">
         <label asp-for="@Model.BlogPost.BlogPostText" class="control-label">Tekst:</label>
-        <textarea asp-for="@Model.BlogPost.BlogPostText" class="form-control" rows="12"></textarea>
+        <textarea asp-for="@Model.BlogPost.BlogPostText" class="form-control" rows="12" id="blogPostText"></textarea>
         <span asp-validation-for="@Model.BlogPost.BlogPostText" class="text-danger"></span>
+
+        <!-- Forhåndsvisningsområde -->
+        <div id="preview-area">
+            <label id="preview-title">Forhåndsvisning:</label>
+            <div id="preview-content"></div>
+        </div>
+
+        <!-- Tilføj en henvisning til HTML-tags -->
+        <small style="color: #6c757d; display: block; margin-top: 5px;">
+            Tip: Du kan bruge HTML-tags til tekstformatering.
+            <a href="#html-tags-section">Se tilgængelige HTML-tags</a>.
+        </small>
     </div>
     <div class="form-group">
         <input type="submit" value="Opdatér Blogindlæg" class="btn btn-primary" />
     </div>
 </form>
+
+<!-- HTML-tags sektionen -->
+<details id="html-tags-section">
+    <summary>HTML-Tags</summary>
+    <p>
+        <ul>
+            <li><code>&lt;p&gt;</code>: Afsnit</li>
+            <li><code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code>: Overskrifter (fra højeste til laveste niveau)</li>
+            <li><code>&lt;b&gt;</code>: Fed tekst</li>
+            <li><code>&lt;i&gt;</code>: Kursiv tekst</li>
+            <li><code>&lt;u&gt;</code>: Understreget tekst</li>
+            <li><code>&lt;strong&gt;</code>: Stærk betoning (typisk fed)</li>
+            <li><code>&lt;em&gt;</code>: Fremhævet tekst (typisk kursiv)</li>
+            <li><code>&lt;sub&gt;</code>: Sænket tekst</li>
+            <li><code>&lt;sup&gt;</code>: Hævet tekst</li>
+            <li><code>&lt;del&gt;</code>: Slettet tekst</li>
+            <li><code>&lt;ins&gt;</code>: Indsat tekst</li>
+            <li><code>&lt;mark&gt;</code>: Markeret tekst (typisk fremhævet)</li>
+            <li><code>&lt;small&gt;</code>: Mindre tekst</li>
+            <li><code>&lt;abbr&gt;</code>: Forkortelse</li>
+            <li><code>&lt;q&gt;</code>: Inline citat</li>
+            <li><code>&lt;blockquote&gt;</code>: Blok-citat</li>
+        </ul>
+    </p>
+</details>
+
+<script>
+    // JavaScript til at opdatere forhåndsvisningsområdet
+    document.addEventListener('DOMContentLoaded', function () {
+        var textArea = document.getElementById('blogPostText');
+        var previewContent = document.getElementById('preview-content');
+
+        // Opdater forhåndsvisning ved indlæsning af siden
+        previewContent.innerHTML = textArea.value;
+
+        textArea.addEventListener('input', function () {
+            previewContent.innerHTML = textArea.value;
+        });
+    });
+</script>
 
 <div class="back-link-container">
     <a asp-page="/BlogPages/GetAllBlogPosts">Gå tilbage til bloggen</a>

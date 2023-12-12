@@ -13,6 +13,6 @@ namespace SejlBåd.Services.BlogServices
         //Blog Methods STOP
         List<Comment> GetCommentsForBlogPost(int blogId);
         void AddCommentToBlog(int blogId, Comment comment);
-        Blog GetCurrentDate(Blog blogs);
+        void GetCurrentDate();
     }
 }

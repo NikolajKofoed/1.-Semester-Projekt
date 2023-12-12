@@ -39,6 +39,7 @@ namespace SejlBåd.Services.BlogServices
         public void AddBlogPost(Blog blog)
         {
             blog.Id = NextBlogId();
+            blog.DatePublished = DateTime.Now;
             _posts.Add(blog);
             _jsonBlogService.SaveJsonBlogData(_posts);
         }
@@ -52,7 +53,6 @@ namespace SejlBåd.Services.BlogServices
                     if (i.Id == blog.Id)
                     {
                         i.BlogPostTitle = blog.BlogPostTitle;
-                        i.BlogPostSubtext = blog.BlogPostSubtext;
                         i.BlogPostText = blog.BlogPostText;
                     }
                 }
@@ -106,10 +106,8 @@ namespace SejlBåd.Services.BlogServices
             }
         }
 
-        public Blog GetCurrentDate(Blog blog)
+        public void GetCurrentDate()
         {
-            blog.DatePublished = DateTime.Now;
-            return blog;
         }
     }
 }
