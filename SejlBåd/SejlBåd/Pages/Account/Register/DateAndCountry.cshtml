@@ -2,21 +2,23 @@
 @model SejlBåd.Pages.Account.Register.DateAndCountryModel
 @{
 }
-<h2>dateandcoutnrypaeg</h2>
-<div>
 
-
-
+<div class="account-register-form">
+    <br />
 
     <form method="post">
-        <div>
-            <label asp-for="Country">Country:</label>
-            <input asp-for="Country" required/>
+        <br />
+        <div class="account-register-form-input-label">
+            <div>
+                <label asp-for="Country">Country:</label>
+                <input asp-for="Country" required />
+            </div>
+            <div>
+                <label asp-for="BirthDate">Date of Birth:</label>
+                <input asp-for="BirthDate" required />
+            </div>
         </div>
-        <div>
-            <label asp-for="BirthDate">Date of Birth:</label>
-            <input asp-for="BirthDate" required/>
-        </div>
+
 
         <button type="submit">Bekræft</button>
     </form>
