@@ -14,7 +14,6 @@ namespace SejlBåd.Services.AccountServices
             _accounts = _jsonFileAccountService.GetJsonAccounts().ToList();
         }
 
-
         // create account
         public void CreateAccount(Account account)
         {

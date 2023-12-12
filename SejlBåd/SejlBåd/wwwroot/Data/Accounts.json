@@ -70,5 +70,17 @@
     "Email": "asd",
     "PhoneNumber": "asdad",
     "Role": "User"
+  },
+  {
+    "Id": 7,
+    "Password": "123",
+    "UserName": "Nik",
+    "Country": "denamrk",
+    "DateOfBirth": "0001-01-01",
+    "FirstName": "kata",
+    "LastName": "rina",
+    "Email": "jhkdfshjk",
+    "PhoneNumber": "jkhsdjhksdf",
+    "Role": "Admin"
   }
 ]

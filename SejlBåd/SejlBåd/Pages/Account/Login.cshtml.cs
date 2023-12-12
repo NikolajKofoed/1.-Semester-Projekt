@@ -20,7 +20,12 @@ namespace SejlBåd.Pages.Account
 
         public IActionResult OnGet()
         {
-            
+            var userRole = HttpContext.Session.GetString("UserRole");
+
+            if (userRole == "User" || userRole == "Admin")
+            {
+                return RedirectToPage("/AuthenticationFailed");
+            }
             return Page();
         }
 

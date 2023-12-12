@@ -15,7 +15,7 @@ namespace SejlBåd.Pages.Account
         {
             var userRole = HttpContext.Session.GetString("UserRole");
 
-            if(string.IsNullOrEmpty(userRole) || userRole != "User")
+            if(string.IsNullOrEmpty(userRole))
             {
                 return RedirectToPage("/Index");
             }
