@@ -52,26 +52,17 @@
                                 {
                                     <a class="dropdown-item" asp-area="" asp-page="/Account/Hidden">Kun For Medlemmer</a>
                                 }
+                                @if (ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+                                {
+                                    <a class="dropdown-item" asp-area="" asp-page="/DockSpotPages/ViewDockSpot">Båd Pladser</a>
+                                    <a class="dropdown-item" asp-area="" asp-page="/SailingClassPages/GetSailingCLassJuniors">Hold Oversigt</a>
+                                }
                                 
                             </div>
                         </li>
                     </ul>
                    
                     
-            </div>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item dropdown">
-                            <div class="dropdown-menu">
-                                @if (ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
-                                {
-                                    <a class="dropdown-item" asp-area="" asp-page="/DockSpotPages/ViewDockSpot">Båd Pladser</a>
-                                    <a class="dropdown-item" asp-area="" asp-page="/SailingClassPages/GetAllSailingClasses">Hold</a>
-                                }
-                            </div>
-                        </li>
-                    </ul>
-                </div>
                         @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/EventPages/Events">Begivenheder</a>
                         </li> * *@
