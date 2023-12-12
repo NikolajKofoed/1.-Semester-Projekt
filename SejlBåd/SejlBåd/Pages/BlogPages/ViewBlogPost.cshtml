@@ -21,6 +21,20 @@
         box-sizing: border-box;
     }
 
+    .blog-post ul li,
+    .blog-post ol li {
+        margin-bottom: 5px; /* Juster afstanden mellem listeelementer */
+    }
+
+    .comment-container ul,
+    .comment-container ol {
+        margin-bottom: 0; /* Fjern marginen mellem listeelementer */
+    }
+
+    .comment {
+        margin-bottom: 10px; /* Juster afstanden mellem kommentarer */
+    }   
+
     .blog-post {
         background-color: #ffffff;
         border: 1px solid #ced4da;
@@ -115,6 +129,9 @@
         .comment strong {
             font-weight: bold;
         }
+#blogpost{
+    margin-top: -25px;
+}
 </style>
 
 <div class="blog-post">
@@ -124,37 +141,45 @@
         <!-- Add any buttons or controls here if needed -->
     </div>
     <hr />
-    <p>@Model.blogs.BlogPostText</p>
+    <div id="blogpost"style="white-space: pre-line; max-width: 100%;">
+        @Html.Raw(Model.blogs.BlogPostText)
+    </div>
+
 </div>
 
 
 
 <hr /> <!-- Additional horizontal line for better separation -->
 
-<h4>Add Comment:</h4>
+<h4>Tilføj Kommentar:</h4>
 <form method="post" asp-page-handler="AddComment">
     <input type="hidden" id="blogId" name="blogId" value="@Model.blogs.Id" />
     <div class="form-group">
-        <label asp-for="NewComment.Name" class="form-label">Name:</label>
+        <label asp-for="NewComment.Name" class="form-label">Navn:</label>
         <input asp-for="NewComment.Name" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="NewComment.Message" class="form-label">Comment:</label>
+        <label asp-for="NewComment.Message" class="form-label">Kommentar:</label>
         <textarea asp-for="NewComment.Message" class="form-control" rows="4"></textarea>
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-primary">Add Comment</button>
+        <button type="submit" class="btn btn-primary">Tilføj Kommentar</button>
     </div>
 </form>
 <br />
 <div class="comment-container">
-    <h4>Comments:</h4>
+    @if (Model.blogs.Comments.Any())
+    {
+    <h4>Kommentarer:</h4>
     @foreach (var comment in Model.blogs.Comments)
     {
-        <div class="comment">
-            <img src="https://i.imgur.com/VPd6z2o.png" alt="User Avatar" width="30" height="30" />
+        {
+            <div class="comment">
+                <img src="https://i.imgur.com/VPd6z2o.png" alt="User Avatar" width="30" height="30" />
             <p><strong>@comment.Name:</strong> @comment.Message</p>
         </div>
+        }
+    }
     }
 </div>
 <br />
