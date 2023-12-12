@@ -1,0 +1,14 @@
+﻿@page
+@model SejlBåd.Pages.ContactPages.DeleteMessageModel
+@{
+}
+
+<h1>Bekræft handling</h1>
+<div class="alert alert-danger">
+    <h5>Er du sikker på du vil slette - '@Model.ContactList.FirstName, @Model.ContactList.LastName'?</h5>
+    <p>@Model.ContactList.Message</p>
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Ja</button>
+        <a class="btn btn-primary" asp-page="/ContactPages/GetAllMessages">Nej</a>
+    </form>
+</div>

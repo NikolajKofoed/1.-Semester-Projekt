@@ -2,3 +2,20 @@
 @model SejlBåd.Pages.BoatPages.EditJuniorModel
 @{
 }
+<form method="post">
+    <div class="form-group">
+        <label class="control-lable">Id</label>
+        <input asp-for="@Model.boat.BoatId" class="form-control" readonly="@(true)" />
+    </div>
+    <div class="form-group">
+        <label class="control-lable">Navn på båden</label>
+        <input asp-for="@Model.boat.BoatName" class="form-control" />
+        <span asp-validation-for="@Model.boat.BoatName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Rediger" class="btn btn-primary" />
+    </div>
+</form>
+<div>
+    <a asp-page="/BoatPages/Boats">Retur til både</a>
+</div>

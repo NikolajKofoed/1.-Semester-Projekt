@@ -1,0 +1,86 @@
+[
+  {
+    "Id": 1,
+    "Password": "trallaal",
+    "UserName": "Jamie oliver: Grise i Krise jule edition",
+    "Country": "dnemark",
+    "DateOfBirth": "0001-01-01",
+    "FirstName": "nikolaj",
+    "LastName": "kofoed",
+    "Email": "askjhdhjk",
+    "PhoneNumber": "786234",
+    "Role": "User"
+  },
+  {
+    "Id": 2,
+    "Password": "jkadsjkdsa",
+    "UserName": "guine",
+    "Country": "denmark",
+    "DateOfBirth": "0001-01-01",
+    "FirstName": "jbkashjk",
+    "LastName": "jkdashkjs",
+    "Email": "uniqueemail",
+    "PhoneNumber": "123123123",
+    "Role": "User"
+  },
+  {
+    "Id": 3,
+    "Password": "asdasd",
+    "UserName": "asdasd",
+    "Country": "sda",
+    "DateOfBirth": "0001-01-01",
+    "FirstName": "adsads",
+    "LastName": "adasd",
+    "Email": "hero",
+    "PhoneNumber": "asd",
+    "Role": "User"
+  },
+  {
+    "Id": 4,
+    "Password": "asdasdsa",
+    "UserName": "asdasdsa",
+    "Country": "adasd",
+    "DateOfBirth": "0001-01-01",
+    "FirstName": "asdsasda",
+    "LastName": "daasdsad",
+    "Email": "asdasd",
+    "PhoneNumber": "dasdasd",
+    "Role": "User"
+  },
+  {
+    "Id": 5,
+    "Password": "asdasd",
+    "UserName": "Guine",
+    "Country": "asdasd",
+    "DateOfBirth": "0001-01-01",
+    "FirstName": "asdasd",
+    "LastName": "asdasd",
+    "Email": "asd",
+    "PhoneNumber": "asdad",
+    "Role": "User"
+  },
+  {
+    "Id": 6,
+    "Password": "123",
+    "UserName": "nik",
+    "Country": "Denmark",
+    "DateOfBirth": "0001-01-01",
+    "FirstName": "asdasd",
+    "LastName": "asdasd",
+    "Email": "asd",
+    "PhoneNumber": "asdad",
+    "Role": "User"
+  },
+  {
+    "Id": 7,
+    "Password": "123",
+    "UserName": "Nik",
+    "Country": "denamrk",
+    "DateOfBirth": "0001-01-01",
+    "FirstName": "kata",
+    "LastName": "rina",
+    "Email": "jhkdfshjk",
+    "PhoneNumber": "jkhsdjhksdf",
+    "Role": "Admin"
+  }
+]

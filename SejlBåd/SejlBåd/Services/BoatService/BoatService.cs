@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Routing.Constraints;
 using SejlBåd.Models;
+using SejlBåd.Pages.BoatPages;
 
 namespace SejlBåd.Services.BoatService
 {
@@ -15,17 +16,17 @@ namespace SejlBåd.Services.BoatService
             boats = JsonFileBoatService.GetJsonBoats().ToList();
         }
 
-        void IBoatService.AddBoats(Boat boat)
+        public void AddBoats(Boat boat)
         {
             boats.Add(boat);
         }
 
-        Boat IBoatService.GetBoat()
+        public Boat GetBoat(int id)
         {
 
             foreach (var boat in boats)
             {
-                if ( boat.Length == 200)
+                if (boat.Id == id)
                 {
                     return boat;
                 }
@@ -37,7 +38,7 @@ namespace SejlBåd.Services.BoatService
             return boats;
         }
 
-        Boat? IBoatService.LookUpBoat(int Id)
+        public Boat? LookUpBoat(int Id)
         {
             foreach (var boat in boats)
             {
@@ -49,10 +50,10 @@ namespace SejlBåd.Services.BoatService
             return null;
         }
 
-        void IBoatService.RemoveBoats(Boat boat)
+        public void DeleteBoats(Boat boat)
 
         {
-           foreach (Boat b in boats)
+            foreach (Boat b in boats)
             {
                 if (boat == b)
                 {
@@ -60,6 +61,47 @@ namespace SejlBåd.Services.BoatService
                     break;
                 }
             }
+        }
+
+        public void CreateBoatModel(Boat boat)
+        {
+            throw new NotImplementedException();
+        }
+
+        //JuniorModel IBoatService.GetJuniorModel(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //JuniorModel IBoatService.DeleteJuniorModel()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        IBoatService IBoatService.DeleteBoats(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        void IBoatService.EditJuniorModel(Boat boat)
+        {
+            throw new NotImplementedException();
+        }
+
+        JuniorBoat IBoatService.GetJuniorModel(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        JuniorBoat IBoatService.DeleteJuniorModel()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IBoatService.DeleteJunior(JuniorBoat boat)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -10,11 +10,10 @@ namespace SejlBåd.Pages.BoatPages
         private IBoatService _boatservice;
         [BindProperty]
         public Models.Boat Boat { get; set; }
-
-        //public CreateJuniorBoat (IBoatService BoatService)
-        //{
-        //    _boatservice = BoatService;
-        //}
+        public CreateBoatModel (IBoatService BoatService)
+        {
+            _boatservice = BoatService;
+        }
         public IActionResult OnGet()
         {
             return Page();
@@ -26,7 +25,7 @@ namespace SejlBåd.Pages.BoatPages
             {
                 return Page();
             }
-           List<BoatService> _boatservice; 
+           _boatservice.AddBoats(Boat); 
             return RedirectToPage("/BoatPages/Boats");
         }
     }

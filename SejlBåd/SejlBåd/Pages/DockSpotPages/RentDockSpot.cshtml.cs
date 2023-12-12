@@ -58,7 +58,7 @@ namespace SejlBåd.Pages.DockSpotPages
 
             Order = _orderService.CreateOrderDockSpot(DockSpot, Customer);
 
-            return RedirectToPage("DockRentReceipt");
+            return RedirectToPage("DockRentReceipt", new { Order.Id });
             
         }
     }

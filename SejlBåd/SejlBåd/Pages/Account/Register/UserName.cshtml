@@ -1,0 +1,23 @@
+﻿@page
+@model SejlBåd.Pages.Account.Register.UserNameModel
+@{
+}
+
+<h2>usernamepage</h2>
+
+<form method="post">
+    <div>
+        <label asp-for="UserName">UserName:</label>
+        <input asp-for="UserName" required />
+    </div>
+    @foreach(var ac in Model._accountService.GetAccounts())
+    {
+        if (ac.UserName == Model.UserName)
+        {
+            <span class="text-danger">Username is Taken</span>
+        }
+    }
+
+
+    <button type="submit">Bekræft</button>
+</form>
