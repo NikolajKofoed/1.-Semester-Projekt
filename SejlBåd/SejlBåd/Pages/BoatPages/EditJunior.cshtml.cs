@@ -35,9 +35,9 @@ namespace SejlBåd.Pages.BoatPages
             {
                 return Page();
             }
-            _boatService.EditJuniorModel(Boat Boat);
+            _boatService.EditJuniorModel(Boat);
             return RedirectToPage("Boats");
         }
     }
 }
-}
+

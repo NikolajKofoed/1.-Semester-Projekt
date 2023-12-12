@@ -9,7 +9,7 @@ namespace SejlBåd.Pages.BoatPages
     {
         private Services.BoatService.IBoatService _boatService;
         [BindProperty]
-        public Models.JuniorModel juniorModel { get; set; }
+        public Models.JuniorBoat juniorModel { get; set; }
 
         public DeleteJuniorModel(IBoatService BoatService)
         {
@@ -28,7 +28,7 @@ namespace SejlBåd.Pages.BoatPages
         public IActionResult OnPost(int id)
         {
             juniorModel = _boatService.GetJuniorModel(id);
-            Models.JuniorModel DeleteJunior = _boatService.DeleteJuniorModel();
+            Models.JuniorBoat DeleteJunior = _boatService.DeleteJuniorModel();
             if (DeleteJunior == null)
             {
                 return Page();

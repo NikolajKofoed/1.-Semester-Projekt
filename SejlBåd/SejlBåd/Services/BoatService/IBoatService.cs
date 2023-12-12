@@ -7,12 +7,14 @@ namespace SejlBåd.Services.BoatService
     {
 
         void AddBoats(Boat boat);
-        void DeleteeBoats(Boat boat);
+        void DeleteBoats(Boat boat);
         Boat? LookUpBoat(int Id);
         Boat GetBoat(int id);
         List<Boat> listOfBoats();
-        JuniorModel GetJuniorModel(int id);
+        JuniorBoat GetJuniorModel(int id);
         IBoatService DeleteBoats(int id);
-        JuniorModel DeleteJuniorModel();
+        JuniorBoat DeleteJuniorModel();
+        void EditJuniorModel(Boat boat);
+        void DeleteJunior(JuniorBoat boat);
     }
 }
