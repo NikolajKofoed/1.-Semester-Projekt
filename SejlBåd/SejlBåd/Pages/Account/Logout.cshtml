@@ -1,11 +1,19 @@
 ﻿@page
 @model SejlBåd.Pages.Account.LogoutModel
 @{
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
 }
 
 
 <h2>log out</h2>
 
 <form method="post">
-    <button type="submit" class="btn btn-primary">Logout</button>
+    <button type="submit" class="btn btn-primary">Bekræft</button>
 </form>
