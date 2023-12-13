@@ -29,7 +29,7 @@
                             <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Kategorier
                             </a>
-                           
+                           <!-- Dropdown Menu Starter -->
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <!-- Dropdown items -->
                                 
@@ -57,37 +57,46 @@
                                     <a class="dropdown-item" asp-area="" asp-page="/DockSpotPages/ViewDockSpot">Båd Pladser</a>
                                     <a class="dropdown-item" asp-area="" asp-page="/SailingClassPages/GetSailingCLassJuniors">Hold Oversigt</a>
                                 }
-                                
                             </div>
+                            <!-- Dropdown Menu Slutter -->
+                        <li class="nav-item">
+                                @if (ViewData["IsUser"] == null && ViewData["IsAdmin"] == null)
+                                {
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Account/Login">Login</a>
+                                }
+                                @if (ViewData["IsUser"] != null && (bool)ViewData["IsUser"] || ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+                                {
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Logout">Logout</a>
+                                }
                         </li>
                     </ul>
                    
                     
-                        @* <li class="nav-item">
+@*                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/EventPages/Events">Begivenheder</a>
-                        </li> * *@
-                      @*    <li class="nav-item">
+                        </li>
+                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/BlogPages/GetAllBlogPosts">Blog</a>
-                        </li> *@
-                        @* <li class="nav-item">
+                        </li> 
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/BoatPages/GetAllBoats">Både</a>
-                        </li> *@
-                       @*  <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/SailingClassPages/GetAllSailingClasses">Hold</a>
-                        </li> *@
-                       @*  <li class="nav-item">
+                        </li> 
+                       <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/DockSpotPages/ViewDockSpot">Book Bådplads</a>
-                        </li> *@
-                    @*     <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/SailingClassPages/GetSailingCLassJuniors">holdmedlemtest</a>
-                        </li> *@
-                      @*   <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Account/Login">Login</a>
-                        </li> *@
-                       @*  <li class="nav-item">
+                        </li>
+                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Account/Logout">Logout</a>
-                        </li> *@
-                       @*  <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/ContactPages/CreateNewMessage">Kontakt Klubben</a>
                         </li>
                         <li class="nav-item">
@@ -96,11 +105,11 @@
 
                     </ul>
                 </div>
-                        </li> *@
-                       @*  <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Account/Hidden">Kun For Medlemmer</a>
-                        </li> *@ 
-            </div>
+                        </li> 
+            </div> *@
         </nav>
     </header>
     <div class="container">

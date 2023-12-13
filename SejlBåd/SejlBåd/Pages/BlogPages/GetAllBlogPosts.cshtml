@@ -108,10 +108,13 @@
                 <h6 style="color: dimgray; opacity: 0.7;">@blogs.DatePublished</h6>
             }
             <h2>@blogs.BlogPostTitle</h2>
+
             <div class="button-container">
                 <a class="btn btn-view-blog-post btn-sm" type="button" asp-page="ViewBlogPost" asp-route-id="@blogs.Id">Vis Blogindlæg</a>
+                @if (ViewData["isAdmin"] != null && (bool)ViewData["isAdmin"] || ViewData["isAdmin"] != null && (bool)ViewData["isAdmin"]){
                 <a class="btn btn-primary btn-sm" type="button" asp-page="UpdateBlogPost" asp-route-id="@blogs.Id">Redigér</a>
                 <a class="btn btn-danger btn-sm" type="button" asp-page="DeleteBlogPost" asp-route-id="@blogs.Id">Slet</a>
+                }
             </div>
         </div>
     }
