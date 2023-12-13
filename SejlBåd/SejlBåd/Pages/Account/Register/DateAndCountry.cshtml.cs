@@ -10,7 +10,7 @@ namespace SejlBåd.Pages.Account.Register
         [BindProperty] public Models.Account Account { get; set; }
         [BindProperty] public string Country { get; set; }
 
-        [BindProperty] public DateOnly BirthDate { get; set; }
+        [BindProperty] public DateTime BirthDate { get; set; }
 
         private IAccountService _accountService;
 

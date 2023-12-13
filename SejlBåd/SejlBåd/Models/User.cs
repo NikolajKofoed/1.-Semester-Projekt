@@ -5,15 +5,16 @@ namespace SejlBåd.Models
     public class User
     {
 
-        [Required(ErrorMessage = "Filling out the name space is required")]
+        [Required(ErrorMessage = "Fornavn skal have en værdi")]
         public string FirstName { get; set; }
-        [Required(ErrorMessage = "Filling out the name space is required")]
+        [Required(ErrorMessage = "Efternavn skal have en værdi")]
         public string LastName { get; set; }
-        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Email Skal være i det rigtige format")]
+        [Required(ErrorMessage = "Emal skal have en værdi")]
         public string Email { get; set; }
 
-        //[Required(ErrorMessage = "must be 8 digits")]
-        [Range(typeof(int), "10000000", "99999999", ErrorMessage = "Phone number Must be 8 Digits")]
+        [Required(ErrorMessage = "Phone number is required.")]
+        [Range(typeof(int), "10000000", "99999999")]
         public int? Tlf { get; set; }
         public CreditCard? CreditCardInfo { get; set; }
 
