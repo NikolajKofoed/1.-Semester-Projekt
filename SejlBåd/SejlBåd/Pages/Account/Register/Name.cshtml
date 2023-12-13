@@ -5,23 +5,68 @@
 
 
 
-<div class="account-register-form">
-    <br />
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa; /* Bootstrap background color */
+        margin: 0; /* Remove default body margin */
+    }
 
-    <form method="post">
-        <br />
-        <div class="account-register-form-input-label">
-            <div>
+    .form-container {
+        padding: 50px 0; /* Add padding to the top */
+    }
+
+    .form-content {
+        background-color: #ffffff; /* White background */
+        border: 1px solid #ced4da; /* Bootstrap border color */
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bootstrap box shadow */
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto; /* Center the form horizontally */
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        border: 1px solid #ced4da; /* Bootstrap border color */
+        border-radius: 4px;
+    }
+
+    .btn-primary {
+        background-color: #007bff; /* Bootstrap primary color */
+        color: #ffffff; /* White text */
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+</style>
+
+<div class="form-container">
+    <div class="form-content">
+        <form method="post">
+            <div class="form-group">
                 <label asp-for="FirstName">First Name:</label>
-                <input asp-for="FirstName" required />
+                <input asp-for="FirstName" required class="form-control" />
             </div>
-            <div>
+            <div class="form-group">
                 <label asp-for="LastName">Last Name:</label>
-                <input asp-for="LastName" required />
+                <input asp-for="LastName" required class="form-control" />
             </div>
-        </div>
-
-
-        <button type="submit">Bekræft</button>
-    </form>
+            <button class="btn btn-primary" type="submit">Bekræft</button>
+        </form>
+    </div>
 </div>

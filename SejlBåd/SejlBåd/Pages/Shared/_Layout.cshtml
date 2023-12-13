@@ -25,23 +25,26 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Kategorier
-                            </a>
-                           <!-- Dropdown Menu Starter -->
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <!-- Dropdown items -->
-                                
-                                @if(ViewData["IsUser"] == null && ViewData["IsAdmin"] == null)
+                        <li class="nav-item ms-0">
+                                @if (ViewData["IsUser"] == null && ViewData["IsAdmin"] == null)
                                 {
-                                    <a class="dropdown-item" asp-area="" asp-page="/Account/Login">Login</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Account/Login">Login</a>
                                 }
-                                
                                 @if (ViewData["IsUser"] != null && (bool)ViewData["IsUser"] || ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
                                 {
-                                    <a class="dropdown-item" asp-area="" asp-page="/Account/Logout">Logout</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Logout">Logout</a>
                                 }
+                        </li>
+                        <li class="nav-item ms-0">
+                            <a class="nav-link text-dark" asp-area="" asp-page="">Test</a>
+                        </li>
+                        <!-- Dropdown Menu Starter -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Andet
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <!-- Dropdown items -->
                                 <a class="dropdown-item" asp-area="" asp-page="/EventPages/Events">Begivenheder</a>
                                 <a class="dropdown-item" asp-area="" asp-page="/BlogPages/GetAllBlogPosts">Blog</a>
                                 <a class="dropdown-item" asp-area="" asp-page="/BoatPages/GetAllBoats">Både</a>
@@ -58,58 +61,23 @@
                                     <a class="dropdown-item" asp-area="" asp-page="/SailingClassPages/GetSailingCLassJuniors">Hold Oversigt</a>
                                 }
                             </div>
-                            <!-- Dropdown Menu Slutter -->
-                        <li class="nav-item">
-                                @if (ViewData["IsUser"] == null && ViewData["IsAdmin"] == null)
-                                {
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Account/Login">Login</a>
-                                }
-                                @if (ViewData["IsUser"] != null && (bool)ViewData["IsUser"] || ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
-                                {
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Logout">Logout</a>
-                                }
                         </li>
-                    </ul>
-                   
-                    
-@*                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/EventPages/Events">Begivenheder</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/BlogPages/GetAllBlogPosts">Blog</a>
-                        </li> 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/BoatPages/GetAllBoats">Både</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/SailingClassPages/GetAllSailingClasses">Hold</a>
-                        </li> 
-                       <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/DockSpotPages/ViewDockSpot">Book Bådplads</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/SailingClassPages/GetSailingCLassJuniors">holdmedlemtest</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Login">Login</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Logout">Logout</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/ContactPages/CreateNewMessage">Kontakt Klubben</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Hidden">OnlyFans</a>
-                        </li>
-
                     </ul>
                 </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Hidden">Kun For Medlemmer</a>
-                        </li> 
-            </div> *@
+                <!-- Dropdown Menu Slutter -->
+                <ul class="navbar-nav">
+                    <li class="nav-item ms-0">
+                        @if (ViewData["IsUser"] == null && ViewData["IsAdmin"] == null)
+                        {
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Login">Login</a>
+                        }
+                        @if (ViewData["IsUser"] != null && (bool)ViewData["IsUser"] || ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+                        {
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Logout">Logout</a>
+                        }
+                    </li>
+                </ul>
+             </div>
         </nav>
     </header>
     <div class="container">
