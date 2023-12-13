@@ -10,6 +10,8 @@ namespace SejlBåd.Pages.Account.Register
         private IAccountService _accountService;
         [BindProperty]
         public string Password { get; set; }
+        [BindProperty]
+        public string PasswordConfirmation { get; set; }
 
         public PasswordModel(IAccountService accountService)
         {
@@ -26,6 +28,11 @@ namespace SejlBåd.Pages.Account.Register
 
             if (!ModelState.IsValid)
                 return Page();
+
+            if(Password != PasswordConfirmation)
+            {
+                return Page();
+            }
 
             _accountService.SetPassword(Account.Id, Password);
 
