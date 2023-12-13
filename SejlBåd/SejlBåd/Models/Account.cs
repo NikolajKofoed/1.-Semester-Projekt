@@ -1,4 +1,6 @@
-﻿namespace SejlBåd.Models
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+namespace SejlBåd.Models
 {
     public class Account
     {
@@ -10,10 +12,17 @@
 
 
         public string? Country { get; set; }
-        public DateOnly? DateOfBirth { get; set; }
+
+        [DataType(DataType.Date, ErrorMessage = "Dato skal være i det rigtige format")]
+        public DateTime? DateOfBirth { get; set; }
+        [MinLength(2)]
         public string? FirstName { get; set; }
+        [MinLength(2)]
         public string? LastName { get; set; }
+
+        [EmailAddress(ErrorMessage = "Email skal være i det rigtige format")]
         public string? Email { get; set; }
+        [Phone(ErrorMessage = "Telefon nummer skal være i det rigtige format")]
         public string? PhoneNumber { get; set; }
 
         public string? Role { get; set; }
@@ -23,7 +32,7 @@
             Id = nextId++;
         }
 
-        public Account(string password, string userName, string country, DateOnly dateOfBirth, string firstName, string lastName, string email, string? phoneNumber)
+        public Account(string password, string userName, string country, DateTime dateOfBirth, string firstName, string lastName, string email, string? phoneNumber)
         {
             Id = nextId++;
             Password = password;

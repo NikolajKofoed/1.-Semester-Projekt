@@ -5,17 +5,23 @@ namespace SejlBåd.Models
 {
     public class CreditCard
     {
-        
-        [Required(ErrorMessage = "Must be a 16 Digit Number")]
-        [Range(typeof(long), "1000000000000000", "9999999999999999", ErrorMessage = "CardNumber Must be 16 Digits")]
+
+        [Required(ErrorMessage = "Credit card number is required.")]
+        [Range(typeof(long), "1000000000000000", "9999999999999999")]
         public long CardNumber { get; set; }
-        [Required(ErrorMessage = "required")]
-        public DateTime ExpirationDate { get; set; }
-        [Required(ErrorMessage = "Security Digits Required")]
-        [Range(typeof(int),"100","999", ErrorMessage = "Must Be A 3 Digit Number")]
+
+
+        [Required(ErrorMessage = "Expiration date is required.")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime? ExpirationDate { get; set; }
+
+
+        [Required(ErrorMessage = "CVV is required.")]
+        [Range(typeof(int), "100", "999")]
         public int SecurityCode { get; set; }
 
-        public CreditCard(long cardNumber, DateTime expirationDate, int securityCode)
+        public CreditCard(long cardNumber, DateTime? expirationDate, int securityCode)
         {
             CardNumber = cardNumber;
             ExpirationDate = expirationDate;

@@ -86,7 +86,7 @@ namespace SejlBåd.Services.AccountServices
 
         // Making account
 
-        void IAccountService.SetDateAndCountry(int id, DateOnly date, string country)
+        void IAccountService.SetDateAndCountry(int id, DateTime date, string country)
         {
             foreach(var ac in _dummyAccounts)
             {
