@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SejlBåd.Services.SailingClassServices;
+using System.Diagnostics.Eventing.Reader;
 
 namespace SejlBåd.Pages.SailingClassPages
 {
@@ -26,8 +27,9 @@ namespace SejlBåd.Pages.SailingClassPages
             {
                 return Page();
             }
-        _sailingClassService.CancelUserToJuniorClass(UserToClass);
+        _sailingClassService.CancelUserToClass(UserToClass);
             return RedirectToPage("SCReceipt");
+    
         }
     }
 }

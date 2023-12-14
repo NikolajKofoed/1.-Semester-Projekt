@@ -49,7 +49,7 @@ namespace SejlBåd.Services.SailingClassServices
             return user;
         }
 
-        User ISailingClassService.CancelUserToJuniorClass(User user)
+        User ISailingClassService.CancelUserToClass(User user)
         {
             throw new NotImplementedException();
         }
