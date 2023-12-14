@@ -49,6 +49,10 @@ namespace SejlBåd.Services.SailingClassServices
             return user;
         }
 
+        User ISailingClassService.CancelUserToJuniorClass(User user)
+        {
+            throw new NotImplementedException();
+        }
 
 
         SailingClass ISailingClassService.AddSailingClass(SailingClass sailingClass)
@@ -80,5 +84,6 @@ namespace SejlBåd.Services.SailingClassServices
         {
             throw new NotImplementedException();
         }
+
     }
 }

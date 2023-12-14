@@ -1,0 +1,21 @@
+﻿@page
+@model SejlBåd.Pages.SailingClassPages.CancelRegistrationModel
+@{
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
+}
+
+<div class="alert alert-danger">
+    <h5>Er du sikker på du vil afmelde din tilmelding</h5>
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Ja</button>
+        <a class="btn btn-primary" asp-page="/SailingClassPage/SCReceipt">Nej</a>
+    </form>
+</div>
+
