@@ -25,18 +25,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item ms-0">
-                                @if (ViewData["IsUser"] == null && ViewData["IsAdmin"] == null)
-                                {
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Account/Login">Login</a>
-                                }
-                                @if (ViewData["IsUser"] != null && (bool)ViewData["IsUser"] || ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
-                                {
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Logout">Logout</a>
-                                }
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/SailingClassPages/GetAllSailingClasses">Hold</a>
                         </li>
-                        <li class="nav-item ms-0">
-                            <a class="nav-link text-dark" asp-area="" asp-page="">Test</a>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/BoatPages/GetAllBoats">Både</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/ContactPages/CreateNewMessage">Kontakt os</a>
                         </li>
                         <!-- Dropdown Menu Starter -->
                         <li class="nav-item dropdown">
@@ -47,9 +43,6 @@
                                 <!-- Dropdown items -->
                                 <a class="dropdown-item" asp-area="" asp-page="/EventPages/Events">Begivenheder</a>
                                 <a class="dropdown-item" asp-area="" asp-page="/BlogPages/GetAllBlogPosts">Blog</a>
-                                <a class="dropdown-item" asp-area="" asp-page="/BoatPages/GetAllBoats">Både</a>
-                                <a class="dropdown-item" asp-area="" asp-page="/SailingClassPages/GetAllSailingClasses">Hold</a>
-                                <a class="dropdown-item" asp-area="" asp-page="/ContactPages/CreateNewMessage">Kontakt Klubben</a>
 
                                 @if (ViewData["IsUser"] != null && (bool)ViewData["IsUser"] || ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
                                 {

@@ -45,8 +45,9 @@
 
 <div class="account-page-container">
     <h2>Grats on new account</h2>
-    <a class="btn btn-primary btn-lg" asp-page="/Account/Login">Login</a>
     <label asp-for="Account.Email"></label>
-    <input asp-for="Account.Email" readonly="readonly" />
+    <input asp-for="Account.Email" readonly="readonly" style="text-align:center"/>
 </div>
+<br />
+<center><a class="btn btn-primary btn-lg" asp-page="/Account/Login">Login</a></center>
 
