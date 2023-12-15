@@ -13,7 +13,7 @@ namespace SejlBåd.Services.SailingClassServices
         User AddUserToJuniorClass(User user);
         User AddUserToSeniorClass(User user);
 
-        User CancelUserToClass(User user);
+        void CancelUserToClass(User user);
 
         void RemoveSailingClass(SailingClass sailingClass);
         void UpdateSailingClass(SailingClass sailingClass);

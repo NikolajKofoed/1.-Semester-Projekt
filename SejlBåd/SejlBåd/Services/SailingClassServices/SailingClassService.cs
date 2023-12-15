@@ -49,9 +49,14 @@ namespace SejlBåd.Services.SailingClassServices
             return user;
         }
 
-        User ISailingClassService.CancelUserToClass(User user)
+        void ISailingClassService.CancelUserToClass(User user)
         {
-            throw new NotImplementedException();
+            if (user != null)
+                {
+                    _sCJuniors.Remove(user);
+                }
+            _jsonFileSailingClassService.SaveJsonSailingClass(sailingClasses);
+            
         }
 
 
