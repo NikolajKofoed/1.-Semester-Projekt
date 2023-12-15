@@ -52,9 +52,13 @@ namespace SejlBåd.Services.SailingClassServices
         void ISailingClassService.CancelUserToClass(User user)
         {
             if (user != null)
+            {
+                foreach(var us in _sCJuniors)
                 {
-                    _sCJuniors.Remove(user);
+                    user.Email = us.Email;
                 }
+                _sCJuniors.Remove(user);
+            }
             _jsonFileSailingClassService.SaveJsonSailingClass(sailingClasses);
             
         }
