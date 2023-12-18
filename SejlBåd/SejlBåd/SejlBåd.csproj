@@ -13,10 +13,6 @@
     <None Remove="Repositories\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\BoatService\BoatListService\" />
-  </ItemGroup>
-
   <ProjectExtensions><VisualStudio><UserProperties wwwroot_4data_4contacts_1json__JsonSchema="json" /></VisualStudio></ProjectExtensions>
 
 </Project>
