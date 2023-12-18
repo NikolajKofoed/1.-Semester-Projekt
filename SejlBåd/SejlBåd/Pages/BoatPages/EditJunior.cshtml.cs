@@ -10,8 +10,7 @@ namespace SejlBåd.Pages.BoatPages
         private IBoatService _boatService;
         private Boat Boat;
 
-        [BindProperty]
-        public Models.Boat boat { get; set; }
+        [BindProperty] public Models.Boat boat { get; set; }
 
         public EditJuniorModel(IBoatService boatService)
         {
@@ -23,7 +22,7 @@ namespace SejlBåd.Pages.BoatPages
             Boat = _boatService.GetBoat(id);
             if (boat == null)
             {
-                return RedirectToPage("Index");
+                return RedirectToPage("/BoatPages/GetAllBoats");
             }
 
             return Page();
@@ -36,7 +35,7 @@ namespace SejlBåd.Pages.BoatPages
                 return Page();
             }
             _boatService.EditJuniorModel(Boat);
-            return RedirectToPage("Boats");
+            return RedirectToPage("/BoatPages/GetAllBoats");
         }
     }
 }

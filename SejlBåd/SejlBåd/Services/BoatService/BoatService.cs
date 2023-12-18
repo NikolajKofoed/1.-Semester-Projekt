@@ -68,16 +68,6 @@ namespace SejlBåd.Services.BoatService
             throw new NotImplementedException();
         }
 
-        //JuniorModel IBoatService.GetJuniorModel(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //JuniorModel IBoatService.DeleteJuniorModel()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
         IBoatService IBoatService.DeleteBoats(int id)
         {
             throw new NotImplementedException();

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SejlBåd.Services.BoatService;
 using SejlBåd.Services.EventServices;
+using System.Reflection;
 
 namespace SejlBåd.Pages.BoatPages
 {
@@ -26,7 +27,7 @@ namespace SejlBåd.Pages.BoatPages
                 return Page();
             }
            _boatservice.AddBoats(Boat); 
-            return RedirectToPage("/BoatPages/Boats");
+            return RedirectToPage("/Data/Boat.json");
         }
     }
 }
