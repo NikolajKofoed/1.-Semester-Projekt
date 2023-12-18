@@ -50,17 +50,21 @@ namespace SejlBåd.Services.BoatService
             return boats;
         }
 
-        public Boat DeleteBoat(int id)
+        public Boat DeleteBoat(int id, Boat boat)
 
         {
-            foreach (Boat b in boats)
+            foreach (Boat b in boatList[id - 1].BoatList)
             {
-                if (id == b.Id)
+                if (boat.Id == b.Id)
                 {
                     boats.Remove(b);
+                    boatList[id - 1].BoatList.Remove(b);
+                    _jsonFileBoatListService.SaveJsonBoats(boatList);
+                    JsonFileBoatService.SaveJsonBoats(boats);
                     return b;
                 }
-            } return null; 
+            } 
+            return null; 
         }
 
         public void EditBoat(Boat boat)

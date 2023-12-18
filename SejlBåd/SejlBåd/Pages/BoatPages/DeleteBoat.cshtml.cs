@@ -26,17 +26,20 @@ namespace SejlBåd.Pages.BoatPages
             return Page();
         }
 
-        public IActionResult OnPost(int id)
+        public IActionResult OnPost(int id, int id2)
         {
-            Boat = _boatService.GetBoat(id);
-            Models.Boat DeleteBoat = _boatService.DeleteBoat(id);
-            if (DeleteBoat == null)
+
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
-            _boatService.DeleteBoat(id);
 
-            return RedirectToPage("Boats");
+            Boats = _boatService.GetBoats(id);
+            Boat = _boatService.GetBoat(id2);
+
+            _boatService.DeleteBoat(id, Boat);
+
+            return RedirectToPage("Boats", new {Boats.Id});
         }
     }
 }

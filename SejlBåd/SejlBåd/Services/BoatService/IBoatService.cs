@@ -10,7 +10,7 @@ namespace SejlBåd.Services.BoatService
 
         List<Boat> listOfBoats();
         void AddBoats(int id, Boat boat);
-        Boat DeleteBoat(int id);
+        Boat DeleteBoat(int id, Boat boat);
         void EditBoat(Boat boat);
         Boat GetBoat(int id);
 
