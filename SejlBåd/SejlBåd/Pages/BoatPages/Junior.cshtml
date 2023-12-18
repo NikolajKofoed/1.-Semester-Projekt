@@ -70,7 +70,11 @@
                 @boat.BoatName
             </td>
             <td>
-                <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">Book</a>
+                        @if (ViewData["IsUser"] != null && (bool)ViewData["IsUser"])
+                        {
+                            <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">Book</a>
+
+                        }
                         @if(ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
                         {
                             <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">Rediger</a>
