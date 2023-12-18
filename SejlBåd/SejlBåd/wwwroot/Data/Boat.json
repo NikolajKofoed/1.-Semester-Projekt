@@ -1,29 +1,31 @@
 [
   {
-    "nextId": 1,
+    "BoatName": "Jolle",
     "Length": 2.87,
     "Id": 1,
     "Width": 1.23,
     "Bom": 2,
     "HasBom": false,
     "TopUnderMast": 2.37,
-    "Vægt":  40,
+    "Vægt": 40,
     "Booked": false
   },
   {
-    "nextId": 1,
+    "BoatName": "Jolle",
+
     "Length": 2.87,
     "Id": 1,
-    "Width": 3.5 ,
+    "Width": 3.5,
     "Bom": 2,
     "HasBom": false,
     "TopUnderMast": 3.5,
-    "Vægt":  39 ,
+    "Vægt": 39,
     "Booked": false
   },
   {
-    "nextId": 1,
-    "Length": 3.00 ,
+    "BoatName": "Jolle",
+
+    "Length": 3.00,
     "Id": 1,
     "Width": 3.00,
     "Bom": 2,
@@ -33,4 +35,3 @@
     "Booked": false
   }
 ]
-
