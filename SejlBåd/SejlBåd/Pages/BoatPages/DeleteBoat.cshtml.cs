@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SejlBåd.Services.BoatService;
+using SejlBåd.Models;
 
 
 namespace SejlBåd.Pages.BoatPages
@@ -9,15 +10,18 @@ namespace SejlBåd.Pages.BoatPages
     {
         private Services.BoatService.IBoatService _boatService;
         [BindProperty]
-        public Models.Boat Boat { get; set; }
+        public Boat Boat { get; set; }
+
+        public Boats Boats { get; set; }
 
         public DeleteBoatModel(IBoatService BoatService)
         {
             _boatService = BoatService;
         }
-        public IActionResult OnGet(int id)
+        public IActionResult OnGet(int id, int id2)
         {
-            Boat = _boatService.GetBoat(id);
+            Boats = _boatService.GetBoats(id);
+            Boat = _boatService.GetBoat(id2);
             
             return Page();
         }
