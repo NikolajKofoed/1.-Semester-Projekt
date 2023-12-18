@@ -9,7 +9,7 @@ namespace SejlBåd.Pages.BoatPages
     {
         private Services.BoatService.IBoatService _boatService;
         [BindProperty]
-        public Models.JuniorBoat juniorModel { get; set; }
+        public Models.Boat boatModel { get; set; }
 
         public DeleteBoatModel(IBoatService BoatService)
         {
@@ -17,7 +17,7 @@ namespace SejlBåd.Pages.BoatPages
         }
         public IActionResult OnGet(int id)
         {
-            if (juniorModel == null)
+            if (boatModel == null)
             {
                 return RedirectToPage("Junior");
             }
@@ -26,13 +26,13 @@ namespace SejlBåd.Pages.BoatPages
 
         public IActionResult OnPost(int id)
         {
-            juniorModel = _boatService.GetBoatModel(id);
-            Models.BoatBoat DeleteJunior = _boatService.DeleteBoatModel();
-            if (DeleteJunior == null)
+            boatModel = _boatService.GetBoat(id);
+            Models.Boat DeleteBoat = _boatService.DeleteBoat(id);
+            if (DeleteBoat == null)
             {
                 return Page();
             }
-            _boatService.DeleteBoat(BoatModel);
+            _boatService.DeleteBoat(id);
 
             return RedirectToPage("/BoatPages/Boats");
         }

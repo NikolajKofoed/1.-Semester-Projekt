@@ -38,24 +38,24 @@ namespace SejlBåd.Services.BoatService
             return boats;
         }
 
-        public void DeleteBoats(int id)
+        public Boat DeleteBoat(int id)
 
         {
             foreach (Boat b in boats)
             {
-                if (id == b.BoatId)
+                if (id == b.Id)
                 {
                     boats.Remove(b);
-                    break;
+                    return b;
                 }
-            }
+            } return null; 
         }
 
         public void EditBoat(Boat boat)
         {
             foreach (Boat b in boats)
             {
-                if (b.BoatId == boat.BoatId)
+                if (b.Id == boat.Id)
                 {
                     b.Booked = boat.Booked;
                 }
