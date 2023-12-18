@@ -9,7 +9,7 @@ namespace SejlBåd.Services.BoatService.BoatListService
         {
             get
             {
-                return Path.Combine(WebHostEnviroment.WebRootPath, "Data", "Boat.json");
+                return Path.Combine(WebHostEnviroment.WebRootPath, "Data", "Boats.json");
             }
         }
 
@@ -20,7 +20,7 @@ namespace SejlBåd.Services.BoatService.BoatListService
             WebHostEnviroment = webHostEnvironment;
         }
 
-        public void SaveJsonBoats(List<Boat> boats)
+        public void SaveJsonBoats(List<Boats> boats)
         {
             using (FileStream jsonFileWriter = File.Create(JsonFileName))
             {
@@ -29,15 +29,15 @@ namespace SejlBåd.Services.BoatService.BoatListService
                     SkipValidation = false,
                     Indented = true
                 });
-                JsonSerializer.Serialize<Boat[]>(jsonFileWriter, boats.ToArray());
+                JsonSerializer.Serialize<Boats[]>(jsonFileWriter, boats.ToArray());
             }
         }
 
-        public IEnumerable<Boat> GetJsonBoats()
+        public IEnumerable<Boats> GetJsonBoats()
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileName))
             {
-                return JsonSerializer.Deserialize<Boat[]>(jsonFileReader.ReadToEnd());
+                return JsonSerializer.Deserialize<Boats[]>(jsonFileReader.ReadToEnd());
             }
         }
     }

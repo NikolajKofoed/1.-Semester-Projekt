@@ -10,7 +10,13 @@
         ViewData["IsAdmin"] = true;
     }
 }
-<form method="post">
+
+
+
+<div class="login-container">
+    <div class="login-form-container">
+        <h2>Login Page</h2>
+        <form method="post">
     <div class="form-group">
         <label asp-for="Boat.Id" class="control-lable"> Id på båden</label>
         <input asp-for="Boat.Id" class="form-control" />
@@ -19,4 +25,10 @@
     <div class="form-group">
         <input type="submit" value="Tilføj ny båd" class="btn btn-primary" />
     </div>
-</form>
+    </form>
+
+        <p>
+            <a class="register-link" asp-page="Register/DateAndCountry">Register</a>
+        </p>
+    </div>
+</div>
