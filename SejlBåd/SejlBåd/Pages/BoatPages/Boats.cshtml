@@ -11,7 +11,7 @@
     }
 }
 
-<center><h1>Junior</h1></center>
+<center><h1>@Model.</h1></center>
 <br />
 
 <table class="table table-bordered table-hover table-striped">
@@ -27,9 +27,9 @@
         </tr>
     </thead>
 <tbody>
-@if (@BoatsModel.BoatList != null)
+@if (@Model.BoatList != null)
 {
-    foreach(var boat in BoatsModel.BoatList)
+    foreach(var boat in @Model.BoatList)
     {
         <tr>
             <td>@boat.Id</td>
@@ -68,6 +68,6 @@
 <p>
     @if(ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
     {
-        <a class="btn btn-primary" asp-page="CreateBoat"> Opret ny båd</a>
+        <a class="btn btn-primary" asp-page="CreateBoat" asp-route-id="@Model.Boats.Id"> Opret ny båd</a>
     }
 </p>

@@ -17,19 +17,17 @@ namespace SejlBåd.Services.BoatService.BoatListService
 
         }
 
-        List<Boat> IBoatListService.GetJuniorBoats()
-        {
-            return boats[0].BoatList;
-        }
 
-        List<Boat> IBoatListService.GetSeniorBoats()
+        public Boats GetBoats(int id)
         {
-            return boats[1].BoatList;
-        }
-
-        List<Boat> IBoatListService.GetVoksenBoats()
-        {
-            return boats[2].BoatList;
+            foreach (var b in boats)
+            {
+                if (b.Id == id)
+                {
+                    return b;
+                }
+            }
+            return null;
         }
 
         public List<Boat> GetBoatList(int id)

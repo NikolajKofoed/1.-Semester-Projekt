@@ -9,19 +9,19 @@ namespace SejlBåd.Pages.BoatPages
 {
     public class BoatsModel : PageModel
     {
-        public IBoatService _BoatService { get; set; }
-        public IBoatListService _boatListService;
-        public static List<Boat> BoatList { get; set; }
+        public IBoatService _boatService { get; set; }
+        public List<Boat> BoatList { get; set; }
+        public Boats Boats { get; set; }
 
 
-        public BoatsModel(IBoatService boatList, IBoatListService boatListService)
+        public BoatsModel(IBoatService boatList)
         {
-            _boatListService = boatListService;
-            _BoatService = boatList;
+            _boatService = boatList;
         }
         public IActionResult OnGet(int id)
         {
-            BoatList = _boatListService.GetBoatList(id);
+            Boats = _boatService.GetBoats(id);
+            BoatList = _boatService.GetBoatList(id);
 
             if (BoatList == null)
             {

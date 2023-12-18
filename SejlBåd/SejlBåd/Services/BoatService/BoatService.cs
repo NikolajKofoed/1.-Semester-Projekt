@@ -1,24 +1,35 @@
 ﻿using Microsoft.AspNetCore.Routing.Constraints;
 using SejlBåd.Models;
 using SejlBåd.Pages.BoatPages;
+using SejlBåd.Services.BoatService.BoatListService;
 
 namespace SejlBåd.Services.BoatService
 {
     public class BoatService : IBoatService
     {
         private JsonFileBoatService JsonFileBoatService { get; set; }
+        private JsonFileBoatListService _jsonFileBoatListService;
 
         List<Boat> boats;
+        List<Boats> boatList;
 
-        public BoatService(JsonFileBoatService jsonFileBoatService)
+
+        public BoatService(JsonFileBoatService jsonFileBoatService, JsonFileBoatListService jsonFileBoatListService)
         {
             JsonFileBoatService = jsonFileBoatService;
+            _jsonFileBoatListService = jsonFileBoatListService;
             boats = JsonFileBoatService.GetJsonBoats().ToList();
+            boatList = _jsonFileBoatListService.GetJsonBoats().ToList();
         }
 
-        public void AddBoats(Boat boat)
+
+
+
+        public void AddBoats(int id, Boat boat)
         {
             boats.Add(boat);
+            boatList[id - 1].BoatList.Add(boat);
+            _jsonFileBoatListService.SaveJsonBoats(boatList);
             JsonFileBoatService.SaveJsonBoats(boats);
         }
 
@@ -65,6 +76,32 @@ namespace SejlBåd.Services.BoatService
         public void CreateBoatModel(Boat boat)
         {
             throw new NotImplementedException();
+        }
+
+        // Boats
+
+        public Boats GetBoats(int id)
+        {
+            foreach (var b in boatList)
+            {
+                if (b.Id == id)
+                {
+                    return b;
+                }
+            }
+            return null;
+        }
+
+        public List<Boat> GetBoatList(int id)
+        {
+            foreach (var b in boatList)
+            {
+                if (b.Id == id)
+                {
+                    return b.BoatList;
+                }
+            }
+            return null;
         }
     }
 }
