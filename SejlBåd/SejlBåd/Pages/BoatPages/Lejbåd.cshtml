@@ -1,0 +1,23 @@
+﻿@page
+@model SejlBåd.Pages.BoatPages.LejbådModel
+@{
+}
+<div class="login-container">
+    <div class="login-form-container">
+        <h2>Login Page</h2>
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="UserName">Username:</label>
+                <input asp-for="UserName" required />
+            </div>
+            <div class="form-group">
+                <label asp-for="Password">Password:</label>
+                <input asp-for="Password" type="password" required />
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>
+            <a class="register-link" asp-page="Register/DateAndCountry">Register</a>
+        </p>
+    </div>
+</div>

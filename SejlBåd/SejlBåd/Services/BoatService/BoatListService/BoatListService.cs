@@ -1,7 +1,6 @@
 ﻿namespace SejlBåd.Services.BoatService.BoatListService
 {
-    public interface IBoatListService
+    public class BoatListService
     {
-
     }
 }

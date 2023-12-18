@@ -1,1 +1,46 @@
-[]
+[
+  {
+    "Junior": null,
+    "BoatId": "Jolle",
+    "BoatList",
+    "Navn": "TERA",
+
+    "BoatId": "Jolle ",
+    "BoatList",
+    "Navn": "FEVA",
+
+    "BoatId": "Jolle",
+    "BoatList",
+    "Navn": "TEVA"
+
+  },
+  {
+    "Voksne":,
+    "BoatId": "Jolle",
+    "BoatList":,
+    "Navn": "Europa Jolle",
+
+    "BoatId": "Jolle",
+    "BoatList":,
+    "Navn": "Laserjolle",
+
+    "BoatId": "Jolle",
+    "BoatList":,
+    "Navn": "Laser jolle"
+
+  },
+  {
+    "Senior":,
+    "BoatId": "Jolle",
+    "BoatList":,
+    "Navn": "Lysnæs-14 kølbåd",
+
+    "BoatId": "Jolle",
+    "BoatList":,
+    "Navn": "Lysnæs-14 kølbåd",
+
+    "BoatId": "Jolle",
+    "BoatList":,
+    "Navn": "Lysnæs-14 kølbåd"
+  }
+]

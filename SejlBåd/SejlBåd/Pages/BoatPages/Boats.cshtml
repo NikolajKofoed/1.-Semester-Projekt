@@ -1,5 +1,5 @@
 ﻿@page
-@model SejlBåd.Pages.BoatPages.JuniorModel
+@model SejlBåd.Pages.BoatPages.BoatsModel
 @{
     if (HttpContext.Session.GetString("UserRole") == "User")
     {
@@ -40,9 +40,9 @@
         </tr>
     </thead>
 <tbody>
-@if (@JuniorModel.BoatList != null)
+@if (@BoatsModel.BoatList != null)
 {
-    foreach( var boat in JuniorModel.BoatList)
+    foreach( var boat in BoatsModel.BoatList)
     {
         <tr>
   @*           <td>
@@ -70,12 +70,15 @@
                 @boat.BoatName
             </td>
             <td>
+                        @if (ViewData["IsAdmin"] == null)
+                        {
 
-                            <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">Book</a>
-
+                     <form method="post">
+                         <button class="btn btn-primary btn-sm" type="submit" title="Lejbåd"  asp-route-id="@boat.Id">Book</button>
+                     </form>
                         }
-                        <a class="btn btn-primary btn-sm" type="button" title="Junior" asp-page="Junior">Lej en båd</a>
-                        @if(ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+                     @if (ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+                    
                         {
                             <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">Rediger</a>
                             <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">slet</a>

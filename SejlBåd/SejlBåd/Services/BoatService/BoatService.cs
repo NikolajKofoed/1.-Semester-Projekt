@@ -38,24 +38,12 @@ namespace SejlBåd.Services.BoatService
             return boats;
         }
 
-        public Boat? LookUpBoat(int Id)
-        {
-            foreach (var boat in boats)
-            {
-                if (boat.Id == Id)
-                {
-                    return boat;
-                }
-            }
-            return null;
-        }
-
-        public void DeleteBoats(Boat boat)
+        public void DeleteBoats(int id)
 
         {
             foreach (Boat b in boats)
             {
-                if (boat == b)
+                if (id == b.BoatId)
                 {
                     boats.Remove(b);
                     break;
@@ -63,33 +51,17 @@ namespace SejlBåd.Services.BoatService
             }
         }
 
+        public void EditBoat(Boat boat)
+        {
+            foreach (Boat b in boats)
+            {
+                if (b.BoatId == boat.BoatId)
+                {
+                    b.Booked = boat.Booked;
+                }
+            }
+        }
         public void CreateBoatModel(Boat boat)
-        {
-            throw new NotImplementedException();
-        }
-
-        IBoatService IBoatService.DeleteBoats(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        void IBoatService.EditJuniorModel(Boat boat)
-        {
-            throw new NotImplementedException();
-        }
-
-        JuniorBoat IBoatService.GetJuniorModel(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        JuniorBoat IBoatService.DeleteJuniorModel()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IBoatService.DeleteJunior(JuniorBoat boat)
         {
             throw new NotImplementedException();
         }
