@@ -34,7 +34,7 @@ namespace SejlBåd.Pages.BoatPages
             }
             _boatService.DeleteBoat(id);
 
-            return RedirectToPage("/BoatPages/Boats");
+            return RedirectToPage("Boats");
         }
     }
 }

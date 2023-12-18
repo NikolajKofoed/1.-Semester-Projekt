@@ -18,7 +18,12 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Type båd</th>
+            <th>Længde</th>
+            <th>Bredde</th>
+            <th>Bom</th>
+            <th>Har bom</th>
+            <th>Vægt</th>
+            <th>Booked</th>
         </tr>
     </thead>
 <tbody>
@@ -27,14 +32,16 @@
     foreach(var boat in BoatsModel.BoatList)
     {
         <tr>
-           
-                <td>
-                   @boat.Id
-                </td>
-                <td>
-                    @boat.Length
-                </td>
-                <td>
+            <td>@boat.Id</td>
+            <td>@boat.Length</td>
+            <td>@boat.Width</td>
+            <td>@boat.Bom</td>
+            <td>@boat.HasBom</td>
+            <td>@boat.Vægt</td>
+            <td>@boat.Booked</td>
+    
+            <t><td>
+
                         @if (ViewData["IsAdmin"] == null)
                         {
 
