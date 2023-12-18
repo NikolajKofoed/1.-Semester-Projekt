@@ -3,22 +3,25 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using SejlBåd.Models; 
 using SejlBåd.Services.BoatService;
-
+using SejlBåd.Services.BoatService.BoatListService;
 
 namespace SejlBåd.Pages.BoatPages
 {
     public class BoatsModel : PageModel
     {
         public IBoatService _BoatService { get; set; }
-        public static List<Models.Boat> BoatList { get; set; } = new List<Models.Boat>();
-        [BindProperty] public Boat DeleteEvent { get; set; }
-        public BoatsModel(IBoatService boatList)
+        public IBoatListService _boatListService;
+        public static List<Boat> BoatList { get; set; }
+
+
+        public BoatsModel(IBoatService boatList, IBoatListService boatListService)
         {
+            _boatListService = boatListService;
             _BoatService = boatList;
         }
-        public IActionResult OnGet()
+        public IActionResult OnGet(int id)
         {
-            BoatList = _BoatService.listOfBoats(); 
+            BoatList = _boatListService.GetBoatList(id);
 
             if (BoatList == null)
             {

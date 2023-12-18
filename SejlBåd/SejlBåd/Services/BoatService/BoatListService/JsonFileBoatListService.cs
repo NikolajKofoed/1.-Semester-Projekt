@@ -9,7 +9,7 @@ namespace SejlBåd.Services.BoatService.BoatListService
         {
             get
             {
-                return Path.Combine(WebHostEnviroment.WebRootPath, "Data", "Boats.json");
+                return Path.Combine(WebHostEnviroment.WebRootPath, "Data", "BoatList.json");
             }
         }
 

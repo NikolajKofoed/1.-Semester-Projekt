@@ -9,6 +9,7 @@ namespace SejlBåd.Services.BoatService.BoatListService
         List<Boat> GetVoksenBoats();
         List<Boat> GetSeniorBoats();
 
+        List<Boat> GetBoatList(int id);
 
 
     }

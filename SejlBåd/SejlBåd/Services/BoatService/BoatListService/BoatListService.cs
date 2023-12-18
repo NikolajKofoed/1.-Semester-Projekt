@@ -6,10 +6,6 @@ namespace SejlBåd.Services.BoatService.BoatListService
     {
 
 
-        List<Boat> juniorBoats;
-        List<Boat> seniorBoats;
-        List<Boat> voksenBoats;
-
         List<Boats> boats;
 
         private JsonFileBoatListService _jsonFileBoatListService;
@@ -18,21 +14,34 @@ namespace SejlBåd.Services.BoatService.BoatListService
         {
             _jsonFileBoatListService = jsonFileBoatListService;
             boats = _jsonFileBoatListService.GetJsonBoats().ToList();
+
         }
 
         List<Boat> IBoatListService.GetJuniorBoats()
         {
-            return juniorBoats = boats[0].BoatList;
+            return boats[0].BoatList;
         }
 
         List<Boat> IBoatListService.GetSeniorBoats()
         {
-            return voksenBoats = boats[1].BoatList;
+            return boats[1].BoatList;
         }
 
         List<Boat> IBoatListService.GetVoksenBoats()
         {
-            return seniorBoats = boats[2].BoatList;
+            return boats[2].BoatList;
+        }
+
+        public List<Boat> GetBoatList(int id)
+        {
+            foreach(var b in boats)
+            {
+                if(b.Id == id)
+                {
+                    return b.BoatList;
+                }
+            }
+            return null;
         }
     }
 }
