@@ -36,7 +36,12 @@
                 Vægten i kg
             </th> *@
             <th>Id</th>
-            <th>Type båd</th>
+            <th>Længde</th>
+            <th>Bredde</th>
+            <th>Bom</th>
+            <th>Har bom</th>
+            <th>Vægt</th>
+            <th>Booked</th>
         </tr>
     </thead>
 <tbody>
@@ -45,6 +50,9 @@
     foreach( var boat in BoatsModel.BoatList)
     {
         <tr>
+            <th>1</th>
+            <th>Jolle </th>
+
             <td>
 
                         @if (ViewData["IsAdmin"] == null)

@@ -10,7 +10,7 @@ namespace SejlBåd.Pages.BoatPages
     public class BoatsModel : PageModel
     {
         public IBoatService _BoatService { get; set; }
-        public static List<Models.Boat> BoatList { get; set; } = new List<Models.Boat>();
+        public static List<Models.Boat> BoatList { get; set; }
         [BindProperty] public Boat DeleteEvent { get; set; }
         public BoatsModel(IBoatService boatList)
         {
