@@ -7,12 +7,12 @@ using SejlBåd.Services.BoatService;
 
 namespace SejlBåd.Pages.BoatPages
 {
-    public class JuniorModel : PageModel
+    public class BoatsModel : PageModel
     {
         public IBoatService _BoatService { get; set; }
         public static List<Models.Boat> BoatList { get; set; } = new List<Models.Boat>();
         [BindProperty] public Boat DeleteEvent { get; set; }
-        public JuniorModel(IBoatService boatList)
+        public BoatsModel(IBoatService boatList)
         {
             _BoatService = boatList;
         }

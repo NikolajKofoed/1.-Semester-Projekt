@@ -34,7 +34,7 @@ namespace SejlBåd.Pages.BoatPages
             {
                 return Page();
             }
-            _boatService.BoatModel(Boat);
+            _boatService.EditBoat(Boat);
             return RedirectToPage("/BoatPages/GetAllBoats");
         }
     }
