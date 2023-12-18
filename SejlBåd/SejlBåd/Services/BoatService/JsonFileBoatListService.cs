@@ -1,7 +1,7 @@
 ﻿using SejlBåd.Models;
 using System.Text.Json;
 
-namespace SejlBåd.Services.BoatService.BoatListService
+namespace SejlBåd.Services.BoatService
 {
     public class JsonFileBoatListService
     {
@@ -29,7 +29,7 @@ namespace SejlBåd.Services.BoatService.BoatListService
                     SkipValidation = false,
                     Indented = true
                 });
-                JsonSerializer.Serialize<Boats[]>(jsonFileWriter, boats.ToArray());
+                JsonSerializer.Serialize(jsonFileWriter, boats.ToArray());
             }
         }
 

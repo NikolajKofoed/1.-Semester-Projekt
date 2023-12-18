@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SejlBåd.Models;
 using SejlBåd.Services.BoatService;
-using SejlBåd.Services.BoatService.BoatListService;
 using SejlBåd.Services.EventServices;
 using System.Reflection;
 

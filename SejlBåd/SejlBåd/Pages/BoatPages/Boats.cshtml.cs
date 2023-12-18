@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using SejlBåd.Models; 
 using SejlBåd.Services.BoatService;
-using SejlBåd.Services.BoatService.BoatListService;
 
 namespace SejlBåd.Pages.BoatPages
 {

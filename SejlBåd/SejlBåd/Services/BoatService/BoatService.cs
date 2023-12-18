@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Routing.Constraints;
 using SejlBåd.Models;
 using SejlBåd.Pages.BoatPages;
-using SejlBåd.Services.BoatService.BoatListService;
 
 namespace SejlBåd.Services.BoatService
 {

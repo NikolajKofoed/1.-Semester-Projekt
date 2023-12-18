@@ -2,7 +2,6 @@ using SejlBåd.Models;
 using SejlBåd.Services.AccountServices;
 using SejlBåd.Services.BlogServices;
 using SejlBåd.Services.BoatService;
-using SejlBåd.Services.BoatService.BoatListService;
 using SejlBåd.Services.ContactService;
 using SejlBåd.Services.CustomerServices;
 using SejlBåd.Services.DockSpotServices;
@@ -35,7 +34,6 @@ builder.Services.AddTransient<JsonFileBlogService>();
 builder.Services.AddSingleton<IAccountService, AccountService>();
 builder.Services.AddTransient<JsonFileAccountService>();
 builder.Services.AddTransient<JsonFileContactService>();
-builder.Services.AddSingleton<IBoatListService, BoatListService>();
 builder.Services.AddTransient<JsonFileBoatListService>();
 builder.Services.AddSession(options =>
 {
