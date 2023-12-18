@@ -29,7 +29,7 @@
 <tbody>
 @if (@BoatsModel.BoatList != null)
 {
-    foreach( var boat in BoatsModel.BoatList)
+    foreach(var boat in BoatsModel.BoatList)
     {
         <tr>
             <td>@boat.Id</td>
@@ -45,18 +45,21 @@
                         @if (ViewData["IsAdmin"] == null)
                         {
 
-                     <form method="post">
-                         <button class="btn btn-primary btn-sm" type="submit" title="Lejbåd"  asp-route-id="@boat.Id">Book</button>
-                     </form>
+                            <form method="post">
+                                <button class="btn btn-primary btn-sm" type="submit" title="Lejbåd" asp-route-id="@boat.Id">Book</button>
+                            </form>
                         }
-                     @if (ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
-                    
+
+                        @if (ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+
                         {
                             <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">Rediger</a>
                             <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">slet</a>
                         }
+                </td>
+
+                       
                         
-            </td>
         </tr>
     }
 }

@@ -13,7 +13,7 @@ namespace SejlBåd.Models
         public double TopUnderMast { get; set; }
         public double Vægt { get; set; }    
         public bool Booked { get; set; }
-        public int Id { get; internal set; }
+        public int Id { get; set; }
 
         public Boat(string boatName, double length, double width, double bom, bool hasBom, double topUnderMast, double vægt, bool booked)
         {
