@@ -20,10 +20,6 @@ namespace SejlBåd.Pages.BoatPages
         public IActionResult OnGet(int id)
         {
             Boat = _boatService.GetBoat(id);
-            if (boat == null)
-            {
-                return RedirectToPage("/BoatPages/GetAllBoats");
-            }
 
             return Page();
         }
@@ -35,7 +31,7 @@ namespace SejlBåd.Pages.BoatPages
                 return Page();
             }
             _boatService.EditBoat(Boat);
-            return RedirectToPage("/BoatPages/GetAllBoats");
+            return RedirectToPage("/Boats");
         }
     }
 }

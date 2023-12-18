@@ -53,8 +53,8 @@
                         @if (ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
 
                         {
-                            <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">Rediger</a>
-                            <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">slet</a>
+                            <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditBoat" asp-route-id="@boat.Id">Rediger</a>
+                            <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="DeleteBoat" asp-route-id="@boat.Id">slet</a>
                         }
                 </td>
 
