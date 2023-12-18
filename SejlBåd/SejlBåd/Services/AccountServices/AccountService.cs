@@ -45,6 +45,11 @@ namespace SejlBåd.Services.AccountServices
             return _dummyAccounts.FirstOrDefault(account => account.Id == id);
         }
 
+        public Account GetAccount(string userName)
+        {
+            return _dummyAccounts.FirstOrDefault(account => account.UserName == userName);
+        }
+
         public Account Login(string userName, string password)
         {
             if(!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(password))
@@ -86,14 +91,13 @@ namespace SejlBåd.Services.AccountServices
 
         // Making account
 
-        void IAccountService.SetDateAndCountry(int id, DateTime date, string country)
+        void IAccountService.SetDateAndCountry(int id, DateTime date)
         {
             foreach(var ac in _dummyAccounts)
             {
                 if(ac.Id == id)
                 {
                     ac.DateOfBirth = date;
-                    ac.Country = country;
 
                 }
             }

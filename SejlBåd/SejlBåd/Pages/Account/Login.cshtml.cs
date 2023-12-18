@@ -42,7 +42,7 @@ namespace SejlBåd.Pages.Account
             }
                 // Store user role in session or authentication cookie
             HttpContext.Session.SetString("UserRole", Account.Role);
-            
+
             return RedirectToPage("/Index");
 
         }

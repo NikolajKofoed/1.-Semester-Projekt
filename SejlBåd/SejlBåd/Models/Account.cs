@@ -10,9 +10,6 @@ namespace SejlBåd.Models
         public string? Password { get; set; }
         public string? UserName { get; set; }
 
-
-        public string? Country { get; set; }
-
         [DataType(DataType.Date, ErrorMessage = "Dato skal være i det rigtige format")]
         public DateTime? DateOfBirth { get; set; }
         [MinLength(2)]
@@ -32,12 +29,11 @@ namespace SejlBåd.Models
             Id = nextId++;
         }
 
-        public Account(string password, string userName, string country, DateTime dateOfBirth, string firstName, string lastName, string email, string? phoneNumber)
+        public Account(string password, string userName, DateTime dateOfBirth, string firstName, string lastName, string email, string? phoneNumber)
         {
             Id = nextId++;
             Password = password;
             UserName = userName;
-            Country = country;
             DateOfBirth = dateOfBirth;
             FirstName = firstName;
             LastName = lastName;
@@ -47,7 +43,7 @@ namespace SejlBåd.Models
 
         public override string ToString()
         {
-            return $"{{{nameof(Id)}={Id.ToString()}, {nameof(Password)}={Password}, {nameof(UserName)}={UserName}, {nameof(Country)}={Country}, {nameof(DateOfBirth)}={DateOfBirth.ToString()}, {nameof(FirstName)}={FirstName}, {nameof(LastName)}={LastName}, {nameof(Email)}={Email}, {nameof(PhoneNumber)}={PhoneNumber}, {nameof(Role)}={Role}}}";
+            return $"{{{nameof(Id)}={Id.ToString()}, {nameof(Password)}={Password}, {nameof(UserName)}={UserName}, {nameof(DateOfBirth)}={DateOfBirth.ToString()}, {nameof(FirstName)}={FirstName}, {nameof(LastName)}={LastName}, {nameof(Email)}={Email}, {nameof(PhoneNumber)}={PhoneNumber}, {nameof(Role)}={Role}}}";
         }
     }
 }

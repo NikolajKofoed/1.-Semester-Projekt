@@ -53,14 +53,7 @@ namespace SejlBåd.Services.SailingClassServices
 
         public void CancelUserToClass(User user)
         {
-            foreach(User us in users)
-            {
-                if(user == us)
-                {
-                    users.Remove(us);
-                    break;
-                }
-            }
+            throw new NotImplementedException();
         }
 
 

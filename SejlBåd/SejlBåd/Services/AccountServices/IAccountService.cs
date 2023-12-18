@@ -8,6 +8,7 @@ namespace SejlBåd.Services.AccountServices
         void CreateAccount(Account account);
         // acount methods
         Account GetAccount(int id);
+        Account GetAccount(string userName);
         Account Login(string userName, string password);
         List<Account> GetAccounts();
 
@@ -16,7 +17,7 @@ namespace SejlBåd.Services.AccountServices
         void AddDummyAccount(Account account);
         Account GetDummyAccount(int id);
         Account CreateDummyAccount(Account account);
-        void SetDateAndCountry(int id, DateTime date, string country);
+        void SetDateAndCountry(int id, DateTime date);
         void SetEmailAndPhoneNum(int id, string email, string phoneNum);
         void SetName(int id, string firstName, string lastName);
         void SetPassword(int id, string password);
