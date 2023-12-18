@@ -71,8 +71,12 @@
             </td>
             <td>
                 <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">Book</a>
-                <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">Rediger</a>       
-                <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">slet</a>
+                        @if(ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+                        {
+                            <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">Rediger</a>
+                            <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="BoatPages" asp-route-id="@boat.Id">slet</a>
+                        }
+                        
             </td>
         </tr>
     }
@@ -80,5 +84,9 @@
 
 </table>
 <p>
-    <a class="btn btn-primary" asp-page="GetAllBoats"> Opret ny båd</a>
+    @if(ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+    {
+        <a class="btn btn-primary" asp-page="GetAllBoats"> Opret ny båd</a>
+    }
+    
 </p>
