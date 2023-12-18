@@ -18,7 +18,7 @@ namespace SejlBåd.Services.SailingClassServices
         void RemoveSailingClass(SailingClass sailingClass);
         void UpdateSailingClass(SailingClass sailingClass);
         void GetSailingClass(SailingClass sailingClass);
-        void AddUserToClass(User user);
+        //void AddUserToClass(User user);
 
         List<SailingClass> GetSailingClasses();
     }

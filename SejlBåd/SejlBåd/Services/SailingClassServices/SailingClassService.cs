@@ -1,6 +1,7 @@
 ﻿using SejlBåd.Models;
 using SejlBåd.MockData.SailingClassMock;
 using SejlBåd.MockData.EventMock;
+using System.Data;
 
 namespace SejlBåd.Services.SailingClassServices
 {
@@ -8,6 +9,7 @@ namespace SejlBåd.Services.SailingClassServices
     {
         private JsonFileSailingClassService _jsonFileSailingClassService;
         public List<SailingClass> sailingClasses { get; set; }
+        public List<User> users;
 
 
         private List<User> _sCJuniors;
@@ -49,18 +51,9 @@ namespace SejlBåd.Services.SailingClassServices
             return user;
         }
 
-        void ISailingClassService.CancelUserToClass(User user)
+        public void CancelUserToClass(User user)
         {
-            if (user != null)
-            {
-                foreach(var us in _sCJuniors)
-                {
-                    user.Email = us.Email;
-                }
-                _sCJuniors.Remove(user);
-            }
-            _jsonFileSailingClassService.SaveJsonSailingClass(sailingClasses);
-            
+            throw new NotImplementedException();
         }
 
 
@@ -89,10 +82,10 @@ namespace SejlBåd.Services.SailingClassServices
             throw new NotImplementedException();
         }
 
-        void ISailingClassService.AddUserToClass(User user)
-        {
-            throw new NotImplementedException();
-        }
+        //void ISailingClassService.AddUserToClass(User user)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
     }
 }
