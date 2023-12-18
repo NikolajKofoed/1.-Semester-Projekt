@@ -8,7 +8,6 @@ namespace SejlBåd.Pages.Account.Register
     public class DateAndCountryModel : PageModel
     {
         [BindProperty] public Models.Account Account { get; set; }
-        [BindProperty] public string Country { get; set; }
 
         [BindProperty] public DateTime BirthDate { get; set; }
 
@@ -30,7 +29,7 @@ namespace SejlBåd.Pages.Account.Register
             if (!ModelState.IsValid)
                 return Page();
 
-            _accountService.SetDateAndCountry(Account.Id,BirthDate, Country);
+            _accountService.SetDateAndCountry(Account.Id, BirthDate);
             return RedirectToPage("EmailAndPhoneNum", new { Account.Id });
 
         }
