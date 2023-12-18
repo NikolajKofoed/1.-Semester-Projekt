@@ -27,7 +27,7 @@ namespace SejlBåd.Pages.BoatPages
                 return Page();
             }
            _boatservice.AddBoats(Boat); 
-            return RedirectToPage("/Data/Boat.json");
+            return RedirectToPage("Boats");
         }
     }
 }

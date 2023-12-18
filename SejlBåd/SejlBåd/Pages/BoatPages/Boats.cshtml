@@ -32,7 +32,15 @@
     foreach( var boat in BoatsModel.BoatList)
     {
         <tr>
-            <td>
+            <td>@boat.Id</td>
+            <td>@boat.Length</td>
+            <td>@boat.Width</td>
+            <td>@boat.Bom</td>
+            <td>@boat.HasBom</td>
+            <td>@boat.Vægt</td>
+            <td>@boat.Booked</td>
+    
+            <t><td>
 
                         @if (ViewData["IsAdmin"] == null)
                         {
