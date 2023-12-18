@@ -19,6 +19,7 @@ namespace SejlBåd.Services.BoatService
         public void AddBoats(Boat boat)
         {
             boats.Add(boat);
+            JsonFileBoatService.SaveJsonBoats(boats);
         }
 
         public Boat GetBoat(int id)
