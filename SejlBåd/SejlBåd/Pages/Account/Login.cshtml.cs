@@ -1,3 +1,6 @@
+
+
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SejlBåd.Services.AccountServices;
@@ -8,6 +11,7 @@ namespace SejlBåd.Pages.Account
     {
         [BindProperty] public Models.Account Account { get; set; }
         public IAccountService _accountService;
+
         [BindProperty]
         public string UserName { get; set; }
         [BindProperty]
