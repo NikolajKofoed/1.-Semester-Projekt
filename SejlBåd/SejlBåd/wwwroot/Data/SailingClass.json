@@ -1,1 +1,102 @@
-[{"Participants":[{"FirstName":"jdshjdshj","LastName":"jkdjkdsjhk","Email":"jhksjhkddsf","Tlf":null,"CreditCardInfo":null},{"FirstName":"jsdjhfhjk","LastName":"jksdjkkjh","Email":"hjksdhjkfs","Tlf":null,"CreditCardInfo":null},{"FirstName":"kdsfhjksjkhdfhjk","LastName":"hjksdfhjkdsfhjkdsfhjkhjkfd","Email":"hjkxfhjkhjkjkdsfjkdsf","Tlf":null,"CreditCardInfo":null},{"FirstName":"ffghfgfhd","LastName":"gdhfgdfhgdhfdgf","Email":"gdfhdhghdgf","Tlf":12341234,"CreditCardInfo":null},{"FirstName":"Nisse","LastName":"far","Email":"Nissefar@inLoveWithNisseMor.dk","Tlf":99999999,"CreditCardInfo":null},{"FirstName":"julle","LastName":"Emsen","Email":"emma.nansen@email.com","Tlf":12344564,"CreditCardInfo":null},{"FirstName":"Nanna","LastName":"Nanson","Email":"emma.nansen@email.com","Tlf":12121212,"CreditCardInfo":null}],"ClassName":"SeniorSailingClass","ClassDate":"00-00-00T00:00:00","ClassSize":0,"ClassDetails":"Beer every friday"},{"Participants":[{"FirstName":"jdhjhjksfdhjkdfshjk","LastName":"hjksdfhjkdsfhjkhjdsfk","Email":"jkhsdfhjkdsfhjkdfshjk","Tlf":12341234,"CreditCardInfo":null}],"ClassName":"JuniorSailingClass","ClassDate":"00-00-00T00:00:00","ClassSize":0,"ClassDetails":"Beer every friday"}]
+[
+  {
+    "Participants": [
+      {
+        "FirstName": "jdshjdshj",
+        "LastName": "jkdjkdsjhk",
+        "Email": "jhksjhkddsf",
+        "Tlf": null,
+        "CreditCardInfo": null
+      },
+      {
+        "FirstName": "jsdjhfhjk",
+        "LastName": "jksdjkkjh",
+        "Email": "hjksdhjkfs",
+        "Tlf": null,
+        "CreditCardInfo": null
+      },
+      {
+        "FirstName": "kdsfhjksjkhdfhjk",
+        "LastName": "hjksdfhjkdsfhjkdsfhjkhjkfd",
+        "Email": "hjkxfhjkhjkjkdsfjkdsf",
+        "Tlf": null,
+        "CreditCardInfo": null
+      },
+      {
+        "FirstName": "ffghfgfhd",
+        "LastName": "gdhfgdfhgdhfdgf",
+        "Email": "gdfhdhghdgf",
+        "Tlf": 12341234,
+        "CreditCardInfo": null
+      },
+      {
+        "FirstName": "Nisse",
+        "LastName": "far",
+        "Email": "Nissefar@inLoveWithNisseMor.dk",
+        "Tlf": 99999999,
+        "CreditCardInfo": null
+      },
+      {
+        "FirstName": "julle",
+        "LastName": "Emsen",
+        "Email": "emma.nansen@email.com",
+        "Tlf": 12344564,
+        "CreditCardInfo": null
+      },
+      {
+        "FirstName": "Nanna",
+        "LastName": "Nanson",
+        "Email": "emma.nansen@email.com",
+        "Tlf": 12121212,
+        "CreditCardInfo": null
+      },
+      {
+        "FirstName": "fredags",
+        "LastName": "bar",
+        "Email": "fredagsbar@email",
+        "Tlf": 12345678,
+        "CreditCardInfo": null
+      },
+      {
+        "FirstName": "ghj",
+        "LastName": "fghjk",
+        "Email": "ghjk@ftyghuj",
+        "Tlf": 24653874,
+        "CreditCardInfo": null
+      },
+      {
+        "FirstName": "hjkl",
+        "LastName": "hjkl",
+        "Email": "jkl@hjkl",
+        "Tlf": 12345678,
+        "CreditCardInfo": null
+      },
+      {
+        "FirstName": "karen",
+        "LastName": "karen",
+        "Email": "karen@mail.com",
+        "Tlf": 12345678,
+        "CreditCardInfo": null
+      }
+    ],
+    "ClassName": "SeniorSailingClass",
+    "ClassDate": "00-00-00T00:00:00",
+    "ClassSize": 0,
+    "ClassDetails": "Beer every friday"
+  },
+  {
+    "Participants": [
+      {
+        "FirstName": "jdhjhjksfdhjkdfshjk",
+        "LastName": "hjksdfhjkdsfhjkhjdsfk",
+        "Email": "jkhsdfhjkdsfhjkdfshjk",
+        "Tlf": 12341234,
+        "CreditCardInfo": null
+      }
+    ],
+    "ClassName": "JuniorSailingClass",
+    "ClassDate": "00-00-00T00:00:00",
+    "ClassSize": 0,
+    "ClassDetails": "Beer every friday"
+  }
+]

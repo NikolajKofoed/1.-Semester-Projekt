@@ -5,15 +5,14 @@ using SejlBåd.Services.BoatService;
 
 namespace SejlBåd.Pages.BoatPages
 {
-    public class EditJuniorModel : PageModel
+    public class EditBoatModel : PageModel
     {
         private IBoatService _boatService;
         private Boat Boat;
 
-        [BindProperty]
-        public Models.Boat boat { get; set; }
+        [BindProperty] public Models.Boat boat { get; set; }
 
-        public EditJuniorModel(IBoatService boatService)
+        public EditBoatModel(IBoatService boatService)
         {
             _boatService = boatService;
         }
@@ -21,10 +20,6 @@ namespace SejlBåd.Pages.BoatPages
         public IActionResult OnGet(int id)
         {
             Boat = _boatService.GetBoat(id);
-            if (boat == null)
-            {
-                return RedirectToPage("Index");
-            }
 
             return Page();
         }
@@ -35,8 +30,8 @@ namespace SejlBåd.Pages.BoatPages
             {
                 return Page();
             }
-            _boatService.EditJuniorModel(Boat);
-            return RedirectToPage("Boats");
+            _boatService.EditBoat(Boat);
+            return RedirectToPage("/Boats");
         }
     }
 }

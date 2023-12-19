@@ -7,18 +7,29 @@ namespace SejlBåd.Services.BoatService
     public class BoatService : IBoatService
     {
         private JsonFileBoatService JsonFileBoatService { get; set; }
+        private JsonFileBoatListService _jsonFileBoatListService;
 
         List<Boat> boats;
+        List<Boats> boatList;
 
-        public BoatService(JsonFileBoatService jsonFileBoatService)
+
+        public BoatService(JsonFileBoatService jsonFileBoatService, JsonFileBoatListService jsonFileBoatListService)
         {
             JsonFileBoatService = jsonFileBoatService;
+            _jsonFileBoatListService = jsonFileBoatListService;
             boats = JsonFileBoatService.GetJsonBoats().ToList();
+            boatList = _jsonFileBoatListService.GetJsonBoats().ToList();
         }
 
-        public void AddBoats(Boat boat)
+
+
+
+        public void AddBoats(int id, Boat boat)
         {
             boats.Add(boat);
+            boatList[id - 1].BoatList.Add(boat);
+            _jsonFileBoatListService.SaveJsonBoats(boatList);
+            JsonFileBoatService.SaveJsonBoats(boats);
         }
 
         public Boat GetBoat(int id)
@@ -38,70 +49,62 @@ namespace SejlBåd.Services.BoatService
             return boats;
         }
 
-        public Boat? LookUpBoat(int Id)
+        public Boat DeleteBoat(int id, Boat boat)
+
         {
-            foreach (var boat in boats)
+            foreach (Boat b in boatList[id - 1].BoatList)
             {
-                if (boat.Id == Id)
+                if (boat.Id == b.Id)
                 {
-                    return boat;
+                    boats.Remove(b);
+                    boatList[id - 1].BoatList.Remove(b);
+                    _jsonFileBoatListService.SaveJsonBoats(boatList);
+                    JsonFileBoatService.SaveJsonBoats(boats);
+                    return b;
                 }
-            }
-            return null;
+            } 
+            return null; 
         }
 
-        public void DeleteBoats(Boat boat)
-
+        public void EditBoat(Boat boat)
         {
             foreach (Boat b in boats)
             {
-                if (boat == b)
+                if (b.Id == boat.Id)
                 {
-                    boats.Remove(b);
-                    break;
+                    b.Booked = boat.Booked;
                 }
             }
         }
-
         public void CreateBoatModel(Boat boat)
         {
             throw new NotImplementedException();
         }
 
-        //JuniorModel IBoatService.GetJuniorModel(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        // Boats
 
-        //JuniorModel IBoatService.DeleteJuniorModel()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        IBoatService IBoatService.DeleteBoats(int id)
+        public Boats GetBoats(int id)
         {
-            throw new NotImplementedException();
+            foreach (var b in boatList)
+            {
+                if (b.Id == id)
+                {
+                    return b;
+                }
+            }
+            return null;
         }
 
-
-        void IBoatService.EditJuniorModel(Boat boat)
+        public List<Boat> GetBoatList(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        JuniorBoat IBoatService.GetJuniorModel(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        JuniorBoat IBoatService.DeleteJuniorModel()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IBoatService.DeleteJunior(JuniorBoat boat)
-        {
-            throw new NotImplementedException();
+            foreach (var b in boatList)
+            {
+                if (b.Id == id)
+                {
+                    return b.BoatList;
+                }
+            }
+            return null;
         }
     }
 }

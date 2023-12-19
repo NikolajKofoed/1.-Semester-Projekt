@@ -1,5 +1,5 @@
 ﻿@page
-@model SejlBåd.Pages.BoatPages.DeleteJuniorModel
+@model SejlBåd.Pages.BoatPages.DeleteBoatModel
 @{
     if (HttpContext.Session.GetString("UserRole") == "User")
     {
@@ -10,9 +10,9 @@
         ViewData["IsAdmin"] = true;
     }
 }
-<h1>Slet en båd</h1>
+<h1>Slet båd</h1>
 <div class="alert alert-danger">
-    <h4>Er du sikker på, at du vil slette? @Model.juniorModel</h4>
+    <h4>Er du sikker på, at du vil slette? </h4>
     <form method="post">
         <button type="submit" class="btn btn-danger">Ja</button>
         <a class="btn btn-primary" asp-page="/BoatPages/Boats">Nej</a>

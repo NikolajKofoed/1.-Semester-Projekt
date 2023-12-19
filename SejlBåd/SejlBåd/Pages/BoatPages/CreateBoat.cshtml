@@ -1,0 +1,54 @@
+﻿@page
+@model SejlBåd.Pages.BoatPages.CreateBoatModel
+@{
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
+}
+
+
+
+<div class="login-container">
+    <div class="login-form-container">
+        <h2>Login Page</h2>
+        <form method="post">
+    <div class="form-group">
+        <label asp-for="Boat.Id" class="control-lable"> Id på både</label>
+        <input asp-for="Boat.Id" class="form-control" />
+        <span asp-validation-for="Boat.Id" class="text-danger"></span>
+    </div>
+            <div class="form-group">
+                <label asp-for="Boat.Length" class="control-lable"> Længde</label>
+                <input asp-for="Boat.Length" class="form-control" />
+                <span asp-validation-for="Boat.Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boat.Width" class="control-lable"> Bredde</label>
+                <input asp-for="Boat.Width" class="form-control" />
+                <span asp-validation-for="Boat.Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boat.Bom" class="control-lable"> Antal bom</label>
+                <input asp-for="Boat.Bom" class="form-control" />
+                <span asp-validation-for="Boat.Bom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boat.Vægt" class="control-lable"> Vægt</label>
+                <input asp-for="Boat.Vægt" class="form-control" />
+                <span asp-validation-for="Boat.Vægt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boat.TopUnderMast" class="control-lable"> Top- og undermast</label>
+                <input asp-for="Boat.TopUnderMast" class="form-control" />
+                <span asp-validation-for="Boat.TopUnderMast" class="text-danger"></span>
+            </div>
+
+    <div class="form-group">
+        <input type="submit" value="Tilføj ny båd" class="btn btn-primary" />
+    </div>
+    </form>
