@@ -28,10 +28,5 @@ namespace SejlBåd.Pages.BoatPages
             }
             return Page();
         }
-        public IActionResult OnPost()
-        {
-
-            return RedirectToPage("Lejbåd");
-        }
     }
 }

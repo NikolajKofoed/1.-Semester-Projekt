@@ -2,10 +2,11 @@
 @model SejlBåd.Pages.BoatPages.LejbådModel
 @{
 }
+<form method="post">
 <div class="login-container">
     <div class="login-form-container">
-        <h2>Login Page</h2>
-        <form method="post">
+        <h2>Indtast et account for at booke båd</h2>
+
             <div class="form-group">
                 <label asp-for="UserName">Username:</label>
                 <input asp-for="UserName" required />
@@ -14,10 +15,12 @@
                 <label asp-for="Password">Password:</label>
                 <input asp-for="Password" type="password" required />
             </div>
-            <button type="submit">Login</button>
-        </form>
-        <p>
-            <a class="register-link" asp-page="Register/DateAndCountry">Register</a>
-        </p>
+            <button type="submit">Lej Båd</button>
+
     </div>
 </div>
+</form>
+
+<p>
+    <a asp-page="Boats">Tilbage</a>
+</p>

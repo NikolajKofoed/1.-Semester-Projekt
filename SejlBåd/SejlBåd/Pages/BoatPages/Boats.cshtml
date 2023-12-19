@@ -31,36 +31,43 @@
 {
     foreach(var boat in @Model.BoatList)
     {
-        <tr>
-            <td>@boat.Id</td>
-            <td>@boat.Length</td>
-            <td>@boat.Width</td>
-            <td>@boat.Bom</td>
-            <td>@boat.HasBom</td>
-            <td>@boat.Vægt</td>
-            <td>@boat.Booked</td>
-    
-            <t><td>
+                @if (@boat.Booked == false || ViewData["IsAdmin"] != null)
+                {
+                    <tr>
+                        <td>@boat.Id</td>
+                        <td>@boat.Length</td>
+                        <td>@boat.Width</td>
+                        <td>@boat.Bom</td>
+                        <td>@boat.HasBom</td>
+                        <td>@boat.Vægt</td>
+                        <td>@boat.Booked</td>
 
-                        @if (ViewData["IsAdmin"] == null)
-                        {
+                        <td>
+                            @if (boat.Account == null)
+                            {
+                                @if (ViewData["IsAdmin"] == null)
+                                {
 
-                            <form method="post">
-                                <button class="btn btn-primary btn-sm" type="submit" title="Lejbåd" asp-route-id="@boat.Id">Book</button>
-                            </form>
-                        }
+                                    <form method="post">
+                                        <a class="btn btn-primary btn-sm" type="button" asp-page="Lejbåd" title="Lejbåd" asp-route-id="@Model.Boats.Id" asp-route-id2="@boat.Id">Book</a>
+                                    </form>
+                                }
+                            }
 
-                        @if (ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
 
-                        {
+                            @if (ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+
+                            {
                                 <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditBoat" asp-route-id="@Model.Boats.Id" asp-route-id2="@boat.Id">Rediger</a>
-                            <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="DeleteBoat" asp-route-id="@Model.Boats.Id" asp-route-id2="@boat.Id">slet</a>
-                        }
-                </td>
+                                <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="DeleteBoat" asp-route-id="@Model.Boats.Id" asp-route-id2="@boat.Id">slet</a>
+                            }
+                        </td>
 
-                       
-                  
-        </tr>
+
+
+                    </tr>
+                }
+                
     }
 }
 

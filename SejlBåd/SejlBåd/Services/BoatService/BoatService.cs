@@ -21,7 +21,20 @@ namespace SejlBåd.Services.BoatService
             boatList = _jsonFileBoatListService.GetJsonBoats().ToList();
         }
 
-
+        Boat IBoatService.RentBoat(int id, Boat boat, Account account)
+        {
+            foreach(var b in boatList[id - 1].BoatList)
+            {
+                if(b.Booked == false && b.Id == boat.Id)
+                {
+                    b.Booked = true;
+                    b.Account = account;
+                    _jsonFileBoatListService.SaveJsonBoats(boatList);
+                    return b;
+                }
+            }
+            return null;
+        }
 
 
         public void AddBoats(int id, Boat boat)
@@ -56,9 +69,22 @@ namespace SejlBåd.Services.BoatService
             {
                 if (boat.Id == b.Id)
                 {
-                    boats.Remove(b);
                     boatList[id - 1].BoatList.Remove(b);
                     _jsonFileBoatListService.SaveJsonBoats(boatList);
+                    DeleteBoat(b);
+                    return b;
+                }
+            }
+            return null;
+        }
+
+        public Boat DeleteBoat(Boat boat)
+        {
+            foreach(var b in boats)
+            {
+                if(boat.Id == b.Id)
+                {
+                    boats.Remove(b);
                     JsonFileBoatService.SaveJsonBoats(boats);
                     return b;
                 }
@@ -126,5 +152,7 @@ namespace SejlBåd.Services.BoatService
             }
             return null;
         }
+
+
     }
 }

@@ -13,7 +13,7 @@ namespace SejlBåd.Services.BoatService
         Boat DeleteBoat(int id, Boat boat);
         void EditBoat(int id, Boat boat);
         Boat GetBoat(int id );
-
+        Boat RentBoat(int id, Boat boat, Account account);
         // Boats
 
         List<Boat> GetBoatList(int id);

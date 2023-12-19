@@ -5,17 +5,18 @@ namespace SejlBåd.Models
     public class Boat
     {
         public static int nextID = 1;
-        [BindProperty]
+
         public double Length { get; set; }
+        public Account? Account { get; set; }
         public double Width { get; set; }
         public double Bom { get; set; }
         public bool? HasBom { get; set; }
         public double TopUnderMast { get; set; }
         public double Vægt { get; set; }    
-        public bool? Booked { get; set; }
+        public bool Booked { get; set; }
         public int Id { get; set; }
 
-        public Boat(double length, double width, double bom, bool hasBom, double topUnderMast, double vægt, bool booked)
+        public Boat(double length, double width, double bom, bool hasBom, double topUnderMast, double vægt, bool booked, Account? account)
         {
             Id = nextID++;
             Length = length;
@@ -25,10 +26,12 @@ namespace SejlBåd.Models
             TopUnderMast = topUnderMast;
             Vægt = Vægt;
             Booked = booked;
+            Account = account;
         }
         public Boat()
         {
             Id = nextID++;
+            Booked = false;
         }
 
 
