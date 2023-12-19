@@ -1,1 +1,86 @@
-[{"Id":1,"Password":"123","UserName":"nik","Country":"Denmark","DateOfBirth":"0001-01-10T00:00:00","FirstName":"hjksdfhjdfhjhjk","LastName":"shjdhkdfshjksdfhjk","Email":"jhkdsfjdfhjk","PhoneNumber":"hjkfsdhjkhjkdsfhjk","Role":"User"},{"Id":2,"Password":"123","UserName":"Nik","Country":"Denmark","DateOfBirth":"0001-01-08T00:00:00","FirstName":"hjksdfhjdfhjhjk","LastName":"shjdhkdfshjksdfhjk","Email":"jhkdsfjdfhjk","PhoneNumber":"hjkfsdhjkhjkdsfhjk","Role":"Admin"},{"Id":3,"Password":"a","UserName":"a","Country":"a","DateOfBirth":"0001-01-01T00:00:00","FirstName":"a","LastName":"a","Email":"a","PhoneNumber":"a","Role":"User"},{"Id":4,"Password":"mitpassword","UserName":"stripperalex","Country":"Danmark","DateOfBirth":"0001-01-01T00:00:00","FirstName":"Stripper","LastName":"Alex","Email":"minemail@bobsdonerkebab.dk","PhoneNumber":"123456789","Role":"User"},{"Id":5,"Password":"a","UserName":"as","Country":"a","DateOfBirth":"0001-01-01T00:00:00","FirstName":"a","LastName":"a","Email":"a","PhoneNumber":"a","Role":"User"},{"Id":6,"Password":"mitpassword","UserName":"mitspritnyeusername","Country":"aasda","DateOfBirth":"0001-01-01T00:00:00","FirstName":"asdasda","LastName":"adsasdas","Email":"asda","PhoneNumber":"asdasda","Role":"User"}]
+[
+  {
+    "Id": 1,
+    "Password": "123",
+    "UserName": "nik",
+    "Country": "Denmark",
+    "DateOfBirth": "0001-01-10T00:00:00",
+    "FirstName": "hjksdfhjdfhjhjk",
+    "LastName": "shjdhkdfshjksdfhjk",
+    "Email": "jhkdsfjdfhjk",
+    "PhoneNumber": "hjkfsdhjkhjkdsfhjk",
+    "Role": "User"
+  },
+  {
+    "Id": 2,
+    "Password": "123",
+    "UserName": "Nik",
+    "Country": "Denmark",
+    "DateOfBirth": "0001-01-08T00:00:00",
+    "FirstName": "hjksdfhjdfhjhjk",
+    "LastName": "shjdhkdfshjksdfhjk",
+    "Email": "jhkdsfjdfhjk",
+    "PhoneNumber": "hjkfsdhjkhjkdsfhjk",
+    "Role": "Admin"
+  },
+  {
+    "Id": 3,
+    "Password": "a",
+    "UserName": "a",
+    "Country": "a",
+    "DateOfBirth": "0001-01-01T00:00:00",
+    "FirstName": "a",
+    "LastName": "a",
+    "Email": "a",
+    "PhoneNumber": "a",
+    "Role": "User"
+  },
+  {
+    "Id": 4,
+    "Password": "mitpassword",
+    "UserName": "stripperalex",
+    "Country": "Danmark",
+    "DateOfBirth": "0001-01-01T00:00:00",
+    "FirstName": "Stripper",
+    "LastName": "Alex",
+    "Email": "minemail@bobsdonerkebab.dk",
+    "PhoneNumber": "123456789",
+    "Role": "Admin"
+  },
+  {
+    "Id": 5,
+    "Password": "a",
+    "UserName": "as",
+    "Country": "a",
+    "DateOfBirth": "0001-01-01T00:00:00",
+    "FirstName": "a",
+    "LastName": "a",
+    "Email": "a",
+    "PhoneNumber": "a",
+    "Role": "User"
+  },
+  {
+    "Id": 6,
+    "Password": "mitpassword",
+    "UserName": "mitspritnyeusername",
+    "Country": "aasda",
+    "DateOfBirth": "0001-01-01T00:00:00",
+    "FirstName": "asdasda",
+    "LastName": "adsasdas",
+    "Email": "asda",
+    "PhoneNumber": "asdasda",
+    "Role": "User"
+  },
+  {
+    "Id": 7,
+    "Password": "BLA",
+    "UserName": "StripperJohnTheComeback",
+    "Country": "Danmark",
+    "DateOfBirth": "2023-12-15T00:00:00",
+    "FirstName": "Alexander",
+    "LastName": "j",
+    "Email": "minemail@mail.com",
+    "PhoneNumber": "asdasda",
+    "Role": "User"
+  }
+]
