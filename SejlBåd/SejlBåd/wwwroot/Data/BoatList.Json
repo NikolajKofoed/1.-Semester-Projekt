@@ -1,1 +1,1 @@
-[{"Id":1,"BoatList":[],"Navn":"Junior"},{"Id":2,"BoatList":[],"Navn":"Voksen"},{"Id":3,"BoatList":[],"Navn":"Senior"}]
+[{"Id":1,"BoatList":[{"Length":67,"Width":678,"Bom":6768,"HasBom":false,"TopUnderMast":678,"V\u00E6gt":7687,"Booked":null,"Id":6}],"Navn":"Junior"},{"Id":2,"BoatList":[],"Navn":"Voksen"},{"Id":3,"BoatList":[],"Navn":"Senior"}]
