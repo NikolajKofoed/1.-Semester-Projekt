@@ -1,18 +1,7 @@
 ﻿@page
-@model SejlBåd.Pages.Account.LoginModel
+@model SejlBåd.Pages.BoatPages.LejbådModel
 @{
-    if (HttpContext.Session.GetString("UserRole") == "User")
-    {
-        ViewData["IsUser"] = true;
-    }
-    if (HttpContext.Session.GetString("UserRole") == "Admin")
-    {
-        ViewData["IsAdmin"] = true;
-    }
 }
-
-
-
 <div class="login-container">
     <div class="login-form-container">
         <h2>Login Page</h2>

@@ -6,7 +6,7 @@ namespace SejlBåd.Services.SailingClassServices
     {
         List<User> GetSailingClassJunior();
         List<User> GetSailingClassSenior();
-        SailingClass AddSailingClass(SailingClass sailingClass);
+        //SailingClass AddSailingClass(SailingClass sailingClass);
 
         void AddSailingC(SailingClass sailingClass);
 
@@ -17,8 +17,8 @@ namespace SejlBåd.Services.SailingClassServices
 
         void RemoveSailingClass(SailingClass sailingClass);
         void UpdateSailingClass(SailingClass sailingClass);
-        void GetSailingClass(SailingClass sailingClass);
-        void AddUserToClass(User user);
+        //void GetSailingClass(SailingClass sailingClass);
+        //void AddUserToClass(User user);
 
         List<SailingClass> GetSailingClasses();
     }

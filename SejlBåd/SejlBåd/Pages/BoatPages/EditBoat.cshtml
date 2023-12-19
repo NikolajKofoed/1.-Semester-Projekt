@@ -1,0 +1,53 @@
+﻿@page
+@model SejlBåd.Pages.BoatPages.EditBoatModel
+@{
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
+}
+
+<form method="post">
+    <div class="form-group">
+        <label class="control-lable">Id</label>
+        <input asp-for="@Model.Boat.Id" class="form-control" readonly="@(true)" />
+    </div>
+<div class="form-group">
+    <label asp-for="Boat.Length" class="control-lable"> Længde</label>
+    <input asp-for="Boat.Length" class="form-control" />
+    <span asp-validation-for="Boat.Length" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Boat.Width" class="control-lable"> Bredde</label>
+    <input asp-for="Boat.Width" class="form-control" />
+    <span asp-validation-for="Boat.Width" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Boat.Bom" class="control-lable"> Antal bom</label>
+    <input asp-for="Boat.Bom" class="form-control" />
+    <span asp-validation-for="Boat.Bom" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Boat.Vægt" class="control-lable"> Vægt</label>
+    <input asp-for="Boat.Vægt" class="form-control" />
+    <span asp-validation-for="Boat.Vægt" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Boat.TopUnderMast" class="control-lable"> Top- og undermast</label>
+    <input asp-for="Boat.TopUnderMast" class="form-control" />
+    <span asp-validation-for="Boat.TopUnderMast" class="text-danger"></span>
+</div>
+
+
+    <div class="form-group">
+        <input type="submit" value="Gem" class="btn btn-primary" />
+    </div>
+</form>
+
+@* <div>
+    <a asp-page="/BoatPages/Boats">Retur til både</a>
+</div> *@

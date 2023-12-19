@@ -13,6 +13,5 @@ namespace SejlBåd.Services.BlogServices
         //Blog Methods STOP
         List<Comment> GetCommentsForBlogPost(int blogId);
         void AddCommentToBlog(int blogId, Comment comment);
-        void GetCurrentDate();
     }
 }

@@ -105,9 +105,5 @@ namespace SejlBåd.Services.BlogServices
                 _jsonBlogService.SaveJsonBlogData(_posts);
             }
         }
-
-        public void GetCurrentDate()
-        {
-        }
     }
 }

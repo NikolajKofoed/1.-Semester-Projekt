@@ -1,0 +1,73 @@
+﻿@page
+@model SejlBåd.Pages.BoatPages.BoatsModel
+@{
+    if (HttpContext.Session.GetString("UserRole") == "User")
+    {
+        ViewData["IsUser"] = true;
+    }
+    if (HttpContext.Session.GetString("UserRole") == "Admin")
+    {
+        ViewData["IsAdmin"] = true;
+    }
+}
+
+<center><h1>@Model.Boats.Navn</h1></center>
+<br />
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Længde</th>
+            <th>Bredde</th>
+            <th>Bom</th>
+            <th>Har bom</th>
+            <th>Vægt</th>
+            <th>Booked</th>
+        </tr>
+    </thead>
+<tbody>
+@if (@Model.BoatList != null)
+{
+    foreach(var boat in @Model.BoatList)
+    {
+        <tr>
+            <td>@boat.Id</td>
+            <td>@boat.Length</td>
+            <td>@boat.Width</td>
+            <td>@boat.Bom</td>
+            <td>@boat.HasBom</td>
+            <td>@boat.Vægt</td>
+            <td>@boat.Booked</td>
+    
+            <t><td>
+
+                        @if (ViewData["IsAdmin"] == null)
+                        {
+
+                            <form method="post">
+                                <button class="btn btn-primary btn-sm" type="submit" title="Lejbåd" asp-route-id="@boat.Id">Book</button>
+                            </form>
+                        }
+
+                        @if (ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+
+                        {
+                                <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditBoat" asp-route-id="@Model.Boats.Id" asp-route-id2="@boat.Id">Rediger</a>
+                            <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="DeleteBoat" asp-route-id="@Model.Boats.Id" asp-route-id2="@boat.Id">slet</a>
+                        }
+                </td>
+
+                       
+                  
+        </tr>
+    }
+}
+
+</table>
+<p>
+    @if(ViewData["IsAdmin"] != null && (bool)ViewData["IsAdmin"])
+    {
+        <a class="btn btn-primary" asp-page="CreateBoat" asp-route-id="@Model.Boats.Id"> Opret ny båd</a>
+    }
+</p>

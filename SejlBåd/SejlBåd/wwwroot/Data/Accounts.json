@@ -41,7 +41,7 @@
     "LastName": "Alex",
     "Email": "minemail@bobsdonerkebab.dk",
     "PhoneNumber": "123456789",
-    "Role": "User"
+    "Role": "Admin"
   },
   {
     "Id": 5,

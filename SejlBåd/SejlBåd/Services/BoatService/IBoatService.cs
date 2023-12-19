@@ -6,15 +6,18 @@ namespace SejlBåd.Services.BoatService
     public interface IBoatService
     {
 
-        void AddBoats(Boat boat);
-        void DeleteBoats(Boat boat);
-        Boat? LookUpBoat(int Id);
-        Boat GetBoat(int id);
+        // Boat
+
         List<Boat> listOfBoats();
-        JuniorBoat GetJuniorModel(int id);
-        IBoatService DeleteBoats(int id);
-        JuniorBoat DeleteJuniorModel();
-        void EditJuniorModel(Boat boat);
-        void DeleteJunior(JuniorBoat boat);
+        void AddBoats(int id, Boat boat);
+        Boat DeleteBoat(int id, Boat boat);
+        void EditBoat(int id, Boat boat);
+        Boat GetBoat(int id );
+
+        // Boats
+
+        List<Boat> GetBoatList(int id);
+
+        Boats GetBoats(int id);
     }
 }

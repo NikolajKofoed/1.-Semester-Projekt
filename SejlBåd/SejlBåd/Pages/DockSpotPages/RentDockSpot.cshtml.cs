@@ -48,6 +48,7 @@ namespace SejlBåd.Pages.DockSpotPages
             else
             {
                 // give feedback
+                return Page(); 
             }
 
             // need to set dockspot again here or it will always be set to dockspot with id 1

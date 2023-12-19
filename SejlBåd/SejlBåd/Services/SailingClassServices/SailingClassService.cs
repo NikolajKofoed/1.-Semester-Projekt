@@ -1,6 +1,7 @@
 ﻿using SejlBåd.Models;
 using SejlBåd.MockData.SailingClassMock;
 using SejlBåd.MockData.EventMock;
+using System.Data;
 
 namespace SejlBåd.Services.SailingClassServices
 {
@@ -8,6 +9,7 @@ namespace SejlBåd.Services.SailingClassServices
     {
         private JsonFileSailingClassService _jsonFileSailingClassService;
         public List<SailingClass> sailingClasses { get; set; }
+        public List<User> users;
 
 
         private List<User> _sCJuniors;
@@ -49,29 +51,23 @@ namespace SejlBåd.Services.SailingClassServices
             return user;
         }
 
-        void ISailingClassService.CancelUserToClass(User user)
-        {
-            if (user != null)
-            {
-                foreach(var us in _sCJuniors)
-                {
-                    user.Email = us.Email;
-                }
-                _sCJuniors.Remove(user);
-            }
-            _jsonFileSailingClassService.SaveJsonSailingClass(sailingClasses);
-            
-        }
-
-
-        SailingClass ISailingClassService.AddSailingClass(SailingClass sailingClass)
+        //er ikke implementeret, da user er sat op på Email, og det er svært at validere vores user den vej igennem
+        public void CancelUserToClass(User user)
         {
             throw new NotImplementedException();
         }
+
+
+        //public void AddSailingClass(SailingClass sailingClass)
+        //{
+        //    sailingClasses.Add(sailingClass);
+        //    _jsonFileSailingClassService.SaveJsonSailingClass(sailingClasses);
+        //}
 
         void ISailingClassService.AddSailingC(SailingClass sailingClass)
         {
-            throw new NotImplementedException();
+            sailingClasses.Add(sailingClass);
+            _jsonFileSailingClassService.SaveJsonSailingClass(sailingClasses);
         }
 
         void ISailingClassService.RemoveSailingClass(SailingClass sailingClass)
@@ -84,15 +80,15 @@ namespace SejlBåd.Services.SailingClassServices
             throw new NotImplementedException();
         }
 
-        void ISailingClassService.GetSailingClass(SailingClass sailingClass)
-        {
-            throw new NotImplementedException();
-        }
+        //void ISailingClassService.GetSailingClass(SailingClass sailingClass)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        void ISailingClassService.AddUserToClass(User user)
-        {
-            throw new NotImplementedException();
-        }
+        //void ISailingClassService.AddUserToClass(User user)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
     }
 }
