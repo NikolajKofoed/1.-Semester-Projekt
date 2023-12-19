@@ -62,8 +62,8 @@ namespace SejlBåd.Services.BoatService
                     JsonFileBoatService.SaveJsonBoats(boats);
                     return b;
                 }
-            } 
-            return null; 
+            }
+            return null;
         }
 
         public void EditBoat(Boat boat)
@@ -80,6 +80,25 @@ namespace SejlBåd.Services.BoatService
         {
             throw new NotImplementedException();
         }
+        public void EditBoat(int id, Boat boat)
+        {
+            foreach (Boat b in boatList[id - 1].BoatList)
+            {
+                if (b.Id == boat.Id)
+                {
+                    b.Length = boat.Length;
+                    b.Width = boat.Width;
+                    b.Bom = boat.Bom;
+                    b.Vægt = boat.Vægt;
+                    b.Booked = b.Booked;
+                    b.HasBom = boat.HasBom;
+
+                    _jsonFileBoatListService.SaveJsonBoats(boatList);
+                    JsonFileBoatService.SaveJsonBoats(boats);
+                }
+            }
+        }
+
 
         // Boats
 
