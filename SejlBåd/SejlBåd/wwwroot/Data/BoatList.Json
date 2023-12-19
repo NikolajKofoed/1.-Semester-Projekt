@@ -1,1 +1,1 @@
-[{"Id":1,"BoatList":[{"Length":67,"Width":678,"Bom":6768,"HasBom":false,"TopUnderMast":678,"V\u00E6gt":7687,"Booked":null,"Id":6}],"Navn":"Junior"},{"Id":2,"BoatList":[],"Navn":"Voksen"},{"Id":3,"BoatList":[],"Navn":"Senior"}]
+[{"Id":1,"BoatList":[{"Length":32,"Width":2.5,"Bom":2,"HasBom":null,"TopUnderMast":2,"V\u00E6gt":36,"Booked":null,"Id":2},{"Length":4,"Width":3,"Bom":2,"HasBom":null,"TopUnderMast":2,"V\u00E6gt":45,"Booked":null,"Id":1}],"Navn":"Junior"},{"Id":2,"BoatList":[],"Navn":"Voksen"},{"Id":3,"BoatList":[],"Navn":"Senior"}]
