@@ -51,20 +51,23 @@ namespace SejlBåd.Services.SailingClassServices
             return user;
         }
 
+        //er ikke implementeret, da user er sat op på Email, og det er svært at validere vores user den vej igennem
         public void CancelUserToClass(User user)
         {
             throw new NotImplementedException();
         }
 
 
-        SailingClass ISailingClassService.AddSailingClass(SailingClass sailingClass)
-        {
-            throw new NotImplementedException();
-        }
+        //public void AddSailingClass(SailingClass sailingClass)
+        //{
+        //    sailingClasses.Add(sailingClass);
+        //    _jsonFileSailingClassService.SaveJsonSailingClass(sailingClasses);
+        //}
 
         void ISailingClassService.AddSailingC(SailingClass sailingClass)
         {
-            throw new NotImplementedException();
+            sailingClasses.Add(sailingClass);
+            _jsonFileSailingClassService.SaveJsonSailingClass(sailingClasses);
         }
 
         void ISailingClassService.RemoveSailingClass(SailingClass sailingClass)
@@ -77,10 +80,10 @@ namespace SejlBåd.Services.SailingClassServices
             throw new NotImplementedException();
         }
 
-        void ISailingClassService.GetSailingClass(SailingClass sailingClass)
-        {
-            throw new NotImplementedException();
-        }
+        //void ISailingClassService.GetSailingClass(SailingClass sailingClass)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         //void ISailingClassService.AddUserToClass(User user)
         //{

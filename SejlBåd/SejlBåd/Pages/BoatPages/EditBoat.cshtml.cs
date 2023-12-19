@@ -8,30 +8,36 @@ namespace SejlBåd.Pages.BoatPages
     public class EditBoatModel : PageModel
     {
         private IBoatService _boatService;
-        private Boat Boat;
 
-        [BindProperty] public Models.Boat boat { get; set; }
+        public Boats Boats { get; set; }
 
-        public EditBoatModel(IBoatService boatService)
+        [BindProperty] public Models.Boat Boat { get; set; }
+
+        public EditBoatModel(IBoatService BoatService)
         {
-            _boatService = boatService;
+            _boatService = BoatService;
         }
-
-        public IActionResult OnGet(int id)
+        public IActionResult OnGet(int id, int id2)
         {
-            Boat = _boatService.GetBoat(id);
+            Boats = _boatService.GetBoats(id);
+            Boat = _boatService.GetBoat(id2);
 
             return Page();
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(int id)
         {
+
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            _boatService.EditBoat(Boat);
-            return RedirectToPage("/Boats");
+
+            Boats = _boatService.GetBoats(id);
+
+            _boatService.EditBoat(id, Boat);
+
+            return RedirectToPage("Boats", new { Boats.Id });
         }
     }
 }

@@ -15,7 +15,7 @@ namespace SejlBåd.Models
         public bool? Booked { get; set; }
         public int Id { get; set; }
 
-        public Boat(string boatName, double length, double width, double bom, bool hasBom, double topUnderMast, double vægt, bool booked)
+        public Boat(double length, double width, double bom, bool hasBom, double topUnderMast, double vægt, bool booked)
         {
             Id = nextID++;
             Length = length;
