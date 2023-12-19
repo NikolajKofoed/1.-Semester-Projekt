@@ -16,7 +16,6 @@
         <label class="control-lable">Id</label>
         <input asp-for="@Model.Boat.Id" class="form-control" readonly="@(true)" />
     </div>
-</form>
 <div class="form-group">
     <label asp-for="Boat.Length" class="control-lable"> Længde</label>
     <input asp-for="Boat.Length" class="form-control" />
@@ -43,10 +42,11 @@
     <span asp-validation-for="Boat.TopUnderMast" class="text-danger"></span>
 </div>
 
-<form method="post">
-    <div class="form-group"><div class="form-group">
-    <input type="submit" value="Gem" class="btn btn-primary" />
-</div></form>
+
+    <div class="form-group">
+        <input type="submit" value="Gem" class="btn btn-primary" />
+    </div>
+</form>
 
 @* <div>
     <a asp-page="/BoatPages/Boats">Retur til både</a>

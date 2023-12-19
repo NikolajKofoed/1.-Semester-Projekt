@@ -12,7 +12,7 @@ namespace SejlBåd.Services.BoatService
         void AddBoats(int id, Boat boat);
         Boat DeleteBoat(int id, Boat boat);
         void EditBoat(int id, Boat boat);
-        Boat GetBoat(int id);
+        Boat GetBoat(int id );
 
         // Boats
 

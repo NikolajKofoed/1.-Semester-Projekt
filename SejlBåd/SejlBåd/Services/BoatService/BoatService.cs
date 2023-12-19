@@ -95,6 +95,7 @@ namespace SejlBåd.Services.BoatService
 
                     _jsonFileBoatListService.SaveJsonBoats(boatList);
                     JsonFileBoatService.SaveJsonBoats(boats);
+                    break;
                 }
             }
         }
