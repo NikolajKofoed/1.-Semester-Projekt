@@ -4,6 +4,8 @@ namespace SejlBåd.Models
 {
     public class Account
     {
+        public string? Role { get; set; }
+
         private static int nextId = 1;
         public int Id { get; set; }
 
@@ -22,7 +24,7 @@ namespace SejlBåd.Models
         [Phone(ErrorMessage = "Telefon nummer skal være i det rigtige format")]
         public string? PhoneNumber { get; set; }
 
-        public string? Role { get; set; }
+       
 
         public Account()
         {
