@@ -24,7 +24,7 @@ namespace SejlBåd.Pages.Account
                 return Page();
             }
 
-            HttpContext.Session.Clear();
+            HttpContext.Session.Remove("UserRole");
 
             return RedirectToPage("/Index");
         }
