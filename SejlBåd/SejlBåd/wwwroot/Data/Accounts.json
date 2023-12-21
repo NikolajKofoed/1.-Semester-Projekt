@@ -1,1 +1,112 @@
-[{"Id":1,"Password":"123","UserName":"nik","DateOfBirth":"0001-01-10T00:00:00","FirstName":"niko","LastName":"niksen","Email":"niko@mail.com","PhoneNumber":"28495749","Role":"User"},{"Id":2,"Password":"123","UserName":"Nik","DateOfBirth":"0001-01-08T00:00:00","FirstName":"Nik","LastName":"Nik","Email":"nik@mail.com","PhoneNumber":"36472839","Role":"Admin"},{"Id":3,"Password":"345","UserName":"Julemor","DateOfBirth":"0001-01-01T00:00:00","FirstName":"Fru","LastName":"Julemanden","Email":"julemor@mail.com","PhoneNumber":"24122412","Role":"User"},{"Id":4,"Password":"mitpassword","UserName":"stripperalex","DateOfBirth":"0001-01-01T00:00:00","FirstName":"Stripper","LastName":"Alex","Email":"minemail@bobsdonerkebab.dk","PhoneNumber":"123456789","Role":"Admin"},{"Id":5,"Password":"a","UserName":"julefar","DateOfBirth":"0001-01-01T00:00:00","FirstName":"Julemanden","LastName":"Nordpol","Email":"julemanden@mail.com","PhoneNumber":"12241224","Role":"User"},{"Id":6,"Password":"mitpassword","UserName":"mitspritnyeusername","DateOfBirth":"0001-01-01T00:00:00","FirstName":"Ny","LastName":"User","Email":"nyuser@mail.com","PhoneNumber":"12345678","Role":"User"},{"Id":7,"Password":"hej","UserName":"TonniT","DateOfBirth":"0001-01-25T00:00:00","FirstName":"Tonni","LastName":"Tonnisen","Email":"tonni@mail.com","PhoneNumber":"12345678","Role":"User"},{"Id":8,"Password":"123","UserName":"gig","DateOfBirth":"0001-01-01T00:00:00","FirstName":"Gitte","LastName":"Gertsen","Email":"gitte@mail.com","PhoneNumber":"67890123","Role":"User"},{"Id":9,"Password":"123","UserName":"kik","DateOfBirth":"0001-01-01T00:00:00","FirstName":"Kipper","LastName":"Krudt","Email":"kik@mail.com","PhoneNumber":"63728473","Role":"User"},{"Id":10,"Password":"testkode","UserName":"emmatest","DateOfBirth":"1999-12-24T00:00:00","FirstName":"Emma","LastName":"Test","Email":"mail@mail.com","PhoneNumber":"23452345","Role":"User"}]
+[
+   {
+    "Id": 1,
+    "Password": "123",
+    "UserName": "nik",
+    "DateOfBirth": "0001-01-10T00:00:00",
+    "FirstName": "niko",
+    "LastName": "niksen",
+    "Email": "niko@mail.com",
+    "PhoneNumber": "28495749",
+    "Role": "User"
+  },
+  {
+    "Id": 2,
+    "Password": "123",
+    "UserName": "Nik",
+    "DateOfBirth": "0001-01-08T00:00:00",
+    "FirstName": "Nik",
+    "LastName": "Nik",
+    "Email": "nik@mail.com",
+    "PhoneNumber": "36472839",
+    "Role": "Admin"
+  },
+  {
+    "Id": 3,
+    "Password": "345",
+    "UserName": "Julemor",
+    "DateOfBirth": "0001-01-01T00:00:00",
+    "FirstName": "Fru",
+    "LastName": "Julemanden",
+    "Email": "julemor@mail.com",
+    "PhoneNumber": "24122412",
+    "Role": "User"
+  },
+  {
+    "Id": 4,
+    "Password": "mitpassword",
+    "UserName": "stripperalex",
+    "DateOfBirth": "0001-01-01T00:00:00",
+    "FirstName": "Stripper",
+    "LastName": "Alex",
+    "Email": "minemail@bobsdonerkebab.dk",
+    "PhoneNumber": "123456789",
+    "Role": "Admin"
+  },
+  {
+    "Id": 5,
+    "Password": "a",
+    "UserName": "julefar",
+    "DateOfBirth": "0001-01-01T00:00:00",
+    "FirstName": "Julemanden",
+    "LastName": "Nordpol",
+    "Email": "julemanden@mail.com",
+    "PhoneNumber": "12241224",
+    "Role": "User"
+  },
+  {
+    "Id": 6,
+    "Password": "mitpassword",
+    "UserName": "mitspritnyeusername",
+    "DateOfBirth": "0001-01-01T00:00:00",
+    "FirstName": "Ny",
+    "LastName": "User",
+    "Email": "nyuser@mail.com",
+    "PhoneNumber": "12345678",
+    "Role": "User"
+  },
+  {
+    "Id": 7,
+    "Password": "hej",
+    "UserName": "TonniT",
+    "DateOfBirth": "0001-01-25T00:00:00",
+    "FirstName": "Tonni",
+    "LastName": "Tonnisen",
+    "Email": "tonni@mail.com",
+    "PhoneNumber": "12345678",
+    "Role": "User"
+  },
+  {
+    "Id": 8,
+    "Password": "123",
+    "UserName": "gig",
+    "DateOfBirth": "0001-01-01T00:00:00",
+    "FirstName": "Gitte",
+    "LastName": "Gertsen",
+    "Email": "gitte@mail.com",
+    "PhoneNumber": "67890123",
+    "Role": "User"
+  },
+  {
+    "Id": 9,
+    "Password": "123",
+    "UserName": "kik",
+    "DateOfBirth": "0001-01-01T00:00:00",
+    "FirstName": "Kipper",
+    "LastName": "Krudt",
+    "Email": "kik@mail.com",
+    "PhoneNumber": "63728473",
+    "Role": "User"
+  },
+  {
+    "Id": 10,
+    "Password": "testkode",
+    "UserName": "emmatest",
+    "DateOfBirth": "1999-12-24T00:00:00",
+    "FirstName": "Emma",
+    "LastName": "Test",
+    "Email": "mail@mail.com",
+    "PhoneNumber": "23452345",
+    "Role": "User"
+  }
+]
